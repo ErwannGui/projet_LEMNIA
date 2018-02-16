@@ -30,6 +30,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig'] # ajout du moteur de template dans la configuration
 
 # Twig Configuration
 twig:
@@ -51,7 +53,9 @@ doctrine:
         #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
-        #path: '%database_path%'
+        # driver: pdo_sqlite
+        # path: '%kernel.project_dir%/app/sqlite.db'
+        # charset: UTF8
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
@@ -65,3 +69,11 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\Utilisateur
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
