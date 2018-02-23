@@ -2,7 +2,7 @@
 parameters:
     database_host: 147.135.249.241
     database_port: 3306
-    database_name: doli2_doli
+    database_name: lemnia
     database_user: root
     database_password: YnovPC&
     mailer_transport: smtp
