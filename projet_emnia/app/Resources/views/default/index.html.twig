@@ -4,37 +4,6 @@
 Portail utilisateur LEMNIA
 {% endblock %}
 
-{% block header %}
-    <header class="navbar-fixed">
-        <nav class="grey lighten-2 ">
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!--Barre latérale affichée sous format desktop-->
-        <nav class="vertical-menu hide-on-med-and-down grey darken-1">
-            <ul class="vertical-bar center-align">
-                <li><a class="vertical-link" href=""><i class="material-icons">dashboard</i>Tableau de bord</a></li>
-                <li><a class="vertical-link" href=""><i class="material-icons">date_range</i>Agenda</a></li>
-                <li><a class="vertical-link" href=""><i class="material-icons">call</i>Alertes</a></li>
-                <li><a class="vertical-link" href=""><i class="material-icons">chat</i>Comments.</a></li>
-                <li><a class="vertical-link" href=""><i class="material-icons">contacts</i>Contact</a></li>
-                <li><a class="vertical-link" href=""><i class="material-icons">settings</i>Paramètres</a></li>
-            </ul>
-        </nav>
-    </header>
-{% endblock %}
-
 {% block body %}
     <!--Contenu de la page-->
     <main class="main-content row">
@@ -50,7 +19,7 @@ Portail utilisateur LEMNIA
                             <a href="">
                                 <div class="card hoverable">
                                     <div class="card-image">
-                                        <img src="{{ asset('image1projet.jpg') }}">
+                                        <img src="{{ asset('img/image1projet.jpg') }}">
                                     </div>
                                     <div class="card-content grey-text text-darken-4">
                                         <span class="card-title">Card title</span>
@@ -70,7 +39,7 @@ Portail utilisateur LEMNIA
 
 {% block stylesheets %}
 <style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+    body { background: #F5F5F5; font: 18px/1.5 sans-serif; overflow-x: hidden; }
     h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
     h1 { font-size: 36px; }
     h2 { font-size: 21px; margin-bottom: 1em; }
@@ -103,16 +72,20 @@ Portail utilisateur LEMNIA
         width: 300px;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        height: calc(100% - 64px - 36px); /*taille du menu a modifier en configuration de prod*/
         top: 64px;
         transition-duration: 1s;
+        background-color: #25262C;
     }
 
     .vertical-menu .vertical-bar i{
-        font-size: 48px!important;
+        font-size: 32px!important;
+        margin-right: 15px;
     }
 
     .vertical-link{
+        display: flex;
+        flex-direction: row;
         line-height: 25px!important;
         width: 300px;
         padding-bottom: 1vh;
@@ -126,6 +99,13 @@ Portail utilisateur LEMNIA
         @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
         .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
+
+    @media only screen and (max-width: 992px) {
+        .main-content{
+            width: 100vw;
+            margin-left: 0!important;
+        }
     }
 </style>
 {% endblock %}

@@ -8,8 +8,36 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('materialize/css/materialize.min.css') }}">
     </head>
-    <body>
-        {% block header %}{% endblock %}
+    <body class="grey lighten-2">
+        <header class="navbar-fixed">
+            <nav class="grey lighten-2 ">
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo right">Logo</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <!-- <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                    </ul> -->
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a href="collapsible.html">Javascript</a></li>
+                        <li><a href="mobile.html">Mobile</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Barre latérale affichée sous format desktop-->
+            <nav class="vertical-menu hide-on-med-and-down">
+                <ul class="vertical-bar center-align">
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">home</i>Tableau de bord</a></li>
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">date_range</i>Factures</a></li>
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">call</i>Commandes</a></li>
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">chat</i>Licenses et abonnements</a></li>
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">contacts</i>Assistance</a></li>
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">settings</i>Liste des utilisateurs</a></li>
+                    <li><a class="vertical-link valign-wrapper" href=""><i class="material-icons">settings</i>Mon compte</a></li>
+                </ul>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
         <script type="text/javascript" src="{{ asset('jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
