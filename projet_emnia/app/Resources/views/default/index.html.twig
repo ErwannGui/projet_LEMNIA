@@ -53,44 +53,7 @@ Portail utilisateur LEMNIA
     #welcome h1 span { display: block; font-size: 75%; }
     #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
     #icon-book { display: none; }
-    header nav a{ color: black!important; }
-    .main-content{
-        width: calc(100vw - 300px);
-        margin-left: 300px!important;
-        top: 64px;
-    }
-    #sidenav-overlay{
-        width: 100vw;
-        z-index: 4!important;
-        background-color: rgba(0,0,0,0.7)!important;
-    }
-    /*Menu vertical en grand écran*/
-
-    .vertical-menu{
-        top: 0;
-        z-index: 1;
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        height: calc(100% - 64px - 36px); /*taille du menu a modifier en configuration de prod*/
-        top: 64px;
-        transition-duration: 1s;
-        background-color: #25262C;
-    }
-
-    .vertical-menu .vertical-bar i{
-        font-size: 32px!important;
-        margin-right: 15px;
-    }
-
-    .vertical-link{
-        display: flex;
-        flex-direction: row;
-        line-height: 25px!important;
-        width: 300px;
-        padding-bottom: 1vh;
-    }
-
+    
     @media (min-width: 768px) {
         #wrapper { width: 80%; margin: 2em auto; }
         #icon-book { display: inline-block; }
@@ -101,11 +64,5 @@ Portail utilisateur LEMNIA
         .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
     }
 
-    @media only screen and (max-width: 992px) {
-        .main-content{
-            width: 100vw;
-            margin-left: 0!important;
-        }
-    }
 </style>
 {% endblock %}

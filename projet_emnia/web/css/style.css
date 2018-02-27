@@ -1,0 +1,74 @@
+/* --  -- */
+
+header nav a{ color: black!important; }
+
+.main-content{
+    width: calc(100vw - 300px);
+    margin-left: 300px!important;
+    top: 64px;
+}
+
+#sidenav-overlay{
+    width: 100vw;
+    z-index: 4!important;
+    background-color: rgba(0,0,0,0.7)!important;
+}
+
+/*Menu vertical en grand écran*/
+
+.er_vertical-menu_header{
+    top: 0;
+    z-index: 1;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    height: calc(100% - 36px); /*taille du menu a modifier en configuration de prod*/
+    transition-duration: 1s;
+    background-color: #25262C;
+}
+
+.er_vertical-bar_header i{
+    font-size: 20px!important;
+    margin-right: 15px;
+}
+
+.er_vertical-bar_header{
+    margin-bottom: 150px;
+    font-size: 20px;
+}
+
+.er_vertical-link_header{
+    display: flex;
+    flex-direction: row;
+    line-height: 25px!important;
+    width: 300px;
+    padding-left: 26px;
+}
+
+.er_vertical-link_header:hover{
+    border-left: solid 4px #039be5;
+}
+
+.er_logo-entreprise_header{
+    filter: brightness(1.2);
+}
+
+.er_user_header img{
+    width: 100px;
+    margin-bottom: -25px;
+}
+
+.er_disconnect_header{
+    margin-left: 30px;
+    width: 240px;
+    height: 56px;
+    line-height: 56px;
+}
+
+@media only screen and (max-width: 992px) {
+    .main-content{
+        width: 100vw;
+        margin-left: 0!important;
+    }
+}
