@@ -15,16 +15,15 @@ class BillController extends Controller
 {
 
 	/**
-     * @Route("/bill", name="customer_portal_bundle_bill")
+     * @Route("/bill", name="customer_portal_bundle_list_user")
      * On peut définir des droits spécifiques à cette route afin d'en limiter l'accès
      */
     public function listBillAction(Request $request){
 
-        /*$em = $this->getDoctrine()->getManager();
-        $users = $em->getRepository('LemniaUserBundle:User')->findAll();*/
+        $user = $this->getUser();
 
         return $this->render('bill/bill.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,
         ]);
     }
 }

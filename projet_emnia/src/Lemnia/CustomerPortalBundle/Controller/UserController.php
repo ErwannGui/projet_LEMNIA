@@ -20,11 +20,13 @@ class UserController extends Controller
      */
     public function listUserAction(Request $request){
 
+        $user = $this->getUser();
+
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('LemniaUserBundle:User')->findAll();
 
         return $this->render('users/users.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users, 'user' => $user, 
         ]);
     }
 
