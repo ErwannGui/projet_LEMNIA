@@ -16,7 +16,7 @@ header nav a{ color: black!important; }
 
 /*Menu vertical en grand écran*/
 
-.er_vertical-menu_header{
+.er_vertical-menu_header, .er_side-nav{
     top: 0;
     z-index: 1;
     width: 300px;
@@ -28,18 +28,17 @@ header nav a{ color: black!important; }
     background-color: #25262C;
 }
 
-.er_vertical-bar_header i{
+.er_vertical-bar_header i, .er_side-nav i{
     font-size: 20px!important;
     margin-right: 15px;
 }
 
 .er_vertical-bar_header{
-    margin-bottom: 150px;
     font-size: 20px;
 }
 
 .er_vertical-link_header{
-    display: flex;
+    display: flex!important;
     flex-direction: row;
     line-height: 25px!important;
     width: 300px;
@@ -54,13 +53,17 @@ header nav a{ color: black!important; }
     filter: brightness(1.2);
 }
 
+.er_user_header{
+    margin-top: 150px;
+}
+
 .er_user_header img{
     width: 100px;
     margin-bottom: -25px;
 }
 
 .er_disconnect_header{
-    margin-left: 30px;
+    margin-left: 30px!important;
     width: 240px;
     height: 56px;
     line-height: 56px;

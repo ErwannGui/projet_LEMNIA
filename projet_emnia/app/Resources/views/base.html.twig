@@ -21,11 +21,25 @@
                     <!-- <ul class="right hide-on-med-and-down">
                         <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                     </ul> -->
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">Javascript</a></li>
-                        <li><a href="mobile.html">Mobile</a></li>
+                    <ul class="side-nav er_side-nav" id="mobile-demo">
+                        <div class="er_logo-entreprise_side-nav">
+                            <a class="er_menu_logo_header center" href=""><img class="er_logo-entreprise_header" src="{{ asset('img/logo_lemnia.png') }}" alt="Logo entreprise"></a>
+                        </div>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">home</i>Tableau de bord</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">content_paste</i>Factures</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href=""><i class="material-icons light-blue-text darken-1">account_circle</i>Mon compte</a></li>
+                        <div class="center er_user_header">
+                            <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
+                            <br>
+                            <span>Prénom NOM</span>
+                        </div>
+                        <div class="valign-wrapper">
+                            <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>
+                        </div>
                     </ul>
                 </div>
             </nav>
