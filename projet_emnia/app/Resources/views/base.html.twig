@@ -8,10 +8,20 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('materialize/css/materialize.min.css') }}">
     </head>
-    <body style="height: 0;">
+    <body>
+        {% block header %}{% endblock %}
         {% block body %}{% endblock %}
         <script type="text/javascript" src="{{ asset('jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
+        <script>
+            $( document ).ready(function(){
+                /*Initialisation des accordéons et modal*/
+                $(".button-collapse").sideNav();
+                $('select').material_select();
+                $('.collapsible').collapsible();
+                $('.modal').modal();
+            })
+        </script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

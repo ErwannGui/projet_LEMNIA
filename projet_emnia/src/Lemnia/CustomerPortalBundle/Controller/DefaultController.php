@@ -19,10 +19,26 @@ class DefaultController extends Controller
      */
     public function homePageAction(Request $request){
 
+		/*$user = $this->getUser()->getId();*/
+
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('LemniaUserBundle:User')->findAll();
 
         return $this->render('default/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users,
+        ]);
+    }
+
+    /**
+     * @Route("/users", name="customer_portal_bundle_list_user")
+     * On peut définir des droits spécifiques à cette route afin d'en limiter l'accès
+     */
+    public function listUserAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('LemniaUserBundle:User')->findAll();
+
+        return $this->render('default/users.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users,
         ]);
     }
