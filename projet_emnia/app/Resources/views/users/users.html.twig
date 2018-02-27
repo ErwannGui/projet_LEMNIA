@@ -11,7 +11,35 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
         <section class="col s12 l12">
             <div class="row">
                 <!--Affichage du tableau de tout les utilisateurs-->
-                
+                <table id="etablissements" class="display" cellspacing="0" width="90%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Entreprise</th>
+                            <th>Téléphone</th>
+                            <th>Mail</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for userN in users %}
+                        <tr>
+                            <td>{{ userN.id }}</td>
+                            <td>{{ userN.firstname }}</td>
+                            <td>{{ userN.lastname }}</td>
+                            <td>Société</td>
+                            <td>{{ userN.phoneNumber }}</td>
+                            <td>{{ userN.email }}</td>
+                            <td><a class="btn-floating btn tooltipped waves-effect waves-light cyan darken-2 right" data-tooltip="Acceder aux demmandes de l'établissement. En temps qu'administrateur, vous pouvez les modifier même si elles ont déja été validées." data-position="top" data-delay="50" href="" style="width: 25px; height: 25px;"><i class="material-icons" style="width: 25px; line-height: 25px; transform: scale(0.8);">search</i></a></td>
+                            <td><a class="dropdown-button" href="#!" data-activates="action_etab"><i class="material-icons right">arrow_drop_down</i></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
@@ -45,4 +73,12 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
     }
 
 </style>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+            $('#etablissements').DataTable();
+        });
+</script>
 {% endblock %}
