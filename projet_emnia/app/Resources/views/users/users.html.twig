@@ -1,39 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Portail utilisateur LEMNIA
+Liste des utilisateurs - Portail utilisateur LEMNIA
 {% endblock %}
 
 {% block body %}
     <!--Contenu de la page-->
     <main class="main-content row">
-        <h1 class="center-align">Bienvenue sur l'intranet</h1>
-        <h3 class="center-align">Projets en cours</h3>
-        <section style="padding-top: 10px" class="col s12 l12">
+        <h3>Liste des utilisateurs</h3>
+        <section class="col s12 l12">
             <div class="row">
-                {% for user in users %}
-                <!--Affichage des projets-->
-                <div style="" class="col s12 m4">
-                    <div class="row">
-                        <div class="col s12">
-                            <a href="">
-                                <div class="card hoverable">
-                                    <div class="card-image">
-                                        <img src="{{ asset('img/image1projet.jpg') }}">
-                                    </div>
-                                    <div class="card-content grey-text text-darken-4">
-                                        <span class="card-title">Card title</span>
-                                        <p>{{ user.username }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+                <!--Affichage du tableau de tout les utilisateurs-->
+                
             </div>
         </section>
-        <h3 class="center-align">Applications récentes</h3>
     </main>
 {% endblock %}
 
