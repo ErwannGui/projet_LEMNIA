@@ -1,0 +1,3 @@
+lemnia_customer_portal_homepage:
+    path:     /
+    defaults: { _controller: LemniaCustomerPortalBundle:Default:homePage }

@@ -1,15 +1,49 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+Portail utilisateur LEMNIA
+{% endblock %}
+
+{% block header %}
+    <header class="navbar-fixed">
+        <nav class="grey lighten-2 ">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">Javascript</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Barre latérale affichée sous format desktop-->
+        <nav class="vertical-menu hide-on-med-and-down grey darken-1">
+            <ul class="vertical-bar center-align">
+                <li><a class="vertical-link" href=""><i class="material-icons">dashboard</i>Tableau de bord</a></li>
+                <li><a class="vertical-link" href=""><i class="material-icons">date_range</i>Agenda</a></li>
+                <li><a class="vertical-link" href=""><i class="material-icons">call</i>Alertes</a></li>
+                <li><a class="vertical-link" href=""><i class="material-icons">chat</i>Comments.</a></li>
+                <li><a class="vertical-link" href=""><i class="material-icons">contacts</i>Contact</a></li>
+                <li><a class="vertical-link" href=""><i class="material-icons">settings</i>Paramètres</a></li>
+            </ul>
+        </nav>
+    </header>
+{% endblock %}
+
 {% block body %}
-    <a style="position: absolute; top: 0; right: 0;" class="waves-effect waves-light btn" href="{{ path('fos_user_security_logout') }}">Logout</a>
-    <h1 class="center-align">Bienvenue sur l'intranet</h1>
     <!--Contenu de la page-->
     <main class="main-content row">
+        <h1 class="center-align">Bienvenue sur l'intranet</h1>
         <h3 class="center-align">Projets en cours</h3>
         <section style="padding-top: 10px" class="col s12 l12">
             <div class="row">
+                {% for user in users %}
                 <!--Affichage des projets-->
-                {% for projet in projets %}
                 <div style="" class="col s12 m4">
                     <div class="row">
                         <div class="col s12">
@@ -19,8 +53,8 @@
                                         <img src="{{ asset('image1projet.jpg') }}">
                                     </div>
                                     <div class="card-content grey-text text-darken-4">
-                                        <span class="card-title">{{ projet.entitled }}</span>
-                                        <p>{{ projet.type }}</p>
+                                        <span class="card-title">Card title</span>
+                                        <p>{{ user.username }}</p>
                                     </div>
                                 </div>
                             </a>
@@ -50,6 +84,39 @@
     #welcome h1 span { display: block; font-size: 75%; }
     #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
     #icon-book { display: none; }
+    header nav a{ color: black!important; }
+    .main-content{
+        width: calc(100vw - 300px);
+        margin-left: 300px!important;
+        top: 64px;
+    }
+    #sidenav-overlay{
+        width: 100vw;
+        z-index: 4!important;
+        background-color: rgba(0,0,0,0.7)!important;
+    }
+    /*Menu vertical en grand écran*/
+
+    .vertical-menu{
+        top: 0;
+        z-index: 1;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        top: 64px;
+        transition-duration: 1s;
+    }
+
+    .vertical-menu .vertical-bar i{
+        font-size: 48px!important;
+    }
+
+    .vertical-link{
+        line-height: 25px!important;
+        width: 300px;
+        padding-bottom: 1vh;
+    }
 
     @media (min-width: 768px) {
         #wrapper { width: 80%; margin: 2em auto; }

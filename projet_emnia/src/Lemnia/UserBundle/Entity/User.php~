@@ -4,18 +4,18 @@
  @copyright 2017 Groupe 5
  @version 1.0
 */
-namespace AppBundle\Entity;
+namespace Lemnia\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User AS FosUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * utilisateur
+ * User
  *
- * @ORM\Table(name="utilisateur")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\utilisateurRepository")
+ * @ORM\Table(name="User")
+ * @ORM\Entity(repositoryClass="Lemnia\UserBundle\Repository\UserRepository")
  */
-class Utilisateur extends FosUser
+class User extends FosUser
 {   
     //génération de la classe Utilisateur et de ses guetters/setters ce qui permet de créer des objets utilisateurs et de les utiliser dans notre application
 
@@ -33,21 +33,21 @@ class Utilisateur extends FosUser
      *
      * @ORM\Column(name="nom", type="string", length=255, nullable=true)
      */
-    private $nom;
+    private $lastName;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
      */
-    private $prenom;
+    private $firstName;
 
     /**
      * @var int
      *
      * @ORM\Column(name="tel", type="integer", nullable=true)
      */
-    private $tel;
+    private $phoneNumber;
 
     /**
      * Get id
