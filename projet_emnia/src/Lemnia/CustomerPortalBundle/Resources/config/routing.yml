@@ -25,3 +25,7 @@ lemnia_customer_portal_listuser:
 lemnia_customer_portal_user:
     path:     /user
     defaults: { _controller: LemniaCustomerPortalBundle:User:user }
+
+lemnia_customer_portal_edituser:
+    path:     /user/edit
+    defaults: { _controller: LemniaCustomerPortalBundle:User:editUser }

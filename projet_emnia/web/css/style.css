@@ -1,4 +1,4 @@
-/* --  -- */
+/* -- Header Portail -- */
 
 header nav a{ color: black!important; }
 
@@ -73,5 +73,21 @@ header nav a{ color: black!important; }
     .main-content{
         width: 100vw;
         margin-left: 0!important;
+    }
+}
+
+/* -- Table responsive liste des utilisateurs -- */
+
+.er_dropdown-user_listuser{
+    width: 240px!important;
+}
+
+@media only screen and (max-width : 1080px) {
+    .er_hide-column_listuser{
+        display: none!important;
+    }
+
+    .er_show-column_listuser{
+        display: block!important;
     }
 }

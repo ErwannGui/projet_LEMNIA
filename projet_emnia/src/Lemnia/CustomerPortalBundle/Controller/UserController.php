@@ -15,7 +15,7 @@ class UserController extends Controller
 {
 
     /**
-     * @Route("/users", name="customer_portal_bundle_list_user")
+     * @Route("/users", name="customer_portal_bundle_listuser")
      * On peut définir des droits spécifiques à cette route afin d'en limiter l'accès
      */
     public function listUserAction(Request $request){
@@ -31,7 +31,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/user", name="customer_portal_bundle_home_page")
+     * @Route("/user", name="customer_portal_bundle_user")
      * On peut définir des droits spécifiques à cette route afin d'en limiter l'accès
      */
     public function userAction(Request $request){
@@ -41,5 +41,23 @@ class UserController extends Controller
         return $this->render('users/user.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,
         ]);
+    }
+
+    /**
+     * @Route("/users/edit/{id}", name="customer_portal_bundle_edituser")
+     * On peut définir des droits spécifiques à cette route afin d'en limiter l'accès
+     */
+    public function editUserAction(Request $request){
+
+        /*$user = $this->getUser();
+
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('LemniaUserBundle:User')->findAll();
+
+        return $this->render('users/users.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users, 'user' => $user, 
+        ]);*/
+
+        return $this->redirectToRoute('lemnia_customer_portal_listuser');
     }
 }
