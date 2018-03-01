@@ -30,7 +30,9 @@
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_indent') }}"><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_subscription') }}"><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_help') }}"><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                        {% if is_granted("ROLE_ADMIN") %}
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
+                        {% endif %}
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_user') }}"><i class="material-icons light-blue-text darken-1">account_circle</i>Mon compte</a></li>
                         <div class="center er_user_header">
                             <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
@@ -52,7 +54,9 @@
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_indent') }}"><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_subscription') }}"><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_help') }}"><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                        {% if is_granted("ROLE_ADMIN") %}
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
+                        {% endif %}
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_user') }}"><i class="material-icons light-blue-text darken-1">account_circle</i>Mon compte</a></li>
                 </ul>
                 <div class="center er_user_header">
