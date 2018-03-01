@@ -1,0 +1,48 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+<form method="post" action="{{ path('fos_user_registration_register') }}" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col s12 m8 l6 offset-m2 offset-l3">
+            <div class="card-panel grey lighten-5">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="firstname" type="text" name="fos_user_registration_form[firstName]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="firstname">Prénom</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="lastname" type="text" name="fos_user_registration_form[lastName]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="lastname">Nom</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="phone" type="tel" name="fos_user_registration_form[phoneNumber]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="phone">Numéro de téléphone</label>
+                    </div>
+                	<div class="input-field col s12">
+                        <input id="identifiant" type="email" name="fos_user_registration_form[email]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="identifiant">Adresse mail</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="identifiant" type="text" name="fos_user_registration_form[username]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="identifiant">Identifiant</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name="fos_user_registration_form[plainPassword][first]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="password">Mot de passe</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name="fos_user_registration_form[plainPassword][second]" class="validate" required>
+                        <label class="cyan-text text-darken-1" for="password">Mot de passe</label>
+                    </div>
+                    {{ form_widget(form._token) }}
+                    <div class="row btn-fin-form">
+                        <div class="col s6 offset-s6 right-align">
+                            <button id="submit" type="submit" name="_submit" class="waves-effect waves-light btn cyan" value="{{ 'registration.submit'|trans }}">Valider<i class="left material-icons white-text">check</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock fos_user_content %}
