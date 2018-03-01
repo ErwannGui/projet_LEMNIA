@@ -91,3 +91,33 @@ header nav a{ color: black!important; }
         display: block!important;
     }
 }
+
+/*------------------------------- Contenu Corentin---------------------------------*/
+
+.co_statusCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    padding:30px;
+    border-radius: 2px;
+}
+
+.co_statusCardCirleIcon{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.co_statusCardTextContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*------------------------------- Fin Contenu Corentin---------------------------------*/
