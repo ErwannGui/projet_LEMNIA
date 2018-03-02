@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../../web/css/style.css">
+</head>
+
+<body>
+    <h5 class="page_title">Assistance</h5>
+    <div class="white_middle">
+        <h6 class="secondary_title">Vous rencontrez un problème? Contactez nous.</h6>
+        <form class="formulaire_assistance">
+            <div class="left_side">
+                <select class="select_assistance" name="select_priorities">
+                    <option class="option_assitance" selected value="none_selection">Selectionnez</option>
+                    <option class="option_assitance" value="low_priority">Priorité basse</option>
+                    <option class="option_assitance"  value="basic_priority">Priorité normale</option> 
+                    <option class="option_assitance"  value="high_priority">Priorité élevée</option> 
+                    <option class="option_assitance"  value="urgent_priority">Priorité majeure</option>
+                </select>
+                <input class="input_assistance" type="text" size="30" value="Votre nom" onclick="javascript:this.value = '';" />
+                <input class="input_assistance" type="text" size="30" value="Votre prénom" onclick="javascript:this.value = '';" />
+                <input class="input_assistance" type="email" size="30" value="Votre mail" onclick="javascript:this.value = '';" />
+                <input class="input_assistance" type="tel" size="30" value="Votre télèphone" onclick="javascript:this.value = '';" />
+                <input class="input_assistance" type="text" size="30" value="Votre job" onclick="javascript:this.value = '';" />
+            </div>
+            <div class="right_side">
+                <input class="input_assistance" type="text" size="30" cols="2" value="Objet" onclick="javascript:this.value = '';" />
+                <textarea class="textarea_assistance" rows="5" cols="50"onclick="javascript:this.value = '';" >Votre message ici</textarea>
+                <input class="submit_assistance" type="submit" value=" Envoyer ">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

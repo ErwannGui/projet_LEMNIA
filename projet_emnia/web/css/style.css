@@ -213,4 +213,102 @@ header nav a{ color: black!important; }
     justify-content: center;
 }
 
-/*------------------------------- Fin Contenu Corentin---------------------------------
+/*------------------------------- Fin Contenu Corentin---------------------------------*/
+
+/****************************************************************************************************************************************/
+
+/*------------------------------- Contenu Andrei---------------------------------*/
+.page_title{
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+.white_middle{ 
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 800px;
+    height: 700px;
+}
+
+.secondary_title{
+    font-family: sans-serif;
+    font-size: 0.9em;
+    margin-bottom: 100px;
+}
+
+.left_side{
+    display: flex;
+    flex-direction: column;
+    order:1;
+}
+
+.right_side{
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+}
+
+.input_assistance{
+    margin-bottom: 30px;
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+    color:#CCCCCC;
+}
+
+.input_assistance:focus{
+    outline: none;
+}
+
+.select_assistance:focus{
+    outline: none;
+}
+
+.textarea_assistance:focus{
+    outline: none;
+}
+
+.submit_assistance:focus{
+    outline: none;
+}
+
+.select_assistance{
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 120px;
+    color: #CCCCCC;
+}
+
+.submit_assistance{
+    margin-top: 40px;
+    background-color: #0199D1;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-left: 130px;
+}
+
+.textarea_assistance{
+    color:#CCCCCC;
+    border-color: #CCCCCC;
+}
+
+@media only screen and (max-width: 800px) {
+    .white_middle{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*------------------------------- Fin Contenu Andrei---------------------------------*/
+
