@@ -10,8 +10,190 @@ Commandes - Portail utilisateur LEMNIA
         <h3>Vos commandes</h3>
         <section class="col s12 l12">
             <div class="row">
-                <!--Affichage du tableau de tout les utilisateurs-->
-                
+                <div class="col s12 m3">
+                    <div class="white co_statusCard z-depth-1 hoverable">
+                        <div class="co_statusCardCirleIcon yellow lighten-4">
+                            <i class="material-icons amber-text text-lighten-3">send</i>
+                        </div>
+                        <div class="co_statusCardTextContent">
+                            <span class="black-text text-lighten-1">2</span>
+                            <span class="grey-text text-lighten-1">Commande envoyée</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="white co_statusCard z-depth-1 hoverable">
+                        <div class="co_statusCardCirleIcon yellow lighten-4">
+                            <i class="material-icons amber-text text-lighten-3">file_download</i>
+                        </div>
+                        <div class="co_statusCardTextContent">
+                            <span class="black-text text-lighten-1">2</span>
+                            <span class="grey-text text-lighten-1">Commande reçue</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="white co_statusCard z-depth-1 hoverable">
+                        <div class="co_statusCardCirleIcon light-blue lighten-5">
+                            <i class="material-icons light-blue-text text-lighten-3">check</i>
+                        </div>
+                        <div class="co_statusCardTextContent">
+                            <span class="black-text text-lighten-1">2</span>
+                            <span class="grey-text text-lighten-1">Commande validée</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="white co_statusCard z-depth-1 hoverable">
+                        <div class="co_statusCardCirleIcon grey lighten-4">
+                            <i class="material-icons grey-text text-lighten-2">watch_later</i>
+                        </div>
+                        <div class="co_statusCardTextContent">
+                            <span class="black-text text-lighten-1">2</span>
+                            <span class="grey-text text-lighten-1">Commande expirée</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row z-depth-4 grey lighten-4 col s12 er_table-container">
+                <table cellpadding="1" cellspacing="1" class="table table-hover centered bordered highlight responsive-table col s12" >
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Service</th>
+                            <th>N° commande</th>
+                            <th>Date</th>
+                            <th>Etat</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable" class="er_elem-table_indent">
+                        <tr>
+                            <td>1</td>
+                            <td>Location logiciel A</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status amber lighten-4">
+                                    Envoyée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large amber lighten-2 right">
+                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Location logiciel B</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status amber lighten-4">
+                                    Envoyée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large amber lighten-2 right">
+                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Intervention humaine</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Réceptionnée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large green lighten-2 right">
+                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>License Artica Proxy</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status blue lighten-4">
+                                    Validée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large blue lighten-2 right">
+                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Hébergement web</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status grey lighten-2">
+                                    Expirée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large red lighten-2 right">
+                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="col s12 row center er_pagination_bill">
+                    <span class="col s6 m4 l3 left-align er_elem-number_bill" id="total_reg"></span>
+                    <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+                </div>
+                <!-- Modal de détails de la commande -->
+                <div id="modal_details" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4>Détails de la commande n°1234567890</h4>
+                        <p>Voici la commande effectuée</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -45,4 +227,27 @@ Commandes - Portail utilisateur LEMNIA
     }
 
 </style>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Prev',
+          nextText:'Next',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:4
+        });
+    });
+
+    $('.tooltipped').tooltip({delay: 50});
+
+    function change() {
+        $('#container-card').toggleClass('er_hide-container_bill');
+        $('#container-sepa').toggleClass('er_hide-container_bill');
+    }
+</script>
 {% endblock %}

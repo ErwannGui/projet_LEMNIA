@@ -144,6 +144,28 @@ header nav a{ color: black!important; }
 .er_hide-container_bill{
     display: none;
 }
+
+/* -- Table des commandes -- */
+
+.er_fab-action_indent{
+    position: inherit!important;
+    width: 200px!important;
+}
+
+.er_fab-action_indent ul{
+    position: inherit!important;
+    height: 10px!important;
+    width: 120px!important;
+}
+
+
+.er_elem-table_indent tr:hover .er_chips-action{
+    visibility: visible!important;
+}
+
+.er_fab-toolbar_indent{
+    width: 200px!important;
+}
 /****************************************************************************************************************************************/
     /**//**//**//**//**/
             /**/        /* -- Appliqué sur toutes les pages utilisant un tableau -- */
