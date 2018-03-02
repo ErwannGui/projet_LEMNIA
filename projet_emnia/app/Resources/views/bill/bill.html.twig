@@ -8,10 +8,305 @@ Factures - Portail utilisateur LEMNIA
     <!--Contenu de la page-->
     <main class="main-content row">
         <h3>Vos factures</h3>
-        <section class="col s12 l12">
-            <div class="row">
-                <!--Affichage du tableau de tout les utilisateurs-->
-                
+        <section class="col s12 l12 row">
+            <div class="row z-depth-4 grey lighten-4 col s12 er_table-container">
+                <table cellpadding="1" cellspacing="1" class="table table-hover centered bordered highlight responsive-table col s12" >
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Service</th>
+                            <th>N° commande</th>
+                            <th>Date</th>
+                            <th>Etat</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable" class="er_elem-table_bill">
+                        <tr>
+                            <td>1</td>
+                            <td>Location logiciel A</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Location logiciel B</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Intervention humaine</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status red lighten-4">
+                                    Non payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>License Artica Proxy</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status amber lighten-4">
+                                    En retard
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Hébergement web</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status red lighten-4">
+                                    Non payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Nom de dommaine</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Location logiciel A</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Location logiciel B</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Intervention humaine</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status red lighten-4">
+                                    Non payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>License Artica Proxy</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status amber lighten-4">
+                                    En retard
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Hébergement web</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status red lighten-4">
+                                    Non payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Nom de dommaine</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td>
+                                <div class="chip er_chips-status green lighten-4">
+                                    Payée
+                                </div>
+                            </td>
+                            <td>
+                                <div class="chip transparent er_chips-action z-depth-4">
+                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="col s12 row center er_pagination_bill">
+                    <span class="col s6 m4 l3 left-align er_elem-number_bill" id="total_reg"></span>
+                    <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+                </div>
+                <!-- Modals de payment et détails de la facture -->
+                <div id="modal_details" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4>Détails de la facture n°1234567890</h4>
+                        <p>Voici la facture payée</p>
+                        <iframe src="https://neo-se.fr" height="480" class="col s12"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                    </div>
+                </div>
+                <div id="modal_payment" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4>Paiement de la facture n°1234567890</h4>
+                        <br>
+                        <div class="switch">
+                            <label class="er_type-payment_bill">Méthode de paiement : </label>
+                            <label>
+                              Carte
+                              <input type="checkbox">
+                              <span class="lever er_payment-choice_bill" onclick="change()"></span>
+                              Prélèvement SEPA
+                            </label>
+                            <div id="container-card" class="">
+                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
+                                    <table class="highlight bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Type</th>
+                                                <th>N° Carte</th>
+                                                <th>Date d'expiration</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Visa</td>
+                                                <td>**** **** **** 5682</td>
+                                                <td>10-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Master Card</td>
+                                                <td>**** **** **** 9534</td>
+                                                <td>03-2020</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="container-sepa" class="er_hide-container_bill">
+                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
+                                    <table class="highlight bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Type</th>
+                                                <th>N° Carte</th>
+                                                <th>Date d'expiration</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Visa</td>
+                                                <td>**** **** **** 5682</td>
+                                                <td>10-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Master Card</td>
+                                                <td>**** **** **** 9534</td>
+                                                <td>03-2020</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -45,4 +340,25 @@ Factures - Portail utilisateur LEMNIA
     }
 
 </style>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Prev',
+          nextText:'Next',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:6
+        });
+    });
+
+    function change() {
+        $('#container-card').toggleClass('er_hide-container_bill');
+        $('#container-sepa').toggleClass('er_hide-container_bill');
+    }
+</script>
 {% endblock %}

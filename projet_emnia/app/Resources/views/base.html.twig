@@ -8,6 +8,16 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('materialize/css/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/css/materialize.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/js/materialize.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/pagination.js') }}"></script>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
     </head>
     <body class="grey lighten-2">
         <header class="navbar-fixed">
@@ -17,7 +27,7 @@
                         Logo
                         <!-- <img src=""> -->
                     </a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons light-blue-text">menu</i></a>
                     <!-- <ul class="right hide-on-med-and-down">
                         <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                     </ul> -->
@@ -70,8 +80,6 @@
             </nav>
         </header>
         {% block body %}{% endblock %}
-        <script type="text/javascript" src="{{ asset('jquery-3.2.1.min.js') }}"></script>
-        <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
         <script>
             $( document ).ready(function(){
                 /*Initialisation des accordéons et modal*/

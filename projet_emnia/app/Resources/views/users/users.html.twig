@@ -11,7 +11,7 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
         <section class="col s12 l12">
             <div class="row">
                 <!--Affichage du tableau de tout les utilisateurs-->
-                <table id="etablissements" class="display restponsive-table" cellspacing="0" width="90%">
+                <table id="users" class="display restponsive-table" cellspacing="0" width="90%">
                     <thead>
                         <tr>
                             <th class="hide-on-med-and-down er_hide-column_listuser">ID</th>
@@ -117,7 +117,7 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
 <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-            $('#etablissements').DataTable();
+            $('#users').DataTable();
         });
 </script>
 {% endblock %}

@@ -1,4 +1,4 @@
-/* -- Header Portail -- */
+ -- Header Portail -- */
 
 header nav a{ color: black!important; }
 
@@ -6,6 +6,9 @@ header nav a{ color: black!important; }
     width: calc(100vw - 300px);
     margin-left: 300px!important;
     top: 64px;
+    padding-top: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 #sidenav-overlay{
@@ -23,9 +26,9 @@ header nav a{ color: black!important; }
     display: flex;
     flex-direction: column;
     padding-top: 15px;
-    height: calc(100% - 36px); /*taille du menu a modifier en configuration de prod*/
+    height: calc(100% - 36px)!important; /*taille du menu a modifier en configuration de prod*/
     transition-duration: 1s;
-    background-color: #25262C;
+    background-color: #25262C!important;
 }
 
 .er_vertical-bar_header i, .er_side-nav i{
@@ -66,11 +69,12 @@ header nav a{ color: black!important; }
 
 .er_disconnect_header{
     left: 30px!important;
+    margin: 0!important;
     width: 240px;
-    height: 56px;
-    line-height: 56px;
-    position: absolute;
-    bottom: 30px;
+    height: 56px!important;
+    line-height: 56px!important;
+    position: absolute!important;
+    bottom: 30px!important;
 }
 
 @media only screen and (max-width: 992px) {
@@ -86,6 +90,10 @@ header nav a{ color: black!important; }
     width: 240px!important;
 }
 
+.dataTables_wrapper select{
+    display: block!important;
+}
+
 @media only screen and (max-width : 1080px) {
     .er_hide-column_listuser{
         display: none!important;
@@ -95,6 +103,87 @@ header nav a{ color: black!important; }
         display: block!important;
     }
 }
+
+
+/* -- Table de factures -- */
+
+.er_pagination_bill{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.er_elem-number_bill{
+    padding-top: 18px!important;
+    height: 30px;
+}
+
+.er_elem-table_bill tr:hover .er_chips-action{
+    visibility: visible!important;
+}
+    
+.er_payment-choice_bill{
+    background-color: #64b5f6!important;
+}
+
+.er_payment-choice_bill:hover{
+    background-color: #64b5f6!important;
+}
+
+.er_type-payment_bill{
+    margin-right: 25px;
+}
+
+.switch label input[type="checkbox"]:checked + .lever::after {
+    background-color: #eeeeee!important;
+}
+
+#container-card tbody tr:hover, #container-sepa tbody tr:hover{
+    background-color: #e1f5fe!important;
+}
+
+.er_hide-container_bill{
+    display: none;
+}
+/****************************************************************************************************************************************/
+    /**//**//**//**//**/
+            /**/        /* -- Appliqué sur toutes les pages utilisant un tableau -- */
+            /**/
+            /**/        .er_chips-status{
+            /**/            width: 125px;
+            /**/        }
+            /**/
+            /**/        .er_table-container{
+            /**/            padding: 30px!important;
+            /**/        }
+            /**/
+            /**/        #container-card .er_table-container{
+            /**/            margin-top: 30px;
+            /**/        }
+            /**/
+            /**/        #container-sepa .er_table-container{
+            /**/            margin-top: 30px;
+            /**/        }
+            /**/
+            /**/        .er_chips-action{
+            /**/            visibility: hidden;
+            /**/        }
+            /**/
+            /**/        .er_chips-action:hover{
+            /**/            box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+            /**/            transition-duration: 0.5s;
+            /**/        }
+            /**/
+            /**/        .er_icon-action{
+            /**/            margin-top: 4px!important;
+            /**/        }
+            /**/
+            /**/        @media only screen and (max-width : 1180px) {
+            /**/            .er_icon-action{
+            /**/                display: none!important;
+            /**/            }
+            /**/        }
+    /**//**//**//**//**/        
+/****************************************************************************************************************************************/
 
 /*------------------------------- Contenu Corentin---------------------------------*/
 
@@ -124,4 +213,4 @@ header nav a{ color: black!important; }
     justify-content: center;
 }
 
-/*------------------------------- Fin Contenu Corentin---------------------------------*/
+/*------------------------------- Fin Contenu Corentin---------------------------------
