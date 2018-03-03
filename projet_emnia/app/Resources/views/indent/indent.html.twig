@@ -23,8 +23,8 @@ Commandes - Portail utilisateur LEMNIA
                 </div>
                 <div class="col s12 m3">
                     <div class="white co_statusCard z-depth-1 hoverable">
-                        <div class="co_statusCardCirleIcon yellow lighten-4">
-                            <i class="material-icons amber-text text-lighten-3">file_download</i>
+                        <div class="co_statusCardCirleIcon green lighten-4">
+                            <i class="material-icons green-text text-lighten-3">file_download</i>
                         </div>
                         <div class="co_statusCardTextContent">
                             <span class="black-text text-lighten-1">2</span>
@@ -79,7 +79,7 @@ Commandes - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
                                     <a class="btn-floating btn-large amber lighten-2 right">
                                         <i class="large material-icons">keyboard_arrow_left</i>
                                     </a>
@@ -101,7 +101,7 @@ Commandes - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
                                     <a class="btn-floating btn-large amber lighten-2 right">
                                         <i class="large material-icons">keyboard_arrow_left</i>
                                     </a>
@@ -123,7 +123,7 @@ Commandes - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
                                     <a class="btn-floating btn-large green lighten-2 right">
                                         <i class="large material-icons">keyboard_arrow_left</i>
                                     </a>
@@ -145,7 +145,7 @@ Commandes - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
                                     <a class="btn-floating btn-large blue lighten-2 right">
                                         <i class="large material-icons">keyboard_arrow_left</i>
                                     </a>
@@ -167,7 +167,7 @@ Commandes - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
                                     <a class="btn-floating btn-large red lighten-2 right">
                                         <i class="large material-icons">keyboard_arrow_left</i>
                                     </a>
@@ -244,6 +244,7 @@ Commandes - Portail utilisateur LEMNIA
     });
 
     $('.tooltipped').tooltip({delay: 50});
+    $('.fixed-action-btn').openFAB();
 
     function change() {
         $('#container-card').toggleClass('er_hide-container_bill');
