@@ -225,82 +225,120 @@ Factures - Portail utilisateur LEMNIA
                     <div class="modal-content">
                         <h4>Détails de la facture n°1234567890</h4>
                         <p>Voici la facture payée</p>
-                        <iframe src="https://neo-se.fr" height="480" class="col s12"></iframe>
+                        <!-- <iframe src="" height="480" class="col s12"></iframe> -->
+                        Affichage du PDF
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
                     </div>
                 </div>
+                <!-- Modal de payment réutilisable ailleurs -->
                 <div id="modal_payment" class="modal modal-fixed-footer">
                     <div class="modal-content">
                         <h4>Paiement de la facture n°1234567890</h4>
-                        <br>
-                        <div class="center"></div>
-                        <label class="er_type-payment_bill">Méthode de paiement : </label>
-                        <form action="#">
-                            <p>
-                              <input class="with-gap" name="payment-choice" type="radio" id="card" value="card" />
-                              <label for="card" onclick="hideSepa()">Carte</label>
-                            </p>
-                            <p>
-                              <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
-                              <label for="sepa" onclick="hideCard()">Prélèvement SEPA</label>
-                            </p>
-                          </form>
-                        <div id="container-card" class="er_hide-container_bill">
-                            <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
-                                <h5>Choix de la carte</h5>
-                                <table class="highlight bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Type</th>
-                                            <th>N° Carte</th>
-                                            <th>Date d'expiration</th>
-                                        </tr>
-                                    </thead>
+                        <div class="center er_payment-action">
+                            <a class="btn btn-floating btn-large light-blue lighten-2 tooltipped pulse er_tab-choice-btn" data-position="bottom" data-delay="50" data-tooltip="Choix de la méthode de paiement" href="#tab_choice-payment" onclick="loadTab('tab_choice-payment')"><i class="material-icons">shopping_basket</i></a>
+                            <a class="btn btn-floating btn-large light-blue lighten-2 tooltipped er_tab-valid-btn" data-position="bottom" data-delay="50" data-tooltip="Validation des CGV" href="#tab_validate-cgv" onclick="loadTab('tab_validate-cgv')" disabled><i class="material-icons">spellcheck</i></a>
+                            <a class="btn btn-floating btn-large light-blue lighten-2 tooltipped er_tab-done-btn" data-position="bottom" data-delay="50" data-tooltip="Paiement completé" href="#tab_payment-done" onclick="loadTab('tab_payment-done')" disabled><i class="material-icons">done</i></a>
+                        </div>
+                        <div id="tab_choice-payment" class="tab_payment">
+                            <span class="er_type-payment_bill">Méthode de paiement : </span>
+                            <form action="#" class="row">
+                                <p class="col s12 m6">
+                                  <input class="with-gap" name="payment-choice" type="radio" id="card" value="card" checked/>
+                                  <label for="card" onclick="showCard()">Carte</label>
+                                </p>
+                                <p class="col s12 m6">
+                                  <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
+                                  <label for="sepa" onclick="showSepa()">Prélèvement SEPA</label>
+                                </p>
+                              </form>
+                            <div id="container-card" class="">
+                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
+                                    <h5>Choix de la carte</h5>
+                                    <table class="highlight bordered responsive-table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Type</th>
+                                                <th>N° Carte</th>
+                                                <th>Date d'expiration</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Visa</td>
-                                            <td>**** **** **** 5682</td>
-                                            <td>10-2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Master Card</td>
-                                            <td>**** **** **** 9534</td>
-                                            <td>03-2020</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Visa</td>
+                                                <td>**** **** **** 5682</td>
+                                                <td>10-2019</td>
+                                                <td>
+                                                    <p>
+                                                        <input type="checkbox" id="card1" name="card-choice" />
+                                                        <label id="label-card1" class="card-choice" for="card1"></label>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Master Card</td>
+                                                <td>**** **** **** 9534</td>
+                                                <td>03-2020</td>
+                                                <td>
+                                                    <p>
+                                                        <input type="checkbox" id="card2" name="card-choice" />
+                                                        <label id="label-card2" class="card-choice" for="card2"></label>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="container-sepa" class="er_hide-container_bill">
+                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
+                                    <h5>Informations de prélèvelement</h5>
+                                    <table class="highlight bordered row">
+                                        <thead class="col s3">
+                                            <tr>
+                                                <th>IBAN</th>
+                                                <th>BIC</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="col s9 row">
+                                            <tr class="col s12">
+                                                <td>**** **** **** 5682</td>
+                                                <td>0123456789</td>
+                                                <td>10-2019</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="right-align">
+                                <strong class="er_price-payment">1463.65 €</strong><br>
+                                <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_validate-cgv" onclick="loadTab('tab_validate-cgv')">Continuer</a>
                             </div>
                         </div>
-                        <div id="container-sepa" class="">
-                            <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
-                                <h5>Informations de prélèvelemnt</h5>
-                                <table class="highlight bordered responsive-table row">
-                                    <thead class="col s3">
-                                        <tr>
-                                            <th>IBAN</th>
-                                            <th>BIC</th>
-                                            <th>Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="col s9">
-                                        <tr>
-                                            <td>**** **** **** 5682</td>
-                                            <td>0123456789</td>
-                                            <td>10-2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td>**** **** **** 9534</td>
-                                            <td>0123456789</td>
-                                            <td>03-2020</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div id="tab_validate-cgv" class="tab_payment er_hide-tab">
+                            <iframe src="http://neo-se.fr" class="er_cgv-payment"></iframe>
+                            <p class="er_validate-cgv_checkbox">
+                                <input type="checkbox" id="cgv" name="card-choice" />
+                                <label id="label-cgv" for="cgv">J'accepte les conditions générals de vente</label>
+                            </p>
+                            <div class="right-align">
+                                <strong class="er_price-payment">1463.65 €</strong><br>
+                                <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_payment-done" onclick="loadTab('tab_payment-done')">Continuer</a>
+                            </div>
+                        </div>
+                        <div id="tab_payment-done" class="tab_payment er_hide-tab">
+                            <div class="center row">
+                                <div class="er_payment-done_icon circle col s6 m4 offset-s3 offset-m4">
+                                    <i class="material-icons white-text center">done</i>
+                                </div>
+                                <span class="col s12">Félicitation. Le paiement de la facture à été éffectué.</span>
                             </div>
                         </div>
                     </div>
@@ -355,16 +393,64 @@ Factures - Portail utilisateur LEMNIA
           hidePageNumbers:false,
           perPage:6
         });
+
+        $('ul.tabs').tabs();
+
+        $('.card-choice').on('click', function () {
+            $('input:checkbox').prop('checked', false);
+            if ($(this.prop('id', 'label-card1'))) {
+                $('#card1').prop('checked', true);
+            }
+            if ($(this.prop('id', 'label-card2'))) {
+                $('#card2').prop('checked', true);
+            }
+        });
     });    
 
-    function hideCard() {
-        $('#container-card').addClass('er_hide-container_bill');
-        $('#container-sepa').removeClass('er_hide-container_bill');
+    function loadTab(value) {
+        $('.tab_payment').addClass('er_hide-tab');
+        if (value == 'tab_validate-cgv') {
+            if ($('#container-sepa').hasClass('er_hide-container_bill')) {
+                if ($('input[name="card-choice"]').is(':checked')) {
+                    $('#'+value).removeClass('er_hide-tab');
+                    $('.er_tab-valid-btn').removeAttr('disabled');
+                    $('.er_tab-valid-btn').addClass('pulse');
+                }
+                else {
+                    Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez choisir une carte', 4000, 'amber lighten-1');
+                    $('#tab_choice-payment').removeClass('er_hide-tab');
+                }
+            }
+            else {
+                $('#'+value).removeClass('er_hide-tab');
+                $('.er_tab-valid-btn').removeAttr('disabled');
+                $('.er_tab-valid-btn').addClass('pulse');
+            }
+        }
+        else if (value == 'tab_payment-done') {
+            if ($('#cgv').is(':checked')) {
+                $('#'+value).removeClass('er_hide-tab');
+                $('.er_tab-done-btn').removeAttr('disabled');
+                $('.er_tab-done-btn').addClass('pulse');
+            }
+            else {
+                Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez accepter les CGV pour continuer', 4000, 'amber lighten-1');
+                $('#tab_validate-cgv').removeClass('er_hide-tab');
+            }
+        }
+        else {
+            $('#'+value).removeClass('er_hide-tab');
+        }
     }
 
-    function hideSepa() {
+    function showCard() {
         $('#container-sepa').addClass('er_hide-container_bill');
         $('#container-card').removeClass('er_hide-container_bill');
+    }
+
+    function showSepa() {
+        $('#container-card').addClass('er_hide-container_bill');
+        $('#container-sepa').removeClass('er_hide-container_bill');
     }
 </script>
 {% endblock %}
