@@ -345,6 +345,7 @@ header nav a{ color: black!important; }
 
 /*------------------------------- Contenu Corentin---------------------------------*/
 
+/* Global */
 .co_statusCard{
     display: flex;
     flex-direction: row;
@@ -371,6 +372,195 @@ header nav a{ color: black!important; }
     justify-content: center;
 }
 
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- CONTACTS ---------------------------------- */
+/* ------------------------------------------------------------------------ */
+
+/* all p of first part of contact card*/
+.co_contactInfoBlock_contacts p{
+    margin:0;
+    padding:0;
+}
+
+/* first part of contact card */
+.co_contactInfoBlock_contacts{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+/* top part of contact card */
+.co_contactInfoTopBlock_contacts{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+    margin-top: 10px;
+}
+
+/* Name circle of contact card */
+.co_nameCircle{
+    width:90px;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    border-radius: 50%;
+}
+
+/* Text information of a contact */
+.co_contactInfoTopBlockText_contacts{
+    display:flex;
+    flex-direction: column;
+    width:calc(100% - 100px);
+}
+
+/* middle block info contact card */
+.co_contactInfoMiddleBlock_contacts{
+    margin:20px 0;
+}
+
+/* one info middle block contact card*/
+.co_contactOneInfoMiddleBlock_contacts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:5px 0;
+}
+
+.co_contactOneInfoMiddleBlock_contacts>i{
+    margin-right: 15px;
+}
+
+.co_addBlueWindowWithFabBlock{
+    bottom:20px;
+    right:20px;
+    position:fixed;
+}
+
+#co_addContactBlock_contacts{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index:100;
+}
+
+.co_blueWindowBody{
+    position:relative;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    z-index:100;
+    display: flex;
+    flex-direction: column;
+    padding:30px;
+}
+
+.co_blueWindowBody p{
+    margin:0;
+    padding:0;
+}
+
+#co_addContactFormBlock_contacts{
+    width:500px;
+    display: none;
+}
+
+.co_whiteMaterialInput{
+    border-bottom: solid 1px white!important;
+    font-size:14px!important;
+    height:40px!important;
+    margin:0!important;
+    padding-bottom:5px!important;
+}
+
+.co_whiteMaterialInput::placeholder{
+    color:white;
+    padding-left:10px;
+}
+
+.co_whiteMaterialInput>*{
+    color:white;
+}
+
+.co_select{
+    border: #CCCCCC 2px solid!important;
+    border-radius: 5px!important;
+    background-color: white!important;
+}
+
+.co_roundedButton{
+    font-size: 14px;
+    padding:10px 20px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+.co_trickyAlignArrowAndFabDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:10;
+}
+
+#co_fabAddContact_contacts{
+
+}
+
+.co_blueWindowArrowBottomRight{
+    display: none;
+    transform: translateY(-20px) rotate(45deg) ;
+    width:40px;
+    height:40px;
+    margin-bottom:10px;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+}
+
+.co_blueWindowHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.co_blueWindowHeader>i:hover{
+    cursor:pointer;
+}
+
+#co_addContactNameBlock_contacts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 40px 0;
+    width:100%;
+}
+
+#co_addContactInputNameBlock_contacts{
+    width:calc(100% - 100px);
+}
+
+#co_addContactInfoBlock{
+    margin:40px 0;
+}
+
+#co_addContactConnectionBlock{
+    margin:40px 0;
+}
+
+#co_addContactAccessBlock{
+    margin:40px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#co_addContactSubmitBlock{
+    margin-top:80px;
+    display: flex;
+    justify-content: center;
+}
 /*------------------------------- Fin Contenu Corentin---------------------------------*/
 
 /****************************************************************************************************************************************/
