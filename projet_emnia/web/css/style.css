@@ -262,7 +262,6 @@ header nav a{ color: black!important; }
     visibility: visible!important;
 }
 
-
 /* -- Classes utilisées pour le modal de payment, réutilisables ailleurs -- */
 
     .er_type-payment{
@@ -355,6 +354,77 @@ header nav a{ color: black!important; }
         margin-top: 15px;
         margin-bottom: 10px;
     }
+
+
+.er_payment-action{
+    border-radius: 46px;
+    width: 100%;
+    margin-top: -10px!important;
+}
+
+.er_payment-action .btn{
+    margin: 3%!important;
+}
+
+.er_next-tab-payment{
+    border-radius: 18px!important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.er_hide-tab{
+    display: none;
+}
+
+.er_cgv-payment{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 360px!important;
+}
+
+.er_validate-cgv_checkbox{
+    margin-left: 5%;
+}
+
+.er_payment-done_icon{
+    position: relative;
+    margin-top: 30px;
+    background-image:linear-gradient(-30deg, white, #29b6f6);
+}
+
+.er_payment-done_icon:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.er_payment-done_icon i{
+    position: absolute;
+    top: 0;
+    left: 0;    
+    font-size: 6vw;
+    padding: 25%;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 602px) and (max-width: 992px) {
+    .er_payment-done_icon i{   
+        font-size: 10vw;
+    }
+}
+
+@media only screen and (max-width: 602px) {
+    .er_payment-done_icon i{   
+        font-size: 15vw;
+    }
+}
+
+.er_price-payment{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
 
 
 /* -- Table des commandes -- */
