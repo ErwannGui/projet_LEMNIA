@@ -186,12 +186,23 @@ Commandes - Portail utilisateur LEMNIA
                 </div>
                 <!-- Modal de détails de la commande -->
                 <div id="modal_details" class="modal modal-fixed-footer">
-                    <div class="modal-content">
+                    <div class="modal-content row">
                         <h4>Détails de la commande n°1234567890</h4>
-                        <p>Voici la commande effectuée</p>
+                        <span class="col s12 er_up-status">Réceptionnée</span>
+                        <strong class="col s12">Description : </strong>
+                        <p class="er_details-content grey-text col s12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mi a purus lacinia rhoncus. Phasellus non aliquet neque, vel ornare purus. Nam id sapien tempor, placerat dolor vel, porta odio. In eros risus, consequat non gravida ac, mollis ut est. In hac habitasse platea dictumst. Cras consequat lobortis sapien eget mollis. Maecenas eu ante eu metus dapibus blandit non quis augue. Phasellus vestibulum mi odio, vitae porttitor dui sodales non. Quisque pellentesque ut sem vitae semper. Pellentesque tincidunt elit metus, at vestibulum ipsum ultricies et. Proin at consequat libero, eget pellentesque nibh. Ut sit amet tincidunt metus, vitae elementum neque. Praesent nibh velit, lobortis vel aliquam quis, dictum id massa.</p>
+                        <div class="col row">
+                            <strong class="col s12">Durée :</strong>
+                            <p class="col s12 er_details-content grey-text">1 an</p>
+                        </div>
+                        <div class="col row">
+                            <strong class="col s12">Numéro de commande :</strong>
+                            <p class="col s12 er_details-content grey-text">1234567890</p>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                    <div class="modal-footer er_modal-details-footer">
+                        <a href="{{ path('lemnia_customer_portal_bill') }}" class="modal-action modal-close btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">content_paste</i>Voir la facture</a>
+                        <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">refresh</i>Annuler la commande</a>
                     </div>
                 </div>
             </div>
@@ -241,14 +252,28 @@ Commandes - Portail utilisateur LEMNIA
           hidePageNumbers:false,
           perPage:4
         });
+
+        $(".er_up-status").each(function() {
+            if ($(this).text() == 'Envoyée') {
+                $(this).addClass('amber lighten-4 amber-text text-lighten-2');
+            }
+            else if ($(this).text() == 'Réceptionnée') {
+                $(this).addClass('green lighten-4 green-text text-lighten-2');
+            }
+            else if ($(this).text() == 'Validée') {
+                $(this).addClass('blue lighten-4 blue-text text-lighten-2');
+            }
+            else if ($(this).text() == 'Expirée') {
+                $(this).addClass('grey lighten-2 grey-text');
+            }
+            else {
+                $(this).addClass('grey lighten-2 grey-text');
+            }
+        });
+
     });
 
     $('.tooltipped').tooltip({delay: 50});
     $('.fixed-action-btn').openFAB();
-
-    function change() {
-        $('#container-card').toggleClass('er_hide-container_bill');
-        $('#container-sepa').toggleClass('er_hide-container_bill');
-    }
 </script>
 {% endblock %}

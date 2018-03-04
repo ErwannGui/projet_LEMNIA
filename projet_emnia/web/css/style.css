@@ -443,6 +443,26 @@ header nav a{ color: black!important; }
 .er_fab-toolbar_indent{
     width: 200px!important;
 }
+
+/* -- Modal de détails d'une commande (réutilisable pour le modal de détails d'un abonnement) -- */
+
+    .er_up-status{
+        padding: 10px!important;
+        font-size: 14px!important;
+        margin-bottom: 50px;
+    }
+
+    .er_details-content{
+        font-size: 14px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .er_modal-details-footer a{
+        margin-left: 15px!important;
+        border-radius: 16px;
+    }
+
 /****************************************************************************************************************************************/
     /**//**//**//**//**/
             /**/        /* -- Appliqué sur toutes les pages utilisant un tableau -- */
