@@ -29,3 +29,7 @@ lemnia_customer_portal_user:
 lemnia_customer_portal_edituser:
     path:     /user/edit
     defaults: { _controller: LemniaCustomerPortalBundle:User:editUser }
+
+lemnia_customer_portal_contacts:
+    path:     /contacts
+    defaults: { _controller: LemniaCustomerPortalBundle:User:contacts }

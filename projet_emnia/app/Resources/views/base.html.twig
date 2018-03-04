@@ -87,10 +87,8 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
 
 
@@ -109,6 +107,7 @@
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_indent') }}"><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_subscription') }}"><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_help') }}"><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_contacts') }}"><i class="material-icons light-blue-text darken-1">contacts</i>Contacts</a></li>
                         {% if is_granted("ROLE_ADMIN") %}
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
                         {% endif %}
@@ -116,7 +115,7 @@
                         <div class="center er_user_header">
                             <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
                             <br>
-                            <span>{{ user.username }}</span>
+                            <span>{{ app.user.username }}</span>
                         </div>
                         <div class="valign-wrapper">
                             <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>
@@ -133,6 +132,7 @@
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_indent') }}"><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_subscription') }}"><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_help') }}"><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                        <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_contacts') }}"><i class="material-icons light-blue-text darken-1">contacts</i>Contacts</a></li>
                         {% if is_granted("ROLE_ADMIN") %}
                         <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
                         {% endif %}
@@ -141,7 +141,7 @@
                 <div class="center er_user_header">
                     <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
                     <br>
-                    <span>{{ user.username }}</span>
+                    <span>{{ app.user.username }}</span>
                 </div>
                 <div class="valign-wrapper">
                     <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>

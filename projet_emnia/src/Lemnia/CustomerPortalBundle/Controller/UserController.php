@@ -60,4 +60,12 @@ class UserController extends Controller
 
         return $this->redirectToRoute('lemnia_customer_portal_listuser');
     }
+
+    public function contactsAction(Request $request){
+
+
+        return $this->render('users/contacts.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
 }
