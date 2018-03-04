@@ -81,11 +81,8 @@ header nav a{ color: black!important; }
      right:0;
      top:80%;
      display:none;
- }
 
-#co_notificationBlock_header>*{
-    border-bottom: 1px solid #DDDDDD;
-}
+ }
 
 /* all p of notification tab */
 #co_notificationBlock_header p{
@@ -102,9 +99,20 @@ header nav a{ color: black!important; }
     font-size:18px;
 }
 
+/* notification list */
+#co_allNotificationsBlock_header{
+    height:85%!important;
+    overflow-y: scroll;
+}
+
+/* all element of notification list */
+#co_allNotificationsBlock_header>*{
+    border-bottom: 1px solid #DDDDDD;
+}
+
 /* one notification */
 .co_oneNotification_header{
-    height:15%;
+    height:18%;
     display : flex;
     flex-direction: row;
     padding:15px 20px;
