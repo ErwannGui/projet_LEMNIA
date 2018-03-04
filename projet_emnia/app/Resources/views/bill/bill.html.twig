@@ -235,71 +235,72 @@ Factures - Portail utilisateur LEMNIA
                     <div class="modal-content">
                         <h4>Paiement de la facture n°1234567890</h4>
                         <br>
-                        <div class="switch">
-                            <label class="er_type-payment_bill">Méthode de paiement : </label>
-                            <label>
-                              Carte
-                              <input type="checkbox">
-                              <span class="lever er_payment-choice_bill" onclick="change()"></span>
-                              Prélèvement SEPA
-                            </label>
-                            <div id="container-card" class="">
-                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
-                                    <table class="highlight bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Type</th>
-                                                <th>N° Carte</th>
-                                                <th>Date d'expiration</th>
-                                            </tr>
-                                        </thead>
+                        <div class="center"></div>
+                        <label class="er_type-payment_bill">Méthode de paiement : </label>
+                        <form action="#">
+                            <p>
+                              <input class="with-gap" name="payment-choice" type="radio" id="card" value="card" />
+                              <label for="card" onclick="hideSepa()">Carte</label>
+                            </p>
+                            <p>
+                              <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
+                              <label for="sepa" onclick="hideCard()">Prélèvement SEPA</label>
+                            </p>
+                          </form>
+                        <div id="container-card" class="er_hide-container_bill">
+                            <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
+                                <h5>Choix de la carte</h5>
+                                <table class="highlight bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Type</th>
+                                            <th>N° Carte</th>
+                                            <th>Date d'expiration</th>
+                                        </tr>
+                                    </thead>
 
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Visa</td>
-                                                <td>**** **** **** 5682</td>
-                                                <td>10-2019</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Master Card</td>
-                                                <td>**** **** **** 9534</td>
-                                                <td>03-2020</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Visa</td>
+                                            <td>**** **** **** 5682</td>
+                                            <td>10-2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Master Card</td>
+                                            <td>**** **** **** 9534</td>
+                                            <td>03-2020</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div id="container-sepa" class="er_hide-container_bill">
-                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
-                                    <table class="highlight bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Type</th>
-                                                <th>N° Carte</th>
-                                                <th>Date d'expiration</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Visa</td>
-                                                <td>**** **** **** 5682</td>
-                                                <td>10-2019</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Master Card</td>
-                                                <td>**** **** **** 9534</td>
-                                                <td>03-2020</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        </div>
+                        <div id="container-sepa" class="">
+                            <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
+                                <h5>Informations de prélèvelemnt</h5>
+                                <table class="highlight bordered responsive-table row">
+                                    <thead class="col s3">
+                                        <tr>
+                                            <th>IBAN</th>
+                                            <th>BIC</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="col s9">
+                                        <tr>
+                                            <td>**** **** **** 5682</td>
+                                            <td>0123456789</td>
+                                            <td>10-2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**** **** **** 9534</td>
+                                            <td>0123456789</td>
+                                            <td>03-2020</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -354,11 +355,16 @@ Factures - Portail utilisateur LEMNIA
           hidePageNumbers:false,
           perPage:6
         });
-    });
+    });    
 
-    function change() {
-        $('#container-card').toggleClass('er_hide-container_bill');
-        $('#container-sepa').toggleClass('er_hide-container_bill');
+    function hideCard() {
+        $('#container-card').addClass('er_hide-container_bill');
+        $('#container-sepa').removeClass('er_hide-container_bill');
+    }
+
+    function hideSepa() {
+        $('#container-sepa').addClass('er_hide-container_bill');
+        $('#container-card').removeClass('er_hide-container_bill');
     }
 </script>
 {% endblock %}

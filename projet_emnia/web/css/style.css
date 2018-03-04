@@ -286,6 +286,15 @@ header nav a{ color: black!important; }
     display: none;
 }
 
+#container-sepa table th, #container-sepa table td{
+    display: flex!important;
+    flex-direction: column!important;
+}
+
+#container-sepa table tr{
+    display: inline-block!important;
+}
+
 /* -- Table des commandes -- */
 
 .er_fab-toolbar_indent .er_fab-action_indent{
