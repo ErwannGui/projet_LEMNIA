@@ -595,7 +595,7 @@ header nav a{ color: black!important; }
     z-index:100;
     display: flex;
     flex-direction: column;
-    padding:30px;
+    padding:0!important;
 }
 
 .co_blueWindowBody p{
@@ -627,12 +627,22 @@ header nav a{ color: black!important; }
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding:30px 30px 15px 30px;
+}
+
+.co_blueWindowModalHeader{
+    padding:0;
 }
 
 .co_blueWindowHeader>i:hover{
     cursor:pointer;
 }
 
+.co_blueWindowMiddle{
+    height:65vh;
+    overflow-y: scroll;
+    padding: 15px 30px 30px 30px;
+}
 /* Center a modal in col */
 .co_centeredModal{
     display: flex;
@@ -642,15 +652,15 @@ header nav a{ color: black!important; }
 }
 
 /* change modal scrollbar aspect */
-.modal::-webkit-scrollbar{
+.modal::-webkit-scrollbar, .co_blueWindowMiddle::-webkit-scrollbar, #co_allNotificationsBlock_header::-webkit-scrollbar{
     width:10px;
 }
 
-.modal::-webkit-scrollbar-track{
+.modal::-webkit-scrollbar-track, .co_blueWindowMiddle::-webkit-scrollbar-track, #co_allNotificationsBlock_header::-webkit-scrollbar-track{
     background-color: transparent;
 }
 
-.modal::-webkit-scrollbar-thumb{
+.modal::-webkit-scrollbar-thumb, .co_blueWindowMiddle::-webkit-scrollbar-thumb, #co_allNotificationsBlock_header::-webkit-scrollbar-thumb{
     background-color:#00000022;
     border-radius: 5px;
 }
@@ -716,9 +726,11 @@ header nav a{ color: black!important; }
 
 /* Body of the add contact window */
 #co_addContactFormBlock_contacts{
-    width:500px;
     display: none;
+    width:100%;
 }
+
+
 
 /* Name part of contact form */
 .co_contactNameBlock_contacts{
