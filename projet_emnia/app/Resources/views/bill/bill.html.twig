@@ -9,15 +9,41 @@ Factures - Portail utilisateur LEMNIA
     <main class="main-content row">
         <h3>Vos factures</h3>
         <section class="col s12 l12 row">
-            <div class="row z-depth-4 grey lighten-4 col s12 er_table-container">
-                <table cellpadding="1" cellspacing="1" class="table table-hover centered bordered highlight responsive-table col s12" >
+            <div class="row z-depth-1 white er_table-container">
+                <div class="row">
+                    <div class="input-field col s12 m6 l3">
+                        <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons er_close-search">close</i>
+                    </div>
+                    <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
+                        <select id="ma_selectColumn_bill" class="grey-text er_table-sort-select">
+                            <option value="0">ID</option>
+                            <option value="1">Service</option>
+                            <option value="2">N° de commande</option>
+                            <option value="3">Date</option>
+                            <option value="4">Etat</option>
+                        </select>
+                        <label>Recherche par</label>
+                    </div>
+                    <div class="input-field col l2 offset-l4 hide-on-med-and-down">
+                        <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
+                            <option value="6" selected>Défaut</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <label>Afficher par</label>
+                    </div>
+                </div>
+                <table id="bill-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Service</th>
                             <th>N° commande</th>
                             <th>Date</th>
-                            <th>Etat</th>
+                            <th class="er_centered-chips">Etat</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -27,12 +53,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Location logiciel A</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
                                 </div>
@@ -43,12 +69,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Location logiciel B</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
                                 </div>
@@ -59,12 +85,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Intervention humaine</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status red lighten-4">
                                     Non payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
                                 </div>
@@ -75,12 +101,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>License Artica Proxy</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status amber lighten-4">
                                     En retard
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
                                 </div>
@@ -91,12 +117,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Hébergement web</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status red lighten-4">
                                     Non payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
                                 </div>
@@ -107,12 +133,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Nom de dommaine</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
                                 </div>
@@ -123,12 +149,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Location logiciel A</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
                                 </div>
@@ -139,12 +165,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Location logiciel B</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
                                 </div>
@@ -155,12 +181,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Intervention humaine</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status red lighten-4">
                                     Non payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
                                 </div>
@@ -171,12 +197,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>License Artica Proxy</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status amber lighten-4">
                                     En retard
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
                                 </div>
@@ -187,12 +213,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Hébergement web</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status red lighten-4">
                                     Non payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
                                 </div>
@@ -203,12 +229,12 @@ Factures - Portail utilisateur LEMNIA
                             <td>Nom de dommaine</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Payée
                                 </div>
                             </td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip transparent er_chips-action z-depth-4">
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">more</i>Détails</a>
                                 </div>
@@ -254,8 +280,8 @@ Factures - Portail utilisateur LEMNIA
                                 </p>
                               </form>
                             <div id="container-card" class="">
-                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
-                                    <h5>Choix de la carte</h5>
+                                <div class="z-depth-1 white grey-text col s12 er_table-container">
+                                    <span>Choix de la carte</span>
                                     <table class="highlight bordered responsive-table">
                                         <thead>
                                             <tr>
@@ -297,9 +323,9 @@ Factures - Portail utilisateur LEMNIA
                                 </div>
                             </div>
                             <div id="container-sepa" class="er_hide-container">
-                                <div class="z-depth-4 grey lighten-4 col s12 er_table-container">
-                                    <h5>Informations de prélèvelement</h5>
-                                    <table class="highlight bordered row">
+                                <div class="z-depth-1 white grey-text col s12 er_table-container">
+                                    <span>Informations de prélèvelement</span>
+                                    <table class="highlight row grey lighten-3">
                                         <thead class="col s3">
                                             <tr>
                                                 <th>IBAN</th>
@@ -387,8 +413,8 @@ Factures - Portail utilisateur LEMNIA
         $('#myTable').pageMe({
           pagerSelector:'#myPager',
           activeColor: 'blue',
-          prevText:'Prev',
-          nextText:'Next',
+          prevText:'Précédent',
+          nextText:'Suivant',
           showPrevNext:true,
           hidePageNumbers:false,
           perPage:6
@@ -405,7 +431,52 @@ Factures - Portail utilisateur LEMNIA
                 $('#card2').prop('checked', true);
             }
         });
-    });    
+    });
+
+    function find() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("bill-table");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            var value = document.getElementById("ma_selectColumn_bill");
+            var selectedColumn = value.options[value.selectedIndex].value;
+            td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        
+    }
+
+    function sort() {
+        var number = $('#er_nb-elmt_table option:selected').val();
+        var element = document.getElementById("myPager");
+
+        // boucle tant qu'un enfant existe
+        while (element.firstChild) {
+           // le supprime
+           element.removeChild(element.firstChild);
+        }
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Précédent',
+          nextText:'Suivant',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:number
+        });
+    }
 
     function loadTab(value) {
         $('.tab_payment').addClass('er_hide-tab');
