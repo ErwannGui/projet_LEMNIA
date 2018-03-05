@@ -158,6 +158,18 @@ header nav a{ color: black!important; }
     line-height: 12px;
 }
 
+/* Mobile Notifications */
+@media all and (max-width: 768px){
+    #co_notificationBlock_header{
+        width:80vw;
+        right:10vw;
+        top:100%;
+    }
+    #co_rightNavNotifications_header{
+        position:inherit;
+    }
+}
+
 /*Menu vertical en grand écran*/
 
 .er_vertical-menu_header, .er_side-nav{
