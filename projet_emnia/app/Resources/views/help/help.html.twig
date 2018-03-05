@@ -38,7 +38,33 @@ Assistance - Portail utilisateur LEMNIA
                 </div>
             </div>
         </section>
+        <!-- Fab button with blue window to add a contact -->
+        <section id="co_sendMessageBlock_help" class="co_addBlueWindowWithFabBlock right">
+            <!-- Blue window body -->
+            <div id="co_sendMessageFormBlock_help" class="z-depth-1 co_blueWindowBody">
+                <!-- blue window header -->
+                <div class="co_blueWindowHeader">
+                    <p class="white-text" style="font-size: 18px">Envoyer un ticket</p>
+                    <i id="co_sendMessageWindowClose_help" class="white-text material-icons" style="font-size: 18px">close</i>
+                </div>
+                <!-- blue window add contact form -->
+                <div class="co_sendMessageForm_help co_blueWindowMiddle">
+                    <!-- Submit Button Block -->
+                    <div class="co_sendMessageSubmitBlock_help">
+                        <button class="co_roundedButton light-blue darken-1 white-text z-depth-1">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="co_trickyAlignArrowAndFabDiv">
+                <div class="co_blueWindowArrowBottomRight z-depth-1"></div>
+                <a id="co_sendMessageFab_help" class="btn-floating btn-large waves-effect waves-light light-blue darken-1 right"><i class="material-icons">add</i></a>
+            </div>
+        </section>
     </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/help.js') }}"></script>
 {% endblock %}
 
 {% block stylesheets %}

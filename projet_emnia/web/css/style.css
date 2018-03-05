@@ -598,6 +598,10 @@ header nav a{ color: black!important; }
     bottom:20px;
     right:20px;
     position:fixed;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index:100;
 }
 
 /* Blue gradient window body */
@@ -730,10 +734,7 @@ header nav a{ color: black!important; }
 
 /* Global block of the add contact block (fab and window) */
 #co_addContactBlock_contacts{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index:100;
+
 }
 
 /* Body of the add contact window */
@@ -741,8 +742,6 @@ header nav a{ color: black!important; }
     display: none;
     width:100%;
 }
-
-
 
 /* Name part of contact form */
 .co_contactNameBlock_contacts{
@@ -783,6 +782,18 @@ header nav a{ color: black!important; }
     display: flex;
     justify-content: center;
 }
+
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- ASSISTANCE -------------------------------- */
+/* ------------------------------------------------------------------------ */
+
+/* Body of the add contact window */
+#co_sendMessageFormBlock_help{
+    display: none;
+    width:100%;
+}
+
 
 
 /*------------------------------- Fin Contenu Corentin---------------------------------*/
