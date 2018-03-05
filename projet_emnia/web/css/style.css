@@ -821,3 +821,21 @@ form{
 
 /*------------------------------- Fin Contenu Andrei---------------------------------*/
 
+/*----------------------------------- Contenu Mael ---------------------------------*/
+
+.ma_carteBancaire_contenu{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.ma_carteBancaire_contenu a{
+    width: 250px;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+.ma_titreBlock_user{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*----------------------------Fin contenu Mael --------------------------------------*/

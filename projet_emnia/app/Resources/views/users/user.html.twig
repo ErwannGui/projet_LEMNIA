@@ -11,7 +11,131 @@ Compte utilisateur - Portail utilisateur LEMNIA
         <section class="col s12 l12">
             <div class="row">
                 <!--Affichage du tableau de tout les utilisateurs-->
-                
+                <div class="col s12 m5">
+                    <div class="card">
+                        <div class="card-action">
+                            <div class="co_contactInfoBlock_contacts">
+                                <div class="ma_titreBlock_user">
+                                    <span class="title_card">Informations personnelles</span>
+                                    <a class="grey-text"><i class="material-icons" style="font-size:18px">edit</i></a>
+                                </div>
+                                <div class="co_contactInfoTopBlock_contacts">
+                                    <div class="co_nameCircle">
+                                        <p class="white-text" style="font-size: 22px">MB</p>
+                                    </div>
+                                    <div class="co_contactInfoTopBlockText_contacts">
+                                        <p class="grey-text text-darken-2" style="font-size: 16px">{{user.getFirstName}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                    </div>
+                                </div>
+                                <div class="co_contactInfoMiddleBlock_contacts">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <i class="material-icons grey-text text-lighten-1" >location_on</i>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <i class="material-icons grey-text text-lighten-1">email</i>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <i class="material-icons grey-text text-lighten-1">phone</i>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getPhoneNumber}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-action">
+                            <div class="co_contactInfoBlock_contacts">
+                                <div class="ma_titreBlock_user">
+                                    <span class="title_card">Informations de connexion</span>
+                                    <a class="grey-text"><i class="material-icons" style="font-size:18px">edit</i></a>
+                                </div>
+                                <div class="co_contactInfoMiddleBlock_contacts">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <i class="material-icons grey-text text-lighten-1" >assignment_ind</i>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <i class="material-icons grey-text text-lighten-1">enhanced_encryption</i>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">*********</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-action">
+                            <div>
+                                <div class="ma_titreBlock_user">
+                                    <span class="title_card">Votre mandat SEPA</span>
+                                    <a class="grey-text"><i class="material-icons" style="font-size:18px">edit</i></a>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="grey-text" style="font-size: 16px">IBAN</td>
+                                                <td class="grey-text text-lighten-1" style="font-size: 14px">1234-12345-12345-1234567890-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="grey-text" style="font-size: 16px">BIC</td>
+                                                <td class="grey-text text-lighten-1" style="font-size: 14px">12345678901</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="grey-text" style="font-size: 16px">DATE</td>
+                                                <td class="grey-text text-lighten-1" style="font-size: 14px">24-02-2018</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="grey-text" style="font-size: 16px">SIGNATURE</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-action">
+                            <div>
+                                <div class="ma_titreBlock_user">
+                                    <span class="title_card">Vos cartes bancaires</span>
+                                </div>
+                                <div class="ma_carteBancaire_contenu">
+                                    <table class="bordered grey-text">
+                                        <thead>
+                                            <tr>
+                                               <th>#</th>
+                                               <th>Type</th>
+                                               <th>NUMERO DE CARTE</th>
+                                               <th>DATE D'EXPIRATION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Visa</td>
+                                                <td>4970 1012  3456 7890</td>
+                                                <td>06-12-2024</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Visa</td>
+                                                <td>4970 1012  3456 7890</td>
+                                                <td>06-12-2024</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a class="btn blue lighten-1">Ajoutez une carte</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
