@@ -195,6 +195,7 @@ header nav a{ color: black!important; }
 
 .er_logo-entreprise_header{
     filter: brightness(1.2);
+    height:40px;
 }
 
 .er_user_header{
