@@ -506,7 +506,9 @@ header nav a{ color: black!important; }
 
 /*------------------------------- Contenu Corentin---------------------------------*/
 
-/* Global */
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- GLOBAL ---------------------------------- */
+/* ------------------------------------------------------------------------ */
 .co_statusCard{
     display: flex;
     flex-direction: row;
@@ -533,6 +535,124 @@ header nav a{ color: black!important; }
     justify-content: center;
 }
 
+/* Name circle of contact card */
+.co_nameCircle{
+    width:90px;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    border-radius: 50%;
+}
+
+/* Changes for standard materialize input */
+.co_whiteMaterialInput{
+    border-bottom: solid 1px white!important;
+    font-size:14px!important;
+    height:40px!important;
+    margin:0!important;
+    padding-bottom:5px!important;
+}
+
+.co_whiteMaterialInput::placeholder{
+    color:white;
+    padding-left:10px;
+}
+
+.co_whiteMaterialInput>*{
+    color:white;
+}
+
+/* Changes for standard materialize select */
+.co_select{
+    border: #CCCCCC 2px solid!important;
+    border-radius: 5px!important;
+    background-color: white!important;
+}
+
+/* Button with rounded effect on side borders*/
+.co_roundedButton{
+    font-size: 14px;
+    padding:10px 20px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+/* Block containing all of the blue window popup (example in contacts and assistance)*/
+.co_addBlueWindowWithFabBlock{
+    bottom:20px;
+    right:20px;
+    position:fixed;
+}
+
+/* Blue gradient window body */
+.co_blueWindowBody{
+    position:relative;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    z-index:100;
+    display: flex;
+    flex-direction: column;
+    padding:30px;
+}
+
+.co_blueWindowBody p{
+    margin:0;
+    padding:0;
+}
+
+/* Align the fab button with the arrow of the blue window */
+.co_trickyAlignArrowAndFabDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:10;
+}
+
+/* The arrow of the blue window */
+.co_blueWindowArrowBottomRight{
+    display: none;
+    transform: translateY(-20px) rotate(45deg) ;
+    width:40px;
+    height:40px;
+    margin-bottom:10px;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+}
+
+/* Head of the blue window (title and cross) */
+.co_blueWindowHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.co_blueWindowHeader>i:hover{
+    cursor:pointer;
+}
+
+/* Center a modal in col */
+.co_centeredModal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* change modal scrollbar aspect */
+.modal::-webkit-scrollbar{
+    width:10px;
+}
+
+.modal::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb{
+    background-color:#00000022;
+    border-radius: 5px;
+}
 
 /* ------------------------------------------------------------------------ */
 /* ---------------------------- CONTACTS ---------------------------------- */
@@ -560,18 +680,6 @@ header nav a{ color: black!important; }
     margin-top: 10px;
 }
 
-/* Name circle of contact card */
-.co_nameCircle{
-    width:90px;
-    height:90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    background:linear-gradient(to top right, #0092CC, #3BBFFE);
-    border-radius: 50%;
-}
-
 /* Text information of a contact */
 .co_contactInfoTopBlockText_contacts{
     display:flex;
@@ -596,12 +704,8 @@ header nav a{ color: black!important; }
     margin-right: 15px;
 }
 
-.co_addBlueWindowWithFabBlock{
-    bottom:20px;
-    right:20px;
-    position:fixed;
-}
 
+/* Global block of the add contact block (fab and window) */
 #co_addContactBlock_contacts{
     display:flex;
     flex-direction: column;
@@ -609,87 +713,14 @@ header nav a{ color: black!important; }
     z-index:100;
 }
 
-.co_blueWindowBody{
-    position:relative;
-    background:linear-gradient(to top right, #0092CC, #3BBFFE);
-    z-index:100;
-    display: flex;
-    flex-direction: column;
-    padding:30px;
-}
-
-.co_blueWindowBody p{
-    margin:0;
-    padding:0;
-}
-
+/* Body of the add contact window */
 #co_addContactFormBlock_contacts{
     width:500px;
     display: none;
 }
 
-.co_whiteMaterialInput{
-    border-bottom: solid 1px white!important;
-    font-size:14px!important;
-    height:40px!important;
-    margin:0!important;
-    padding-bottom:5px!important;
-}
-
-.co_whiteMaterialInput::placeholder{
-    color:white;
-    padding-left:10px;
-}
-
-.co_whiteMaterialInput>*{
-    color:white;
-}
-
-.co_select{
-    border: #CCCCCC 2px solid!important;
-    border-radius: 5px!important;
-    background-color: white!important;
-}
-
-.co_roundedButton{
-    font-size: 14px;
-    padding:10px 20px;
-    border-radius: 20px;
-    border-style: none;
-}
-
-.co_trickyAlignArrowAndFabDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index:10;
-}
-
-#co_fabAddContact_contacts{
-
-}
-
-.co_blueWindowArrowBottomRight{
-    display: none;
-    transform: translateY(-20px) rotate(45deg) ;
-    width:40px;
-    height:40px;
-    margin-bottom:10px;
-    background:linear-gradient(to top right, #0092CC, #3BBFFE);
-}
-
-.co_blueWindowHeader{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.co_blueWindowHeader>i:hover{
-    cursor:pointer;
-}
-
-#co_addContactNameBlock_contacts{
+/* Name part of contact form */
+.co_contactNameBlock_contacts{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -697,19 +728,23 @@ header nav a{ color: black!important; }
     width:100%;
 }
 
-#co_addContactInputNameBlock_contacts{
+/* only input for name part of contact form */
+.co_contactInputNameBlock_contacts{
     width:calc(100% - 100px);
 }
 
-#co_addContactInfoBlock{
+/* Info part of contact form */
+.co_contactInfoBlock{
     margin:40px 0;
 }
 
-#co_addContactConnectionBlock{
+/* connection info part of contact form */
+.co_contactConnectionBlock{
     margin:40px 0;
 }
 
-#co_addContactAccessBlock{
+/* access choice part of contact form */
+.co_contactAccessBlock{
     margin:40px 0;
     display: flex;
     flex-direction: row;
@@ -717,11 +752,14 @@ header nav a{ color: black!important; }
     align-items: center;
 }
 
-#co_addContactSubmitBlock{
+/* submit part of contact form */
+.co_contactSubmitBlock{
     margin-top:80px;
     display: flex;
     justify-content: center;
 }
+
+
 /*------------------------------- Fin Contenu Corentin---------------------------------*/
 
 /****************************************************************************************************************************************/
