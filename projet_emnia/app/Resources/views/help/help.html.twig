@@ -11,35 +11,15 @@ Assistance - Portail utilisateur LEMNIA
         <section class="col s12 l12">
             <div class="row">
                 <!--Affichage du tableau de tout les utilisateurs-->
-                <h5 class="page_title">Assistance</h5>
-                <div class="white_middle">
-                    <h6 class="secondary_title">Vous rencontrez un problème? Contactez nous.</h6>
-                    <form class="formulaire_assistance">
-                        <div class="left_side">
-                            <select class="select_assistance" name="select_priorities">
-                                <option class="option_assitance" selected value="none_selection">Selectionnez</option>
-                                <option class="option_assitance" value="low_priority">Priorité basse</option>
-                                <option class="option_assitance"  value="basic_priority">Priorité normale</option>
-                                <option class="option_assitance"  value="high_priority">Priorité élevée</option>
-                                <option class="option_assitance"  value="urgent_priority">Priorité majeure</option>
-                            </select>
-                            <input class="input_assistance" type="text" size="30" value="Votre nom" onclick="javascript:this.value = '';" />
-                            <input class="input_assistance" type="text" size="30" value="Votre prénom" onclick="javascript:this.value = '';" />
-                            <input class="input_assistance" type="email" size="30" value="Votre mail" onclick="javascript:this.value = '';" />
-                            <input class="input_assistance" type="tel" size="30" value="Votre télèphone" onclick="javascript:this.value = '';" />
-                            <input class="input_assistance" type="text" size="30" value="Votre job" onclick="javascript:this.value = '';" />
-                        </div>
-                        <div class="right_side">
-                            <input class="input_assistance" type="text" size="30" cols="2" value="Objet" onclick="javascript:this.value = '';" />
-                            <textarea class="textarea_assistance" rows="5" cols="50"onclick="javascript:this.value = '';" >Votre message ici</textarea>
-                            <input class="submit_assistance" type="submit" value=" Envoyer ">
-                        </div>
-                    </form>
+                <h5 class="an_page_title">Assistance</h5>
+                <div class="an_white_middle">
+                    <h6 class="an_secondary_title">Vous rencontrez un problème? Contactez nous.</h6>
+
                 </div>
             </div>
         </section>
         <!-- Fab button with blue window to add a contact -->
-        <section id="co_sendMessageBlock_help" class="co_addBlueWindowWithFabBlock right">
+        <section id="co_sendMessageBlock_help" class="co_addBlueWindowWithFabBlock col s12 m10 l8 xl5" style="right:0;">
             <!-- Blue window body -->
             <div id="co_sendMessageFormBlock_help" class="z-depth-1 co_blueWindowBody">
                 <!-- blue window header -->
@@ -49,9 +29,60 @@ Assistance - Portail utilisateur LEMNIA
                 </div>
                 <!-- blue window add contact form -->
                 <div class="co_sendMessageForm_help co_blueWindowMiddle">
+                    <div id="co_sendMessageUserInformationBlock_help">
+                        <p id="co_sendMessageUserInformationTitle_help" class="white-text">Votre message sera envoyé avec ces informations</p>
+                        <div class="co_sendMessageUserInfoLine_help" id="co_sendMessageUserInformationBlockLine1_help">
+                            <p class="white-text">Corentin Dupont</p>
+                            <p class="white-text">Web Developer</p>
+                            <p class="white-text">Startup Palace</p>
+                        </div>
+                        <div class="co_sendMessageUserInfoLine_help" id="co_sendMessageUserInformationBlockLine2_help">
+                            <p class="white-text">dupont.corentin44@gmail.com</p>
+                            <p class="white-text">06 78 45 12 36</p>
+                        </div>
+                    </div>
+                    <div id="co_sendMessageMailInputBlock_help">
+                        <div class="co_sendMessagePriorityInputBlock_help">
+                            <label for="co_prioritySelect_help" class="white-text" style="font-size: 14px"></label>
+                            <select id="co_prioritySelect_help" class="browser-default co_materializeBrowserDefaultInput">
+                                <option value="" disabled selected >Priorité</option>
+                                <option value="1">Priorité basse</option>
+                                <option value="2">Priorité normal</option>
+                                <option value="3">Priorité élevée</option>
+                                <option value="3">Priorité majeure</option>
+                            </select>
+                        </div>
+                        <input id="co_mailObjectInput_help" placeholder="Objet" type="text" class="co_whiteMaterialInput white-text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Objet'"/>
+                        <label for="co_mailObjectInput_help"></label>
+                        <div class="input-field">
+                            <textarea id="co_messageContentTextArea_help" class="materialize-textarea white" placeholder="Ecrivez votre message ici . . . "onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ecrivez votre message ici . . . '"></textarea>
+                            <label for="co_messageContentTextArea_help"></label>
+                        </div>
+                    </div>
+                    <!--<form class="an_formulaire_assistance_help">
+                        <div class="an_left_side_help">
+                            <select class="an_select_assistance_help co_whiteMaterialInput white-text" name="select_priorities">
+                                <option class="an_option_assistance_help" selected value="none_selection">Selectionnez</option>
+                                <option class="an_option_assistance_help" value="low_priority">Priorité basse</option>
+                                <option class="an_option_assistance_help"  value="basic_priority">Priorité normale</option>
+                                <option class="an_option_assistance_help"  value="high_priority">Priorité élevée</option>
+                                <option class="an_option_assistance_help"  value="urgent_priority">Priorité majeure</option>
+                            </select>
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="text" size="30" value="Votre nom" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_hel co_whiteMaterialInput white-textp" type="text" size="30" value="Votre prénom" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="email" size="30" value="Votre mail" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="tel" size="30" value="Votre télèphone" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="text" size="30" value="Votre job" onclick="javascript:this.value = '';" />
+                        </div>
+                        <div class="an_right_side_help">
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="text" size="30" cols="2" value="Objet" onclick="javascript:this.value = '';" />
+                            <textarea class="an_textarea_assistance_help" rows="5" cols="50"onclick="javascript:this.value = '';" >Votre message ici</textarea>
+                            <input class="an_submit_assistance_help co_roundedButton light-blue darken-1 white-text" type="submit" value=" Envoyer ">
+                        </div>
+                    </form>-->
                     <!-- Submit Button Block -->
                     <div class="co_sendMessageSubmitBlock_help">
-                        <button class="co_roundedButton light-blue darken-1 white-text z-depth-1">Envoyer</button>
+                        <button class="co_roundedButton light-blue darken-1 white-text z-depth-1">Envoyer le message</button>
                     </div>
                 </div>
             </div>

@@ -588,7 +588,7 @@ header nav a{ color: black!important; }
 /* Button with rounded effect on side borders*/
 .co_roundedButton{
     font-size: 14px;
-    padding:10px 20px;
+    padding:8px 20px;
     border-radius: 20px;
     border-style: none;
 }
@@ -655,7 +655,7 @@ header nav a{ color: black!important; }
 }
 
 .co_blueWindowMiddle{
-    height:65vh;
+    height:70vh;
     overflow-y: scroll;
     padding: 15px 30px 30px 30px;
 }
@@ -679,6 +679,16 @@ header nav a{ color: black!important; }
 .modal::-webkit-scrollbar-thumb, .co_blueWindowMiddle::-webkit-scrollbar-thumb, #co_allNotificationsBlock_header::-webkit-scrollbar-thumb{
     background-color:#00000022;
     border-radius: 5px;
+}
+
+/* modify browser default materialize select */
+.co_materializeBrowserDefaultInput{
+    font-size: 12px;
+    width:175px;
+    border-radius:6px;
+    border-color: #cccccc;
+    height:30px;
+    background-color:white;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -794,6 +804,66 @@ header nav a{ color: black!important; }
     width:100%;
 }
 
+/* All element of help form */
+.co_sendMessageForm_help>*{
+    margin:30px 0;
+}
+
+/* User information send message block */
+#co_sendMessageUserInformationBlock_help{
+    margin-bottom:60px;
+}
+
+/* All element of information send message block */
+#co_sendMessageUserInformationBlock_help>*{
+    margin-bottom:15px;
+}
+
+/* all p of information send message block */
+#co_sendMessageUserInformationBlock_help p{
+    font-size:14px;
+}
+
+/* Title of information send message block */
+#co_sendMessageUserInformationTitle_help{
+    border-bottom:solid 1px white;
+    height:30px;
+}
+
+/* One line for send message user info block */
+.co_sendMessageUserInfoLine_help{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Priority select block */
+.co_sendMessagePriorityInputBlock_help{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* send message text area */
+#co_messageContentTextArea_help{
+    height:200px;
+}
+
+/* Submit block of send message window */
+.co_sendMessageSubmitBlock_help{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:0;
+}
+
+/* all element of mail inputs block */
+#co_sendMessageMailInputBlock_help>*{
+    margin-bottom:15px;
+}
+
+
 
 
 /*------------------------------- Fin Contenu Corentin---------------------------------*/
@@ -801,12 +871,12 @@ header nav a{ color: black!important; }
 /****************************************************************************************************************************************/
 
 /*------------------------------- Contenu Andrei---------------------------------*/
-.page_title{
+.an_page_title_help{
     font-family: sans-serif;
     font-size: 1.5em;
 }
 
-.white_middle{ 
+.an_white_middle_help{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -814,19 +884,19 @@ header nav a{ color: black!important; }
     height: 700px;
 }
 
-.secondary_title{
+.an_secondary_title_help{
     font-family: sans-serif;
     font-size: 0.9em;
     margin-bottom: 100px;
 }
 
-.left_side{
+.an_left_side_help{
     display: flex;
     flex-direction: column;
     order:1;
 }
 
-.right_side{
+.an_right_side_help{
     display: flex;
     flex-direction: column;
     order: 2;
@@ -837,7 +907,7 @@ form{
     justify-content: space-around;
 }
 
-.input_assistance{
+.an_input_assistance_help{
     margin-bottom: 30px;
     border-top:0px;
     border-left:0px;
@@ -845,30 +915,30 @@ form{
     color:#CCCCCC;
 }
 
-.input_assistance:focus{
+.an_input_assistance_help:focus{
     outline: none;
 }
 
-.select_assistance:focus{
+.an_select_assistance_help:focus{
     outline: none;
 }
 
-.textarea_assistance:focus{
+.an_textarea_assistance_help:focus{
     outline: none;
 }
 
-.submit_assistance:focus{
+.an_submit_assistance_help:focus{
     outline: none;
 }
 
-.select_assistance{
+.an_select_assistance_help{
     margin-bottom: 20px;
     border-radius: 20px;
     width: 120px;
     color: #CCCCCC;
 }
 
-.submit_assistance{
+.an_submit_assistance_help{
     margin-top: 40px;
     background-color: #0199D1;
     border: none;
@@ -881,13 +951,13 @@ form{
     margin-left: 130px;
 }
 
-.textarea_assistance{
+.an_textarea_assistance_help{
     color:#CCCCCC;
     border-color: #CCCCCC;
 }
 
 @media only screen and (max-width: 800px) {
-    .white_middle{
+    .an_white_middle_help{
         display: flex;
         flex-direction: column;
     }

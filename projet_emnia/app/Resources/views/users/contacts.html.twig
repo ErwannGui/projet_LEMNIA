@@ -283,14 +283,12 @@
                     </div>
                     <div class="co_contactAccessBlock">
                         <label for="co_accessSelect_contacts" class="white-text" style="font-size: 14px">Accès</label>
-                        <div class="input-field co_whiteMaterialInput">
-                            <select id="co_accessSelect_contacts">
-                                <option value="" class="white-text" disabled selected >sélectionner</option>
-                                <option value="1" class="white-text">Factures</option>
-                                <option value="2" class="white-text">Tickets</option>
-                                <option value="3" class="white-text">Tous</option>
-                            </select>
-                        </div>
+                        <select id="co_accessSelect_contacts" class="browser-default co_materializeBrowserDefaultInput">
+                            <option value="" disabled selected>sélectionner</option>
+                            <option value="1">Factures</option>
+                            <option value="2">Tickets</option>
+                            <option value="3">Tous</option>
+                        </select>
                     </div>
                     <div class="co_contactSubmitBlock">
                         <button class="co_roundedButton light-blue darken-1 white-text z-depth-1">Ajouter le nouveau contact</button>
@@ -302,7 +300,6 @@
                 <a id="co_fabAddContact_contacts" class="btn-floating btn-large waves-effect waves-light light-blue darken-1 right"><i class="material-icons">add</i></a>
             </div>
         </section>
-
     </main>
 
 
