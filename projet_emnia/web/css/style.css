@@ -264,6 +264,8 @@ header nav a{ color: black!important; }
 .er_pagination_bill{
     display: inline-block;
     vertical-align: top;
+    margin-top: 15px;
+    margin-bottom: 0!important;
 }
 
 .er_elem-number_bill{
@@ -281,8 +283,12 @@ header nav a{ color: black!important; }
         margin-left: 15px;
     }
 
-    #container-card tbody tr:hover, #container-sepa tbody tr:hover{
+    #container-card tbody tr:hover{
         background-color: #e1f5fe!important;
+    }
+
+    #container-sepa table thead{
+        border-bottom: none!important;
     }
 
     .er_hide-container{
@@ -445,16 +451,27 @@ header nav a{ color: black!important; }
 .er_fab-toolbar_indent .er_fab-action_indent{
     position: inherit;
     width: 200px!important;
+    visibility: hidden;
 }
 
 .er_fab-toolbar_indent .er_fab-action_indent ul{
     position: inherit;
     height: 10px!important;
     width: 120px!important;
+    margin-left: 9px;
+    transition-duration: 1s;
+}
+
+.er_fab-btn_indent{
+    box-shadow: none!important;
 }
 
 .er_fab-toolbar_indent{
     width: 200px!important;
+}
+
+.er_elem-table_indent tr:hover .er_fab-action_indent{
+    visibility: visible!important;
 }
 
 /* -- Modal de détails d'une commande (réutilisable pour le modal de détails d'un abonnement) -- */
@@ -482,6 +499,7 @@ header nav a{ color: black!important; }
             /**/
             /**/        .er_chips-status{
             /**/            width: 125px;
+            /**/            text-align: center;
             /**/        }
             /**/
             /**/        .er_table-container{
@@ -514,7 +532,40 @@ header nav a{ color: black!important; }
             /**/                display: none!important;
             /**/            }
             /**/        }
-    /**//**//**//**//**/        
+    /**//**//**//**//**/ 
+
+                        .er_table-container #search{
+                            padding-left: 40px;
+                        } 
+                        .er_table-container .er_close-search{
+                            top: 10px!important;
+                            right: -25px!important;
+                        }
+                        .er_table-container .select-dropdown{
+                            font-size: 14px!important;
+                        }
+                        .er_table-container .select-dropdown li{
+                            font-size: 14px!important;
+                        } 
+                        .er_table-container .select-dropdown li span{
+                            color: #9e9e9e!important;
+                        } 
+                        .er_table-container table th{
+                            text-transform: uppercase;
+                            font-size: 16px;
+                        } 
+                        .er_table-container table{
+                            font-size: 14px;
+                        }
+                        .er_table-container table thead{
+                            background-color: #eeeeee!important;
+                        } 
+                        .er_table-container table tr th:first-child, .er_table-container table tr td:first-child{
+                            padding-right: 50px;
+                        }
+                        .er_centered-chips{
+                            text-align: center!important;
+                        }
 /****************************************************************************************************************************************/
 
 /*------------------------------- Contenu Corentin---------------------------------*/

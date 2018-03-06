@@ -55,15 +55,41 @@ Commandes - Portail utilisateur LEMNIA
                     </div>
                 </div>
             </div>
-            <div class="row z-depth-4 grey lighten-4 col s12 er_table-container">
-                <table cellpadding="1" cellspacing="1" class="table table-hover centered bordered highlight responsive-table col s12" >
+            <div class="row z-depth-1 white col s12 er_table-container">
+                <div class="row">
+                    <div class="input-field col s12 m6 l3">
+                        <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons er_close-search">close</i>
+                    </div>
+                    <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
+                        <select id="ma_selectColumn_bill" class="grey-text er_table-sort-select">
+                            <option value="0">ID</option>
+                            <option value="1">Service</option>
+                            <option value="2">N° de commande</option>
+                            <option value="3">Date</option>
+                            <option value="4">Etat</option>
+                        </select>
+                        <label>Recherche par</label>
+                    </div>
+                    <div class="input-field col l2 offset-l4 hide-on-med-and-down">
+                        <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
+                            <option value="4" selected>Défaut</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <label>Afficher par</label>
+                    </div>
+                </div>
+                <table id="indent-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Service</th>
                             <th>N° commande</th>
                             <th>Date</th>
-                            <th>Etat</th>
+                            <th class="er_centered-chips">Etat</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -73,19 +99,19 @@ Commandes - Portail utilisateur LEMNIA
                             <td>Location logiciel A</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status amber lighten-4">
                                     Envoyée
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
-                                    <a class="btn-floating btn-large amber lighten-2 right">
-                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                                     </a>
                                     <ul class="left">
-                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
-                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -95,19 +121,19 @@ Commandes - Portail utilisateur LEMNIA
                             <td>Location logiciel B</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status amber lighten-4">
                                     Envoyée
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
-                                    <a class="btn-floating btn-large amber lighten-2 right">
-                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                                     </a>
                                     <ul class="left">
-                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
-                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -117,19 +143,19 @@ Commandes - Portail utilisateur LEMNIA
                             <td>Intervention humaine</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status green lighten-4">
                                     Réceptionnée
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
-                                    <a class="btn-floating btn-large green lighten-2 right">
-                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                                     </a>
                                     <ul class="left">
-                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
-                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -139,19 +165,19 @@ Commandes - Portail utilisateur LEMNIA
                             <td>License Artica Proxy</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status blue lighten-4">
                                     Validée
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
-                                    <a class="btn-floating btn-large blue lighten-2 right">
-                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                                     </a>
                                     <ul class="left">
-                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
-                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -161,19 +187,19 @@ Commandes - Portail utilisateur LEMNIA
                             <td>Hébergement web</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
-                            <td>
+                            <td class="er_centered-chips">
                                 <div class="chip er_chips-status grey lighten-2">
                                     Expirée
                                 </div>
                             </td>
                             <td class="er_fab-toolbar_indent">
-                                <div class="fixed-action-btn horizontal er_fab-action_indent click-to-toggle">
-                                    <a class="btn-floating btn-large red lighten-2 right">
-                                        <i class="large material-icons">keyboard_arrow_left</i>
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                                     </a>
                                     <ul class="left">
-                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons">content_paste</i></a></li>
-                                        <li><a href="#modal_details" class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons">more</i></a></li>
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -274,6 +300,51 @@ Commandes - Portail utilisateur LEMNIA
     });
 
     $('.tooltipped').tooltip({delay: 50});
-    $('.fixed-action-btn').openFAB();
+    /*$('.fixed-action-btn').openFAB();*/
+
+    function find() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("indent-table");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            var value = document.getElementById("ma_selectColumn_bill");
+            var selectedColumn = value.options[value.selectedIndex].value;
+            td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        
+    }
+
+    function sort() {
+        var number = $('#er_nb-elmt_table option:selected').val();
+        var element = document.getElementById("myPager");
+
+        // boucle tant qu'un enfant existe
+        while (element.firstChild) {
+           // le supprime
+           element.removeChild(element.firstChild);
+        }
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Précédent',
+          nextText:'Suivant',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:number
+        });
+    }
 </script>
 {% endblock %}
