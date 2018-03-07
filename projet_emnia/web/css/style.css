@@ -701,6 +701,10 @@ header nav a{ color: black!important; }
     padding:0;
 }
 
+.co_blueWindowModalHeader>p{
+    margin:0;
+}
+
 .co_blueWindowHeader>i:hover{
     cursor:pointer;
 }
@@ -719,15 +723,15 @@ header nav a{ color: black!important; }
 }
 
 /* change modal scrollbar aspect */
-.modal::-webkit-scrollbar, .co_blueWindowMiddle::-webkit-scrollbar, #co_allNotificationsBlock_header::-webkit-scrollbar{
+.modal::-webkit-scrollbar, .co_blueWindowMiddle::-webkit-scrollbar, #co_allNotificationsBlock_header::-webkit-scrollbar, #co_modalDiscussionBlock_help::-webkit-scrollbar{
     width:10px;
 }
 
-.modal::-webkit-scrollbar-track, .co_blueWindowMiddle::-webkit-scrollbar-track, #co_allNotificationsBlock_header::-webkit-scrollbar-track{
+.modal::-webkit-scrollbar-track, .co_blueWindowMiddle::-webkit-scrollbar-track, #co_allNotificationsBlock_header::-webkit-scrollbar-track, #co_modalDiscussionBlock_help::-webkit-scrollbar-track{
     background-color: transparent;
 }
 
-.modal::-webkit-scrollbar-thumb, .co_blueWindowMiddle::-webkit-scrollbar-thumb, #co_allNotificationsBlock_header::-webkit-scrollbar-thumb{
+.modal::-webkit-scrollbar-thumb, .co_blueWindowMiddle::-webkit-scrollbar-thumb, #co_allNotificationsBlock_header::-webkit-scrollbar-thumb, #co_modalDiscussionBlock_help::-webkit-scrollbar-thumb{
     background-color:#00000022;
     border-radius: 5px;
 }
@@ -740,6 +744,31 @@ header nav a{ color: black!important; }
     border-color: #cccccc;
     height:30px;
     background-color:white;
+}
+
+/* personal modal container*/
+.co_modal_container{
+    z-index: 1000;
+    display:none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    background-color:#00000088;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+
+/* personal modal */
+.co_modal{
+    padding:30px!important;
+    margin:0!important;
+}
+
+.co_modalFooter{
+    padding-top:30px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -912,6 +941,125 @@ header nav a{ color: black!important; }
 /* all element of mail inputs block */
 #co_sendMessageMailInputBlock_help>*{
     margin-bottom:15px;
+}
+
+/* ----------------------- Modal Discussion ---------------------*/
+
+/* Discussion part of discussion modal */
+#co_modalDiscussionBlock_help{
+    height:55vh;
+    overflow-y: scroll;
+}
+
+#co_modalDiscussionBlock_help p{
+    margin:0;
+    padding:0;
+}
+
+#co_modalDiscussionBlock_help .co_nameCircle{
+    margin:0
+}
+
+/* One line of discussion */
+.co_modalDiscussionMessageLine_help{
+    width:100%;
+    display: flex;
+}
+
+/* one lemnia line */
+.co_modalDiscussionLemniaMessageLine_help{
+    justify-content: flex-start;
+}
+
+.co_modalDiscussionUserMessageLine_help{
+    justify-content: flex-end;
+}
+
+/* One message of discussion */
+.co_modalDiscussionOneMessage_help{
+    display:flex;
+    margin:20px 0;
+    align-items: flex-end;
+}
+
+/* lemnia message line */
+.co_modalDiscussionLemniaAnswer_help{
+    flex-direction: row;
+}
+
+/* User message line */
+.co_modalDiscussionUserAnswer_help{
+    flex-direction: row-reverse;
+}
+
+/* The bubble body of lemnia's message */
+.co_modalDiscussionLemniaAnswer_help .co_modalDiscussionMessageBody{
+    background-color:#EEEEEE;
+    border-radius:20px 20px 20px 0;
+}
+
+/* Bubble block of lemnia's answers */
+.co_modalDiscussionLemniaAnswer_help .co_modalDiscussionBubbleBlock_help{
+    margin:0 0 0 20px!important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The bubble body of user message */
+.co_modalDiscussionUserAnswer_help .co_modalDiscussionMessageBody{
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    border-radius:20px 20px 0 20px;
+}
+
+/* Bubble block of user's answers */
+.co_modalDiscussionUserAnswer_help .co_modalDiscussionBubbleBlock_help{
+    margin:0 20px 0 0!important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The bubble of a message */
+.co_modalDiscussionMessageBody{
+    padding:10px;
+}
+
+/* The block with bubble and name circle */
+.co_modalDiscussionBubbleBlock_help{
+    transform: translateY(18px);/* date and hour font size +4px */
+}
+
+/* discussion modal footer */
+#co_discussionModalContainer_help .co_modalFooter{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+#co_modalDiscussionSendAnswerBlock_help{
+    width:70%;
+    position:relative
+}
+
+#co_modalDiscussionSendMessageButton_help{
+    position:absolute;
+    bottom:15px;
+    right:5px;
+}
+
+/* discussion modal footer text area */
+#co_modalDiscussionTextArea_help{
+    height:100px;
+    margin: 0 !important;
+}
+
+/* discussion modal footer action block */
+#co_modalDiscussionActionBlock_help{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width:30%;
+    padding-bottom: 10px;
 }
 
 
