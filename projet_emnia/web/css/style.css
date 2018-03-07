@@ -207,7 +207,7 @@ header nav a{ color: black!important; }
 
 .er_logo-entreprise_header{
     filter: brightness(1.2);
-    height:40px;
+    height:70%;
 }
 
 .er_user_header{
@@ -304,16 +304,6 @@ header nav a{ color: black!important; }
         display: inline-block!important;
     }
 
-    .er_payment-action{
-        border-radius: 46px;
-        width: 100%;
-        margin-top: -10px!important;
-    }
-
-    .er_payment-action .btn{
-        margin: 3%!important;
-    }
-
     .er_next-tab-payment{
         border-radius: 18px!important;
         margin-top: 15px;
@@ -337,35 +327,37 @@ header nav a{ color: black!important; }
 
     .er_payment-done_icon{
         position: relative;
-        margin-top: 30px;
-        background-image:linear-gradient(-30deg, white, #29b6f6);
+        width: 16.5vw;
+        height: 16.5vw;
+        margin-left: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+        background:linear-gradient(to top right, #0092CC, #3BBFFE);
     }
 
-    .er_payment-done_icon:before{
-        content: "";
-        display: block;
-        padding-top: 100%;
+    .er_payment-done_icon i{   
+        font-size: 8vw;
     }
 
-    .er_payment-done_icon i{
-        position: absolute;
-        top: 0;
-        left: 0;    
-        font-size: 6vw;
-        padding: 25%;
-        width: 100%;
-        height: 100%;
-    }
-
-    @media only screen and (min-width: 602px) and (max-width: 992px) {
-        .er_payment-done_icon i{   
-            font-size: 10vw;
+    @media only screen and (max-width: 992px) {
+        .er_payment-done_icon{   
+            width: 24vw;
+            height: 24vw;
         }
     }
 
-    @media only screen and (max-width: 602px) {
+    @media only screen and (min-width: 1280px) {
+        .er_payment-done_icon{   
+            width: 11vw;
+            height: 11vw;
+            margin-left: 40%;
+        }
+
         .er_payment-done_icon i{   
-            font-size: 15vw;
+            font-size: 6vw;
         }
     }
 
@@ -384,67 +376,6 @@ header nav a{ color: black!important; }
 .er_payment-action .btn{
     margin: 3%!important;
 }
-
-.er_next-tab-payment{
-    border-radius: 18px!important;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.er_hide-tab{
-    display: none;
-}
-
-.er_cgv-payment{
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 360px!important;
-}
-
-.er_validate-cgv_checkbox{
-    margin-left: 5%;
-}
-
-.er_payment-done_icon{
-    position: relative;
-    margin-top: 30px;
-    background-image:linear-gradient(-30deg, white, #29b6f6);
-}
-
-.er_payment-done_icon:before{
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.er_payment-done_icon i{
-    position: absolute;
-    top: 0;
-    left: 0;    
-    font-size: 6vw;
-    padding: 25%;
-    width: 100%;
-    height: 100%;
-}
-
-@media only screen and (min-width: 602px) and (max-width: 992px) {
-    .er_payment-done_icon i{   
-        font-size: 10vw;
-    }
-}
-
-@media only screen and (max-width: 602px) {
-    .er_payment-done_icon i{   
-        font-size: 15vw;
-    }
-}
-
-.er_price-payment{
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
 
 /* -- Table des commandes -- */
 
@@ -565,6 +496,9 @@ header nav a{ color: black!important; }
                         }
                         .er_centered-chips{
                             text-align: center!important;
+                        }
+                        .er_hide-pager{
+                            display: none!important;
                         }
 /****************************************************************************************************************************************/
 
