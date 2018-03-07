@@ -150,9 +150,9 @@
     display: none;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 992px) {
     .login-left-part {
-        display: none;
+        display: none!important;
     }
     
     .login-temp-part {
