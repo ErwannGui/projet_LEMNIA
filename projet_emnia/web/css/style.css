@@ -573,13 +573,26 @@ header nav a{ color: black!important; }
 /* ------------------------------------------------------------------------ */
 /* ---------------------------- GLOBAL ---------------------------------- */
 /* ------------------------------------------------------------------------ */
+
+/*.co_statusCardRowContainer .col:first-child{
+    padding-left: 0!important;
+}
+
+.co_statusCardRowContainer .col:last-child{
+    padding-right: 0!important;
+}
+
+.co_statusCardRowContainer>*{
+    padding:0!important;
+}*/
+
 .co_statusCard{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    padding:30px;
+    padding:30px!important;
     border-radius: 2px;
 }
 
@@ -591,6 +604,19 @@ header nav a{ color: black!important; }
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+}
+
+.co_statusCardSurroundedIcon{
+    border-style: solid;
+    border-width: 1px;
+}
+
+.co_goldBorders{
+    border-color: #F1D04D;
+}
+
+.co_orangeBorders{
+    border-color: #FFB637;
 }
 
 .co_statusCardTextContent{

@@ -7,31 +7,62 @@ Portail utilisateur LEMNIA
 {% block body %}
     <!--Contenu de la page-->
     <main class="main-content row">
-        <h1 class="center-align">Bienvenue sur l'intranet</h1>
-        <h3 class="center-align">Projets en cours</h3>
-        <section style="padding-top: 10px" class="col s12 l12">
-            <div class="row">
-                <!--Affichage des projets-->
-                <div style="" class="col s12 m4">
-                    <div class="row">
-                        <div class="col s12">
-                            <a href="">
-                                <div class="card hoverable">
-                                    <div class="card-image">
-                                        <img src="{{ asset('img/image1projet.jpg') }}">
-                                    </div>
-                                    <div class="card-content grey-text text-darken-4">
-                                        <span class="card-title">Card title</span>
-                                        <p>{{ user.username }}</p>
-                                    </div>
-                                </div>
-                            </a>
+        <h3>Vue d'ensemble</h3>
+        <section class="row col s12 l12">
+            <!-- Status Card and Graph block -->
+            <div class="col s12 m12 l12 xl8" style="padding:0">
+                <!-- StatusCard -->
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <div class="white card-panel co_statusCard z-depth-1">
+                            <div class="co_statusCardCirleIcon co_statusCardSurroundedIcon co_goldBorders">
+                                <i class="material-icons amber-text text-accent-3">check</i>
+                            </div>
+                            <div class="co_statusCardTextContent">
+                                <span class="amber-text text-accent-3">7 850 €</span>
+                                <span class="grey-text text-darken-3" style="font-size: 12px">Coût mensuel de vos abonnements</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="white card-panel co_statusCard z-depth-1">
+                            <div class="co_statusCardCirleIcon co_statusCardSurroundedIcon co_orangeBorders">
+                                <i class="material-icons orange-text">check</i>
+                            </div>
+                            <div class="co_statusCardTextContent">
+                                <span class="orange-text">7 850 €</span>
+                                <span class="grey-text text-darken-3" style="font-size: 12px">Coût total de vos abonnements</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Graph -->
+                    <div class="col s12 m12">
+                        <div class="white card-panel z-depth-1">
+                            <p>Amazing graph made by Fabien</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Right column block with status block -->
+            <div class="col s12 m12 l12 xl4" style="padding:0">
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="white card-panel z-depth-1">
+                            <p>Amazing status block</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m12">
+                        <div class="white card-panel z-depth-1">
+                            <p>Amazing other status block</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
-        <h3 class="center-align">Applications récentes</h3>
     </main>
 {% endblock %}
 
