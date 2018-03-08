@@ -81,11 +81,8 @@ $.fn.pageMe = function(opts){
     children.hide();
     children.slice(0, perPage).show();
 
-    $('.page_link').click(function(){
-        var clickedPage = $(this).html().valueOf()-1;
-        goTo(clickedPage,perPage);
-        return false;
-    });
+    $('.page_link').click(clickable);
+
     pager.find('li .prev_link').click(function(){
         previous();
         return false;
@@ -94,6 +91,12 @@ $.fn.pageMe = function(opts){
         next();
         return false;
     });
+
+    function clickable() {
+        var clickedPage = $(this).html().valueOf()-1;
+        goTo(clickedPage,perPage);
+        return false;
+    }
 
     function previous(){
         var goToPage = parseInt(pager.data("curr")) - 1;
@@ -106,6 +109,7 @@ $.fn.pageMe = function(opts){
             $('#page_num_'+(goToPage+5)+'').addClass('last_page');
             $('#page_num_'+(goToPage+1)+'').show();
         }
+        $('.page_link').click(clickable);
         goTo(goToPage);
     }
 
@@ -135,6 +139,7 @@ $.fn.pageMe = function(opts){
             $('#page_num_'+(goToPage-3)+'').addClass('first_page');
             $('#page_num_'+(goToPage-4)+'').hide();
         }
+        $('.page_link').click(clickable);
         goTo(goToPage);
     }
 
