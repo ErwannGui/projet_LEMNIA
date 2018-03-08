@@ -32,13 +32,13 @@ Assistance - Portail utilisateur LEMNIA
                     <div id="co_sendMessageUserInformationBlock_help">
                         <p id="co_sendMessageUserInformationTitle_help" class="white-text">Votre message sera envoyé avec ces informations</p>
                         <div class="co_sendMessageUserInfoLine_help" id="co_sendMessageUserInformationBlockLine1_help">
-                            <p class="white-text">Corentin Dupont</p>
+                            <p class="white-text">{{ user.firstname }} {{ user.lastname }}</p>
                             <p class="white-text">Web Developer</p>
                             <p class="white-text">Startup Palace</p>
                         </div>
                         <div class="co_sendMessageUserInfoLine_help" id="co_sendMessageUserInformationBlockLine2_help">
-                            <p class="white-text">dupont.corentin44@gmail.com</p>
-                            <p class="white-text">06 78 45 12 36</p>
+                            <p class="white-text">{{ user.email }}</p>
+                            <p class="white-text">{{ user.phoneNumber }}</p>
                         </div>
                     </div>
                     <div id="co_sendMessageMailInputBlock_help">
