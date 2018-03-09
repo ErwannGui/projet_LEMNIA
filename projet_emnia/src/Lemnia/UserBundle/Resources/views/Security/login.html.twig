@@ -6,34 +6,30 @@
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-<h1 class="center-align">Connexion</h1>
-<form method="post" action="{{ path("fos_user_security_check") }}" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col s12 m8 l6 xl4 offset-m2 offset-l3 offset-xl4">
-            <div class="card-panel grey lighten-5">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="identifiant" type="text" name="_username" class="validate" value="{{ last_username }}" required>
-                        <label class="cyan-text text-darken-1" for="identifiant">Identifiant</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="password" type="password" name="_password" class="validate" required>
-                        <label class="cyan-text text-darken-1" for="password">Mot de passe</label>
-                    </div>
-                    {% if csrf_token %}
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                    {% endif %}
-                    <div class="row btn-fin-form">
-                        <div class="col s6">
-                            <a href="{{ path('fos_user_registration_register') }}" class="btn tooltipped grey lighten-1" data-position="bottom" data-delay="50" data-tooltip="Pas de compte ? Créez vous en un !">Inscription<i class="left material-icons white-text">person_add</i></a>
-                        </div>
-                        <div class="col s6 right-align">
-                            <button id="_submit" type="submit" name="_submit" class="waves-effect waves-light btn cyan" value="{{ 'security.login.submit'|trans }}">Connexion<i class="left material-icons white-text">check</i></button>
-                        </div>
-                    </div>
-                </div>
+<div class="col s8 offset-s2 l6 login-right-part center">
+    <img class="login-logo" src="{{ asset('img/logo_bleu_clair.png') }}">
+    <h1>LEMNIA</h1>
+    <h2>Global Solution</h2>
+    <p>Content de vous revoir !</p>
+    <p>Connectez-vous à votre espace personnel</p>
+    <form method="post" action="{{ path("fos_user_security_check") }}" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field">
+                <input id="identifiant" type="text" name="_username" class="validate" value="{{ last_username }}" required>
+                <label class="cyan-text text-darken-1" for="identifiant">Identifiant</label>
+            </div>
+            <div class="input-field">
+                <input id="password" type="password" name="_password" class="validate" maxlength="255" required>
+                <label class="cyan-text text-darken-1" for="password">Mot de passe</label>
+            </div>
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+            <div class="login-space">
+                <button id="_submit" type="submit" name="_submit" class="btn" value="{{ 'security.login.submit'|trans }}">Connexion</button>
+                <a href="#">Mot de passe oublié ?</a>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 {% endblock fos_user_content %}

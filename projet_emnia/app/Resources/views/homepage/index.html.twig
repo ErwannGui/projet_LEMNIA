@@ -1,65 +1,202 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}
-Portail utilisateur LEMNIA
-{% endblock %}
-
-{% block body %}
-    <!--Contenu de la page-->
-    <main class="main-content row">
-        <h1 class="center-align">Bienvenue sur l'intranet</h1>
-        <h3 class="center-align">Projets en cours</h3>
-        <section style="padding-top: 10px" class="col s12 l12">
+{% extends 'base.html.twig' %} {% block title %} Portail utilisateur LEMNIA {% endblock %} {% block body %}
+<!--Contenu de la page-->
+<main class="main-content row">
+    <h3>Vue d'ensemble</h3>
+    <section class="row col s12 l12">
+        <!-- Status Card and Graph block -->
+        <div class="col s12 m12 l12 xl8" style="padding:0">
+            <!-- StatusCard -->
             <div class="row">
-                <!--Affichage des projets-->
-                <div style="" class="col s12 m4">
-                    <div class="row">
-                        <div class="col s12">
-                            <a href="">
-                                <div class="card hoverable">
-                                    <div class="card-image">
-                                        <img src="{{ asset('img/image1projet.jpg') }}">
-                                    </div>
-                                    <div class="card-content grey-text text-darken-4">
-                                        <span class="card-title">Card title</span>
-                                        <p>{{ user.username }}</p>
-                                    </div>
-                                </div>
-                            </a>
+                <div class="col s12 m12 l6">
+                    <div class="white card-panel co_statusCard z-depth-1">
+                        <div class="co_statusCardCirleIcon co_statusCardSurroundedIcon co_goldBorders">
+                            <i class="material-icons amber-text text-accent-3">check</i>
+                        </div>
+                        <div class="co_statusCardTextContent">
+                            <span class="amber-text text-accent-3">7 850 €</span>
+                            <span class="grey-text text-darken-3" style="font-size: 12px">Coût mensuel de vos abonnements</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <h3 class="center-align">Applications récentes</h3>
-    </main>
-{% endblock %}
 
-{% block stylesheets %}
+                <div class="col s12 m12 l6">
+                    <div class="white card-panel co_statusCard z-depth-1">
+                        <div class="co_statusCardCirleIcon co_statusCardSurroundedIcon co_orangeBorders">
+                            <i class="material-icons orange-text">check</i>
+                        </div>
+                        <div class="co_statusCardTextContent">
+                            <span class="orange-text">7 850 €</span>
+                            <span class="grey-text text-darken-3" style="font-size: 12px">Coût total de vos abonnements</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph -->
+                <div class="col s12 m12">
+                    <div class="white card-panel z-depth-1">
+                        <canvas id="myChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var chart = new Chart(ctx, {
+
+                                type: 'line',
+                                data: {
+                                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                                    datasets: [{
+                                        label: "Statistiques",
+                                        fill: false,
+                                        borderColor: '#87CEFA',
+                                        // Dans le data faudra remplacer avec les requête dans l'API
+                                        data: [15, 20, 12, 25, 18, 25, 32],
+                                    }]
+                                },
+
+                                options: {
+                                    //Pour désactiver l'animation d'apparition.
+                                    animation: {
+                                        duration: 0,
+                                    },
+                                    hover: {
+                                        animationDuration: 0,
+                                    },
+                                    responsiveAnimationDuration: 0,
+
+                                }
+                            });
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right column block with status block -->
+        <div class="col s12 m12 l12 xl4" style="padding:0">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="white card-panel z-depth-1">
+                        <p>Amazing status block</p>
+                    </div>
+                </div>
+                <div class="col s12 m12">
+                    <div class="white card-panel z-depth-1">
+                        <p>Amazing other status block</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+{% endblock %} {% block stylesheets %}
 <style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; overflow-x: hidden; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
+    body {
+        background: #F5F5F5;
+        font: 18px/1.5 sans-serif;
+        overflow-x: hidden;
+    }
+    
+    h1,
+    h2 {
+        line-height: 1.2;
+        margin: 0 0 .5em;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 21px;
+        margin-bottom: 1em;
+    }
+    
+    p {
+        margin: 0 0 1em 0;
+    }
+    
+    a {
+        color: #0000F0;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    code {
+        background: #F5F5F5;
+        max-width: 100px;
+        padding: 2px 6px;
+        word-wrap: break-word;
+    }
+    
+    #wrapper {
+        background: #FFF;
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+    }
+    
+    #container {
+        padding: 2em;
+    }
+    
+    #welcome,
+    #status {
+        margin-bottom: 2em;
+    }
+    
+    #welcome h1 span {
+        display: block;
+        font-size: 75%;
+    }
+    
+    #icon-status,
+    #icon-book {
+        float: left;
+        height: 64px;
+        margin-right: 1em;
+        margin-top: -4px;
+        width: 64px;
+    }
+    
+    #icon-book {
+        display: none;
+    }
     
     @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+        #wrapper {
+            width: 80%;
+            margin: 2em auto;
+        }
+        #icon-book {
+            display: inline-block;
+        }
+        #status a,
+        #next a {
+            display: block;
+        }
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .sf-toolbar {
+            opacity: 0;
+            -webkit-animation: fade-in 1s .2s forwards;
+            animation: fade-in 1s .2s forwards;
+        }
     }
 
 </style>

@@ -158,6 +158,18 @@ header nav a{ color: black!important; }
     line-height: 12px;
 }
 
+/* Mobile Notifications */
+@media all and (max-width: 768px){
+    #co_notificationBlock_header{
+        width:80vw;
+        right:10vw;
+        top:100%;
+    }
+    #co_rightNavNotifications_header{
+        position:inherit;
+    }
+}
+
 /*Menu vertical en grand écran*/
 
 .er_vertical-menu_header, .er_side-nav{
@@ -195,6 +207,7 @@ header nav a{ color: black!important; }
 
 .er_logo-entreprise_header{
     filter: brightness(1.2);
+    height:70%;
 }
 
 .er_user_header{
@@ -251,6 +264,8 @@ header nav a{ color: black!important; }
 .er_pagination_bill{
     display: inline-block;
     vertical-align: top;
+    margin-top: 15px;
+    margin-bottom: 0!important;
 }
 
 .er_elem-number_bill{
@@ -268,8 +283,12 @@ header nav a{ color: black!important; }
         margin-left: 15px;
     }
 
-    #container-card tbody tr:hover, #container-sepa tbody tr:hover{
+    #container-card tbody tr:hover{
         background-color: #e1f5fe!important;
+    }
+
+    #container-sepa table thead{
+        border-bottom: none!important;
     }
 
     .er_hide-container{
@@ -283,16 +302,6 @@ header nav a{ color: black!important; }
 
     #container-sepa table tr{
         display: inline-block!important;
-    }
-
-    .er_payment-action{
-        border-radius: 46px;
-        width: 100%;
-        margin-top: -10px!important;
-    }
-
-    .er_payment-action .btn{
-        margin: 3%!important;
     }
 
     .er_next-tab-payment{
@@ -318,35 +327,37 @@ header nav a{ color: black!important; }
 
     .er_payment-done_icon{
         position: relative;
-        margin-top: 30px;
-        background-image:linear-gradient(-30deg, white, #29b6f6);
+        width: 16.5vw;
+        height: 16.5vw;
+        margin-left: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+        background:linear-gradient(to top right, #0092CC, #3BBFFE);
     }
 
-    .er_payment-done_icon:before{
-        content: "";
-        display: block;
-        padding-top: 100%;
+    .er_payment-done_icon i{   
+        font-size: 8vw;
     }
 
-    .er_payment-done_icon i{
-        position: absolute;
-        top: 0;
-        left: 0;    
-        font-size: 6vw;
-        padding: 25%;
-        width: 100%;
-        height: 100%;
-    }
-
-    @media only screen and (min-width: 602px) and (max-width: 992px) {
-        .er_payment-done_icon i{   
-            font-size: 10vw;
+    @media only screen and (max-width: 992px) {
+        .er_payment-done_icon{   
+            width: 24vw;
+            height: 24vw;
         }
     }
 
-    @media only screen and (max-width: 602px) {
+    @media only screen and (min-width: 1280px) {
+        .er_payment-done_icon{   
+            width: 11vw;
+            height: 11vw;
+            margin-left: 40%;
+        }
+
         .er_payment-done_icon i{   
-            font-size: 15vw;
+            font-size: 6vw;
         }
     }
 
@@ -366,82 +377,32 @@ header nav a{ color: black!important; }
     margin: 3%!important;
 }
 
-.er_next-tab-payment{
-    border-radius: 18px!important;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.er_hide-tab{
-    display: none;
-}
-
-.er_cgv-payment{
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 360px!important;
-}
-
-.er_validate-cgv_checkbox{
-    margin-left: 5%;
-}
-
-.er_payment-done_icon{
-    position: relative;
-    margin-top: 30px;
-    background-image:linear-gradient(-30deg, white, #29b6f6);
-}
-
-.er_payment-done_icon:before{
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.er_payment-done_icon i{
-    position: absolute;
-    top: 0;
-    left: 0;    
-    font-size: 6vw;
-    padding: 25%;
-    width: 100%;
-    height: 100%;
-}
-
-@media only screen and (min-width: 602px) and (max-width: 992px) {
-    .er_payment-done_icon i{   
-        font-size: 10vw;
-    }
-}
-
-@media only screen and (max-width: 602px) {
-    .er_payment-done_icon i{   
-        font-size: 15vw;
-    }
-}
-
-.er_price-payment{
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-
 /* -- Table des commandes -- */
 
 .er_fab-toolbar_indent .er_fab-action_indent{
     position: inherit;
     width: 200px!important;
+    visibility: hidden;
 }
 
 .er_fab-toolbar_indent .er_fab-action_indent ul{
     position: inherit;
     height: 10px!important;
     width: 120px!important;
+    margin-left: 9px;
+    transition-duration: 1s;
+}
+
+.er_fab-btn_indent{
+    box-shadow: none!important;
 }
 
 .er_fab-toolbar_indent{
     width: 200px!important;
+}
+
+.er_elem-table_indent tr:hover .er_fab-action_indent{
+    visibility: visible!important;
 }
 
 /* -- Modal de détails d'une commande (réutilisable pour le modal de détails d'un abonnement) -- */
@@ -469,6 +430,7 @@ header nav a{ color: black!important; }
             /**/
             /**/        .er_chips-status{
             /**/            width: 125px;
+            /**/            text-align: center;
             /**/        }
             /**/
             /**/        .er_table-container{
@@ -501,7 +463,43 @@ header nav a{ color: black!important; }
             /**/                display: none!important;
             /**/            }
             /**/        }
-    /**//**//**//**//**/        
+    /**//**//**//**//**/ 
+
+                        .er_table-container #search{
+                            padding-left: 40px;
+                        } 
+                        .er_table-container .er_close-search{
+                            top: 10px!important;
+                            right: -25px!important;
+                        }
+                        .er_table-container .select-dropdown{
+                            font-size: 14px!important;
+                        }
+                        .er_table-container .select-dropdown li{
+                            font-size: 14px!important;
+                        } 
+                        .er_table-container .select-dropdown li span{
+                            color: #9e9e9e!important;
+                        } 
+                        .er_table-container table th{
+                            text-transform: uppercase;
+                            font-size: 16px;
+                        } 
+                        .er_table-container table{
+                            font-size: 14px;
+                        }
+                        .er_table-container table thead{
+                            background-color: #eeeeee!important;
+                        } 
+                        .er_table-container table tr th:first-child, .er_table-container table tr td:first-child{
+                            padding-right: 50px;
+                        }
+                        .er_centered-chips{
+                            text-align: center!important;
+                        }
+                        .er_hide-pager{
+                            display: none!important;
+                        }
 /****************************************************************************************************************************************/
 
 /*------------------------------- Contenu Corentin---------------------------------*/
@@ -509,13 +507,26 @@ header nav a{ color: black!important; }
 /* ------------------------------------------------------------------------ */
 /* ---------------------------- GLOBAL ---------------------------------- */
 /* ------------------------------------------------------------------------ */
+
+/*.co_statusCardRowContainer .col:first-child{
+    padding-left: 0!important;
+}
+
+.co_statusCardRowContainer .col:last-child{
+    padding-right: 0!important;
+}
+
+.co_statusCardRowContainer>*{
+    padding:0!important;
+}*/
+
 .co_statusCard{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    padding:30px;
+    padding:30px!important;
     border-radius: 2px;
 }
 
@@ -527,6 +538,19 @@ header nav a{ color: black!important; }
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+}
+
+.co_statusCardSurroundedIcon{
+    border-style: solid;
+    border-width: 1px;
+}
+
+.co_goldBorders{
+    border-color: #F1D04D;
+}
+
+.co_orangeBorders{
+    border-color: #FFB637;
 }
 
 .co_statusCardTextContent{
@@ -575,7 +599,7 @@ header nav a{ color: black!important; }
 /* Button with rounded effect on side borders*/
 .co_roundedButton{
     font-size: 14px;
-    padding:10px 20px;
+    padding:8px 20px;
     border-radius: 20px;
     border-style: none;
 }
@@ -585,6 +609,10 @@ header nav a{ color: black!important; }
     bottom:20px;
     right:20px;
     position:fixed;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index:100;
 }
 
 /* Blue gradient window body */
@@ -594,7 +622,7 @@ header nav a{ color: black!important; }
     z-index:100;
     display: flex;
     flex-direction: column;
-    padding:30px;
+    padding:0!important;
 }
 
 .co_blueWindowBody p{
@@ -626,12 +654,26 @@ header nav a{ color: black!important; }
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding:30px 30px 15px 30px;
+}
+
+.co_blueWindowModalHeader{
+    padding:0;
+}
+
+.co_blueWindowModalHeader>p{
+    margin:0;
 }
 
 .co_blueWindowHeader>i:hover{
     cursor:pointer;
 }
 
+.co_blueWindowMiddle{
+    height:70vh;
+    overflow-y: scroll;
+    padding: 15px 30px 30px 30px;
+}
 /* Center a modal in col */
 .co_centeredModal{
     display: flex;
@@ -641,17 +683,52 @@ header nav a{ color: black!important; }
 }
 
 /* change modal scrollbar aspect */
-.modal::-webkit-scrollbar{
+.modal::-webkit-scrollbar, .co_blueWindowMiddle::-webkit-scrollbar, #co_allNotificationsBlock_header::-webkit-scrollbar, #co_modalDiscussionBlock_help::-webkit-scrollbar{
     width:10px;
 }
 
-.modal::-webkit-scrollbar-track{
+.modal::-webkit-scrollbar-track, .co_blueWindowMiddle::-webkit-scrollbar-track, #co_allNotificationsBlock_header::-webkit-scrollbar-track, #co_modalDiscussionBlock_help::-webkit-scrollbar-track{
     background-color: transparent;
 }
 
-.modal::-webkit-scrollbar-thumb{
+.modal::-webkit-scrollbar-thumb, .co_blueWindowMiddle::-webkit-scrollbar-thumb, #co_allNotificationsBlock_header::-webkit-scrollbar-thumb, #co_modalDiscussionBlock_help::-webkit-scrollbar-thumb{
     background-color:#00000022;
     border-radius: 5px;
+}
+
+/* modify browser default materialize select */
+.co_materializeBrowserDefaultInput{
+    font-size: 12px;
+    width:175px;
+    border-radius:6px;
+    border-color: #cccccc;
+    height:30px;
+    background-color:white;
+}
+
+/* personal modal container*/
+.co_modal_container{
+    z-index: 1000;
+    display:none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    background-color:#00000088;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+
+/* personal modal */
+.co_modal{
+    padding:30px!important;
+    margin:0!important;
+}
+
+.co_modalFooter{
+    padding-top:30px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -707,16 +784,13 @@ header nav a{ color: black!important; }
 
 /* Global block of the add contact block (fab and window) */
 #co_addContactBlock_contacts{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index:100;
+
 }
 
 /* Body of the add contact window */
 #co_addContactFormBlock_contacts{
-    width:500px;
     display: none;
+    width:100%;
 }
 
 /* Name part of contact form */
@@ -760,17 +834,208 @@ header nav a{ color: black!important; }
 }
 
 
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- ASSISTANCE -------------------------------- */
+/* ------------------------------------------------------------------------ */
+
+/* Body of the add contact window */
+#co_sendMessageFormBlock_help{
+    display: none;
+    width:100%;
+}
+
+/* All element of help form */
+.co_sendMessageForm_help>*{
+    margin:30px 0;
+}
+
+/* User information send message block */
+#co_sendMessageUserInformationBlock_help{
+    margin-bottom:60px;
+}
+
+/* All element of information send message block */
+#co_sendMessageUserInformationBlock_help>*{
+    margin-bottom:15px;
+}
+
+/* all p of information send message block */
+#co_sendMessageUserInformationBlock_help p{
+    font-size:14px;
+}
+
+/* Title of information send message block */
+#co_sendMessageUserInformationTitle_help{
+    border-bottom:solid 1px white;
+    height:30px;
+}
+
+/* One line for send message user info block */
+.co_sendMessageUserInfoLine_help{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Priority select block */
+.co_sendMessagePriorityInputBlock_help{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* send message text area */
+#co_messageContentTextArea_help{
+    height:200px;
+}
+
+/* Submit block of send message window */
+.co_sendMessageSubmitBlock_help{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:0;
+}
+
+/* all element of mail inputs block */
+#co_sendMessageMailInputBlock_help>*{
+    margin-bottom:15px;
+}
+
+/* ----------------------- Modal Discussion ---------------------*/
+
+/* Discussion part of discussion modal */
+#co_modalDiscussionBlock_help{
+    height:55vh;
+    overflow-y: scroll;
+}
+
+#co_modalDiscussionBlock_help p{
+    margin:0;
+    padding:0;
+}
+
+#co_modalDiscussionBlock_help .co_nameCircle{
+    margin:0
+}
+
+/* One line of discussion */
+.co_modalDiscussionMessageLine_help{
+    width:100%;
+    display: flex;
+}
+
+/* one lemnia line */
+.co_modalDiscussionLemniaMessageLine_help{
+    justify-content: flex-start;
+}
+
+.co_modalDiscussionUserMessageLine_help{
+    justify-content: flex-end;
+}
+
+/* One message of discussion */
+.co_modalDiscussionOneMessage_help{
+    display:flex;
+    margin:20px 0;
+    align-items: flex-end;
+}
+
+/* lemnia message line */
+.co_modalDiscussionLemniaAnswer_help{
+    flex-direction: row;
+}
+
+/* User message line */
+.co_modalDiscussionUserAnswer_help{
+    flex-direction: row-reverse;
+}
+
+/* The bubble body of lemnia's message */
+.co_modalDiscussionLemniaAnswer_help .co_modalDiscussionMessageBody{
+    background-color:#EEEEEE;
+    border-radius:20px 20px 20px 0;
+}
+
+/* Bubble block of lemnia's answers */
+.co_modalDiscussionLemniaAnswer_help .co_modalDiscussionBubbleBlock_help{
+    margin:0 0 0 20px!important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The bubble body of user message */
+.co_modalDiscussionUserAnswer_help .co_modalDiscussionMessageBody{
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    border-radius:20px 20px 0 20px;
+}
+
+/* Bubble block of user's answers */
+.co_modalDiscussionUserAnswer_help .co_modalDiscussionBubbleBlock_help{
+    margin:0 20px 0 0!important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The bubble of a message */
+.co_modalDiscussionMessageBody{
+    padding:10px;
+}
+
+/* The block with bubble and name circle */
+.co_modalDiscussionBubbleBlock_help{
+    transform: translateY(18px);/* date and hour font size +4px */
+}
+
+/* discussion modal footer */
+#co_discussionModalContainer_help .co_modalFooter{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+#co_modalDiscussionSendAnswerBlock_help{
+    width:70%;
+    position:relative
+}
+
+#co_modalDiscussionSendMessageButton_help{
+    position:absolute;
+    bottom:15px;
+    right:5px;
+}
+
+/* discussion modal footer text area */
+#co_modalDiscussionTextArea_help{
+    height:100px;
+    margin: 0 !important;
+}
+
+/* discussion modal footer action block */
+#co_modalDiscussionActionBlock_help{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width:30%;
+    padding-bottom: 10px;
+}
+
+
+
+
 /*------------------------------- Fin Contenu Corentin---------------------------------*/
 
 /****************************************************************************************************************************************/
 
 /*------------------------------- Contenu Andrei---------------------------------*/
-.page_title{
+.an_page_title_help{
     font-family: sans-serif;
     font-size: 1.5em;
 }
 
-.white_middle{ 
+.an_white_middle_help{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -778,19 +1043,19 @@ header nav a{ color: black!important; }
     height: 700px;
 }
 
-.secondary_title{
+.an_secondary_title_help{
     font-family: sans-serif;
     font-size: 0.9em;
     margin-bottom: 100px;
 }
 
-.left_side{
+.an_left_side_help{
     display: flex;
     flex-direction: column;
     order:1;
 }
 
-.right_side{
+.an_right_side_help{
     display: flex;
     flex-direction: column;
     order: 2;
@@ -801,7 +1066,7 @@ form{
     justify-content: space-around;
 }
 
-.input_assistance{
+.an_input_assistance_help{
     margin-bottom: 30px;
     border-top:0px;
     border-left:0px;
@@ -809,30 +1074,30 @@ form{
     color:#CCCCCC;
 }
 
-.input_assistance:focus{
+.an_input_assistance_help:focus{
     outline: none;
 }
 
-.select_assistance:focus{
+.an_select_assistance_help:focus{
     outline: none;
 }
 
-.textarea_assistance:focus{
+.an_textarea_assistance_help:focus{
     outline: none;
 }
 
-.submit_assistance:focus{
+.an_submit_assistance_help:focus{
     outline: none;
 }
 
-.select_assistance{
+.an_select_assistance_help{
     margin-bottom: 20px;
     border-radius: 20px;
     width: 120px;
     color: #CCCCCC;
 }
 
-.submit_assistance{
+.an_submit_assistance_help{
     margin-top: 40px;
     background-color: #0199D1;
     border: none;
@@ -845,13 +1110,13 @@ form{
     margin-left: 130px;
 }
 
-.textarea_assistance{
+.an_textarea_assistance_help{
     color:#CCCCCC;
     border-color: #CCCCCC;
 }
 
 @media only screen and (max-width: 800px) {
-    .white_middle{
+    .an_white_middle_help{
         display: flex;
         flex-direction: column;
     }
