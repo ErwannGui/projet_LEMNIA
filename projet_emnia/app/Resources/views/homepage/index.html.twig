@@ -44,14 +44,43 @@
                                     labels: ["January", "February", "March", "April", "May", "June", "July"],
                                     datasets: [{
                                         label: "Statistiques",
-                                        fill: false,
+                                        fill: true,
+                                        //yAxisID: 'k',
                                         borderColor: '#87CEFA',
+                                        backgroundColor: '#87CEFA',
                                         // Dans le data faudra remplacer avec les requête dans l'API
                                         data: [15, 20, 12, 25, 18, 25, 32],
                                     }]
                                 },
 
                                 options: {
+                                    legend: {
+                                        display: false,
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Statistique',
+                                        fontSize: 20,
+                                        fontStyle: 'italic',
+                                        padding: 20,
+                                    },
+                                    scales: {
+                                        yAxes: [{
+                                            display: true,
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Dépenses Mensuelles',
+                                            },
+
+                                            ticks: {
+                                                beginAtZero: true,
+                                                userCallback: function(tick) {
+                                                    return tick.toString() + 'k';
+                                                }
+
+                                            }
+                                        }]
+                                    },
                                     //Pour désactiver l'animation d'apparition.
                                     animation: {
                                         duration: 0,
