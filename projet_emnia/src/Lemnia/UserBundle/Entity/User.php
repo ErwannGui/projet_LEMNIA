@@ -49,6 +49,7 @@ class User extends FosUser
      */
     private $phoneNumber;
 
+
     /**
      * Set lastName
      *
@@ -96,7 +97,6 @@ class User extends FosUser
     {
         return $this->firstName;
     }
-
     /**
      * Set phoneNumber
      *

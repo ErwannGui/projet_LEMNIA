@@ -875,5 +875,24 @@ form{
     display: flex;
     justify-content: space-between;
 }
+.ma_nameCircle_modify{
+    width:90px;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background:white;
+    border-radius: 50%;
+}
 
+.ma_modifyBackground{
+    background: linear-gradient(to top right, #0092CC, #3BBFFE);
+}
+.ma_modifier_info_perso input{
+    border-bottom: 1px solid white !important;
+}
+input{
+    margin-right: 20px !important;
+}
 /*----------------------------Fin contenu Mael --------------------------------------*/

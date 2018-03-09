@@ -1,0 +1,51 @@
+$('#close').hide();
+$('.ma_modifier_info_perso').hide();
+$('#validerInfos').hide();
+$('#validerInfosCo').hide();
+
+$('#ma_modif_info_perso').click(function(){
+    if ($('#ma_info_perso').hasClass('ma_modifyBackground')){
+        $('#ma_info_perso').removeClass('ma_modifyBackground')
+        $('#ma_title_infos_perso').removeClass('white-text');
+        $('#ma_initial_info_perso').removeClass('black-text');
+        $('#ma_initial_info_perso').addClass('white-text');
+        $('#ma_nameCircle').addClass('co_nameCircle');
+        $('#ma_nameCircle').removeClass('ma_nameCircle_modify');
+        $('#edit').show();
+        $('#close').hide();
+        $('.ma_apercu_info_perso').show();
+        $('.ma_modifier_info_perso').hide();
+        $('#validerInfos').hide();
+    }else{
+    $('#ma_info_perso').addClass('ma_modifyBackground');
+    $('#ma_title_infos_perso').addClass('white-text');
+    $('#ma_initial_info_perso').addClass('black-text');
+    $('#ma_initial_info_perso').removeClass('white-text');
+    $('#ma_nameCircle').removeClass('co_nameCircle');
+    $('#ma_nameCircle').addClass('ma_nameCircle_modify');
+    $('#edit').hide();
+    $('#close').show();
+    $('.ma_apercu_info_perso').hide();
+    $('.ma_modifier_info_perso').show();
+    $('#validerInfos').show();
+    };
+});
+$('#ma_modif_info_co').click(function(){
+    if ($('#ma_info_co').hasClass('ma_modifyBackground')){
+        $('#ma_info_co').removeClass('ma_modifyBackground')
+        $('#ma_title_infos_co').removeClass('white-text');
+        $('#editInfosCo').show();
+        $('#closeInfosCo').hide();
+        $('.ma_apercu_info_co').show();
+        $('.ma_modifier_info_co').hide();
+        $('#validerInfosCo').hide();
+    }else{
+        $('#ma_info_co').addClass('ma_modifyBackground');
+        $('#ma_title_infos_co').addClass('white-text');
+        $('#editInfosCo').hide();
+        $('#closeInfosCo').show();
+        $('.ma_apercu_info_co').hide();
+        $('.ma_modifier_info_co').show();
+        $('#validerInfosCo').show();
+    };
+});

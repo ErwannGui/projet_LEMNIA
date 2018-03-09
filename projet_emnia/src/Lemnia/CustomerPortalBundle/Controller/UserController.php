@@ -38,6 +38,8 @@ class UserController extends Controller
 
 		$user = $this->getUser();
 
+
+
         return $this->render('users/user.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,
         ]);

@@ -13,45 +13,72 @@ Compte utilisateur - Portail utilisateur LEMNIA
                 <!--Affichage du tableau de tout les utilisateurs-->
                 <div class="col s12 m5">
                     <div class="card">
-                        <div class="card-action">
+                        <div class="card-action" id="ma_info_perso">
                             <div class="co_contactInfoBlock_contacts">
                                 <div class="ma_titreBlock_user">
-                                    <span class="title_card">Informations personnelles</span>
-                                    <a class="grey-text"><i class="material-icons" style="font-size:18px">edit</i></a>
+                                    <span class="title_card" id="ma_title_infos_perso">Informations personnelles</span>
+                                    <a class="grey-text" id="ma_modif_info_perso" href="#"><i class="material-icons" id="edit" style="font-size:20px">edit</i><i class="material-icons white-text" id="close" style="font-size:20px">clear</i></a>
                                 </div>
                                 <div class="co_contactInfoTopBlock_contacts">
-                                    <div class="co_nameCircle">
-                                        <p class="white-text" style="font-size: 22px">MB</p>
+                                    <div class="co_nameCircle" id="ma_nameCircle">
+                                        <p class="white-text" id="ma_initial_info_perso" style="font-size: 22px">MB</p>
                                     </div>
-                                    <div class="co_contactInfoTopBlockText_contacts">
-                                        <p class="grey-text text-darken-2" style="font-size: 16px">{{user.getFirstName}}</p>
+                                    <div class="co_contactInfoTopBlockText_contacts ma_apercu_info_perso">
+                                        <p class="grey-text text-darken-2" style="font-size: 16px">{{user.getFirstName}} {{user.getLastName}}</p>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                    </div>
+                                    <div class="co_contactInfoTopBlockText_contacts ma_modifier_info_perso">
+                                        <input placeholder="Nom" id="lastname" type="text" class="validate white-text" value="{{user.getLastName}}">
+                                        <input placeholder="Prénom" id="firstname" type="text" class="validate white-text" value="{{user.getFirstName}}">
                                     </div>
                                 </div>
-                                <div class="co_contactInfoMiddleBlock_contacts">
+                                <div class="co_contactInfoMiddleBlock_contacts ma_apercu_info_perso">
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1" >location_on</i>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
                                     </div>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1">email</i>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getEmail}}</p>
                                     </div>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1">phone</i>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getPhoneNumber}}</p>
                                     </div>
                                 </div>
+                                <div class="co_contactInfoMiddleBlock_contacts ma_modifier_info_perso">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <input placeholder="Société" id="socity" type="text" class="validate white-text">
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <input placeholder="Job" id="job" type="text" class="validate white-text">
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <input placeholder="Pays" id="nation" type="text" class="validate white-text">
+                                        <input placeholder="Ville" id="city" type="text" class="validate white-text">
+                                        <input placeholder="C.Postal" id="code" type="number" max="99999" class="validate white-text">
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <input placeholder="Adresse" id="location" type="text" class="validate white-text">
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <input placeholder="Téléphone" id="phone" type="number"  max="0999999999" class="validate white-text">
+                                        <input placeholder="Mail" id="mail" type="email" class="validate white-text">
+                                    </div>
+                                </div>
+                                <div id="validerInfos">
+                                    <input class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" value="Valider les modifications" type="submit">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-action">
+                        <div class="card-action" id="infos_co">
                             <div class="co_contactInfoBlock_contacts">
                                 <div class="ma_titreBlock_user">
-                                    <span class="title_card">Informations de connexion</span>
-                                    <a class="grey-text"><i class="material-icons" style="font-size:18px">edit</i></a>
+                                    <span class="title_card" id="ma_title_info_co">Informations de connexion</span>
+                                    <a class="grey-text" id="ma_modif_info_co" href="#"><i class="material-icons" id="editInfosCo" style="font-size:18px">edit</i><i class="material-icons white-text" id="closeInfosCo" style="font-size:20px">clear</i></a>
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts">
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
@@ -60,7 +87,21 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     </div>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1">enhanced_encryption</i>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">*********</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getPassword}}</p>
+                                    </div>
+                                    <div id="validerInfosCo">
+                                        <input class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" value="Valider les modifications" type="submit">
+                                    </div>
+                                </div>
+                                <div class="co_contactInfoMiddleBlock_contacts ma_modifier_infos_co">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                        <input type="text" placeholder="identifiant" id="identifiant" class="validate white-text" value="{{user}}">
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+
+                                    </div>
+                                    <div id="validerInfosCo">
+                                        <input class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" value="Valider les modifications" type="submit">
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +171,15 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <a class="btn blue lighten-1">Ajoutez une carte</a>
+                                    <a class="btn blue lighten-1 modal-trigger" href="#modal1">Ajoutez une carte</a>
+                                    <div id="modal1" class="modal modal-fixed-footer">
+                                        <div class="modal-content">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Valider</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -139,6 +188,9 @@ Compte utilisateur - Portail utilisateur LEMNIA
             </div>
         </section>
     </main>
+{% endblock %}
+{% block javascripts %}
+     <script src="{{ asset('js/user.js') }}"></script>
 {% endblock %}
 
 {% block stylesheets %}
@@ -170,3 +222,4 @@ Compte utilisateur - Portail utilisateur LEMNIA
 
 </style>
 {% endblock %}
+
