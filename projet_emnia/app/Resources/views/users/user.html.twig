@@ -19,24 +19,25 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     <span class="title_card" id="ma_title_infos_perso">Informations personnelles</span>
                                     <a class="grey-text" id="ma_modif_info_perso" href="#"><i class="material-icons" id="edit" style="font-size:20px">edit</i><i class="material-icons white-text" id="close" style="font-size:20px">clear</i></a>
                                 </div>
+                                {{ form_start(formInfoPerso) }}
                                 <div class="co_contactInfoTopBlock_contacts">
                                     <div class="co_nameCircle" id="ma_nameCircle">
-                                        <p class="white-text" id="ma_initial_info_perso" style="font-size: 22px">MB</p>
+                                        <p class="white-text" id="ma_initial_info_perso" style="font-size: 22px">{{initial}}</p>
                                     </div>
                                     <div class="co_contactInfoTopBlockText_contacts ma_apercu_info_perso">
-                                        <p class="grey-text text-darken-2" style="font-size: 16px">{{user.getFirstName}} {{user.getLastName}}</p>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 16px">{{user.getFirstName}} {{user.getLastName}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getJob}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getSocity}}</p>
                                     </div>
-                                    <div class="co_contactInfoTopBlockText_contacts ma_modifier_info_perso">
-                                        <input placeholder="Nom" id="lastname" type="text" class="validate white-text" value="{{user.getLastName}}">
-                                        <input placeholder="Prénom" id="firstname" type="text" class="validate white-text" value="{{user.getFirstName}}">
+                                    <div class="co_contactInfoTopBlockText_contacts ma_modifier_info ma_modifier_info_perso">
+                                        {{ form_widget(formInfoPerso.lastname, {'value': user.getLastName }) }}
+                                        {{ form_widget(formInfoPerso.firstname, {'value': user.getFirstName }) }}
                                     </div>
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts ma_apercu_info_perso">
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1" >location_on</i>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
+                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getAdresse}}, {{user.getCodePostal}} {{user.getCity}}, {{user.getNation}}</p>
                                     </div>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1">email</i>
@@ -48,39 +49,40 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     </div>
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts ma_modifier_info_perso">
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
-                                        <input placeholder="Société" id="socity" type="text" class="validate white-text">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {{ form_widget(formInfoPerso.socity, {'value': user.getSocity }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
-                                        <input placeholder="Job" id="job" type="text" class="validate white-text">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {{ form_widget(formInfoPerso.job, {'value': user.getJob }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
-                                        <input placeholder="Pays" id="nation" type="text" class="validate white-text">
-                                        <input placeholder="Ville" id="city" type="text" class="validate white-text">
-                                        <input placeholder="C.Postal" id="code" type="number" max="99999" class="validate white-text">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {{ form_widget(formInfoPerso.pays, {'value': user.getNation }) }}
+                                        {{ form_widget(formInfoPerso.ville, {'value': user.getCity }) }}
+                                        {{ form_widget(formInfoPerso.cPostal, {'value': user.getCodePostal }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
-                                        <input placeholder="Adresse" id="location" type="text" class="validate white-text">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {{ form_widget(formInfoPerso.adresse, {'value': user.getAdresse }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
-                                        <input placeholder="Téléphone" id="phone" type="number"  max="0999999999" class="validate white-text">
-                                        <input placeholder="Mail" id="mail" type="email" class="validate white-text">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {{ form_widget(formInfoPerso.telephone, {'value': user.getPhoneNumber }) }}
+                                        {{ form_widget(formInfoPerso.email, {'value': user.getEmail }) }}
                                     </div>
                                 </div>
                                 <div id="validerInfos">
-                                    <input class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" value="Valider les modifications" type="submit">
+                                    <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Valider les modifications</button>
                                 </div>
+                                {{ form_end(formInfoPerso) }}
                             </div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-action" id="infos_co">
+                        <div class="card-action" id="ma_info_co">
                             <div class="co_contactInfoBlock_contacts">
                                 <div class="ma_titreBlock_user">
-                                    <span class="title_card" id="ma_title_info_co">Informations de connexion</span>
+                                    <span class="title_card" id="ma_title_infos_co">Informations de connexion</span>
                                     <a class="grey-text" id="ma_modif_info_co" href="#"><i class="material-icons" id="editInfosCo" style="font-size:18px">edit</i><i class="material-icons white-text" id="closeInfosCo" style="font-size:20px">clear</i></a>
                                 </div>
-                                <div class="co_contactInfoMiddleBlock_contacts">
+                                <div class="co_contactInfoMiddleBlock_contacts" id="ma_apercu_infos_co">
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1" >assignment_ind</i>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user}}</p>
@@ -89,19 +91,22 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                         <i class="material-icons grey-text text-lighten-1">enhanced_encryption</i>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getPassword}}</p>
                                     </div>
-                                    <div id="validerInfosCo">
-                                        <input class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" value="Valider les modifications" type="submit">
-                                    </div>
                                 </div>
-                                <div class="co_contactInfoMiddleBlock_contacts ma_modifier_infos_co">
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
+                                <div class="co_contactInfoMiddleBlock_contacts" id="ma_modifier_infos_co">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
                                         <input type="text" placeholder="identifiant" id="identifiant" class="validate white-text" value="{{user}}">
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
-
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        <input type="password" placeholder="Mot de passe courant" id="currentPassword" class="validate white-text">
                                     </div>
-                                    <div id="validerInfosCo">
-                                        <input class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" value="Valider les modifications" type="submit">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info" id="ma_new_password">
+                                        <input type="password" placeholder="Nouveau mot de passe" id="newPassword" class="validate white-text">
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        <input type="password" placeholder="Valider le mot de passe" id="validatePassword" class="validate white-text">
+                                    </div>
+                                    <div id="validerInfosCo ">
+                                        <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Valider les modifications</button>
                                     </div>
                                 </div>
                             </div>
@@ -110,26 +115,26 @@ Compte utilisateur - Portail utilisateur LEMNIA
                 </div>
                 <div class="col s12 m7">
                     <div class="card">
-                        <div class="card-action">
+                        <div class="card-action" id="ma_sepa">
                             <div>
                                 <div class="ma_titreBlock_user">
-                                    <span class="title_card">Votre mandat SEPA</span>
-                                    <a class="grey-text"><i class="material-icons" style="font-size:18px">edit</i></a>
+                                    <span class="title_card" id="ma_title_sepa">Votre mandat SEPA</span>
+                                    <a class="grey-text" id="ma_modif_sepa" href="#"><i class="material-icons" id="editSepa" style="font-size:18px">edit</i><i class="material-icons white-text" id="closeSepa" style="font-size:20px">clear</i></a>
                                 </div>
-                                <div>
+                                <div id="ma_apercu_sepa">
                                     <table>
                                         <tbody>
                                             <tr>
                                                 <td class="grey-text" style="font-size: 16px">IBAN</td>
-                                                <td class="grey-text text-lighten-1" style="font-size: 14px">1234-12345-12345-1234567890-12</td>
+                                                <td class="grey-text text-lighten-1" style="font-size: 14px">{{sepa.getIban}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="grey-text" style="font-size: 16px">BIC</td>
-                                                <td class="grey-text text-lighten-1" style="font-size: 14px">12345678901</td>
+                                                <td class="grey-text text-lighten-1" style="font-size: 14px">{{sepa.getBic}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="grey-text" style="font-size: 16px">DATE</td>
-                                                <td class="grey-text text-lighten-1" style="font-size: 14px">24-02-2018</td>
+                                                <td class="grey-text text-lighten-1" style="font-size: 14px">{{sepa.getDateSignature|date("d/m/Y")}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="grey-text" style="font-size: 16px">SIGNATURE</td>
@@ -137,10 +142,39 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="co_contactInfoMiddleBlock_contacts" id="ma_modifier_sepa">
+                                    {{ form_start(formSepa) }}
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {% if sepa != null %}
+                                            {{ form_widget(formSepa.iban,{'value': sepa.getIban }) }}
+                                        {% else %}
+                                            {{ form_widget(formSepa.iban,{'value': "IBAN" }) }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        {% if sepa != null %}
+                                            {{ form_widget(formSepa.bic, {'value': sepa.getBic }) }}
+                                        {% else %}
+                                            {{ form_widget(formSepa.bic, {'value': "BIC" }) }}
+                                        {% endif %}
+                                    </div>
+
+                                    <label for="signature" class="white-text">Signature électronique</label>
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                        <input type="text" placeholder="signature" id="signature" class="validate white-text">
+                                        {% if sepa != null %}
+                                            <p class="white-text" style="font-size: 14px">Signé le {{sepa.getDateSignature|date('d/m/Y')}}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div id="validerSepa">
+                                        <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Valider les modifications</button>
+                                    </div>
+                                    {{ form_end(formSepa) }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" style="margin-bottom:0px" id="tableCard">
                         <div class="card-action">
                             <div>
                                 <div class="ma_titreBlock_user">
@@ -157,30 +191,37 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        {% for carteBancaire in carteBancaires %}
                                             <tr>
-                                                <td>1</td>
-                                                <td>Visa</td>
-                                                <td>4970 1012  3456 7890</td>
-                                                <td>06-12-2024</td>
+                                                <td>{{carteBancaire.getId}}</td>
+                                                <td>{{carteBancaire.getType}}</td>
+                                                <td>{{carteBancaire.getNumeroCarte}}</td>
+                                                <td>{{carteBancaire.getDateExpiration|date('m/Y')}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Visa</td>
-                                                <td>4970 1012  3456 7890</td>
-                                                <td>06-12-2024</td>
-                                            </tr>
+                                        {% endfor %}
                                         </tbody>
                                     </table>
-                                    <a class="btn blue lighten-1 modal-trigger" href="#modal1">Ajoutez une carte</a>
-                                    <div id="modal1" class="modal modal-fixed-footer">
-                                        <div class="modal-content">
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Valider</a>
-                                        </div>
-                                    </div>
+                                    <a class="btn blue lighten-1 modal-trigger" id="addNewCard" href="#">Ajoutez une carte</a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top:0px;" id="addCard">
+                        <div class="card-action ma_modifyBackground">
+                            <div>
+                                {{ form_start(formCarteBancaire) }}
+                                <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    {{form_widget(formCarteBancaire.type)}}
+                                    {{form_widget(formCarteBancaire.numeroCarte)}}
+                                </div>
+                                <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    {{form_widget(formCarteBancaire.dateExpiration)}}
+                                    {{form_widget(formCarteBancaire.pictogramme)}}
+                                </div>
+                                <div class="ma_carteBancaire_contenu">
+                                    <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Ajoutez la carte</button>
+                                </div>
+                                {{form_end(formCarteBancaire)}}
                             </div>
                         </div>
                     </div>

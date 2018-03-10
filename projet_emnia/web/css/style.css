@@ -1061,11 +1061,6 @@ header nav a{ color: black!important; }
     order: 2;
 }
 
-form{
-    display: flex;
-    justify-content: space-around;
-}
-
 .an_input_assistance_help{
     margin-bottom: 30px;
     border-top:0px;
@@ -1154,10 +1149,16 @@ form{
 .ma_modifyBackground{
     background: linear-gradient(to top right, #0092CC, #3BBFFE);
 }
-.ma_modifier_info_perso input{
+.ma_modifier_info input{
     border-bottom: 1px solid white !important;
 }
 input{
     margin-right: 20px !important;
+}
+#ma_new_password{
+    margin-top: 20px;
+}
+#addCard{
+    top: -200px;
 }
 /*----------------------------Fin contenu Mael --------------------------------------*/

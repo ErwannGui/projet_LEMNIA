@@ -2,7 +2,13 @@ $('#close').hide();
 $('.ma_modifier_info_perso').hide();
 $('#validerInfos').hide();
 $('#validerInfosCo').hide();
-
+$('#closeInfosCo').hide();
+$('#closeSepa').hide();
+$('#ma_modifier_infos_co').hide();
+$('#validerSepa').hide();
+$('#ma_modifier_sepa').hide();
+$('#addCard').hide();
+// modification des informations personnels
 $('#ma_modif_info_perso').click(function(){
     if ($('#ma_info_perso').hasClass('ma_modifyBackground')){
         $('#ma_info_perso').removeClass('ma_modifyBackground')
@@ -30,22 +36,55 @@ $('#ma_modif_info_perso').click(function(){
     $('#validerInfos').show();
     };
 });
+
+// modifications des infos de connexion
 $('#ma_modif_info_co').click(function(){
     if ($('#ma_info_co').hasClass('ma_modifyBackground')){
-        $('#ma_info_co').removeClass('ma_modifyBackground')
+        $('#ma_info_co').removeClass('ma_modifyBackground');
         $('#ma_title_infos_co').removeClass('white-text');
-        $('#editInfosCo').show();
-        $('#closeInfosCo').hide();
-        $('.ma_apercu_info_co').show();
-        $('.ma_modifier_info_co').hide();
         $('#validerInfosCo').hide();
+        $('#closeInfosCo').hide();
+        $('#editInfosCo').show();
+        $('#ma_modifier_infos_co').hide();
+        $('#ma_apercu_infos_co').show();
     }else{
         $('#ma_info_co').addClass('ma_modifyBackground');
         $('#ma_title_infos_co').addClass('white-text');
-        $('#editInfosCo').hide();
         $('#closeInfosCo').show();
-        $('.ma_apercu_info_co').hide();
-        $('.ma_modifier_info_co').show();
+        $('#editInfosCo').hide();
         $('#validerInfosCo').show();
+        $('#ma_modifier_infos_co').show();
+        $('#ma_apercu_infos_co').hide();
     };
+});
+
+// modifications du mandat sepa
+$('#ma_modif_sepa').click(function(){
+    if ($('#ma_sepa').hasClass('ma_modifyBackground')){
+        $('#ma_sepa').removeClass('ma_modifyBackground');
+        $('#ma_title_sepa').removeClass('white-text');
+        $('#validerSepa').hide();
+        $('#closeSepa').hide();
+        $('#editSepa').show();
+        $('#ma_modifier_sepa').hide();
+        $('#ma_apercu_sepa').show();
+    }else{
+        $('#ma_sepa').addClass('ma_modifyBackground');
+        $('#ma_title_sepa').addClass('white-text');
+        $('#closeSepa').show();
+        $('#editSepa').hide();
+        $('#validerSepa').show();
+        $('#ma_modifier_sepa').show();
+        $('#ma_apercu_sepa').hide();
+    };
+});
+
+$('#addNewCard').click(function(){
+    $('#addNewCard').hide();
+    $('#addCard').show();
+    $( "#addCard" ).animate({
+        top: "+=200"
+    }, "slow", function() {
+        // Animation complete.
+    });
 });

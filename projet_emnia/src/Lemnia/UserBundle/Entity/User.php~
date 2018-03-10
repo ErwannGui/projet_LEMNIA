@@ -31,103 +31,250 @@ class User extends FosUser
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
+     * @ORM\Column(name="lastName", type="string", length=255, nullable=true)
      */
     private $lastName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
+     * @ORM\Column(name="firstName", type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="tel", type="integer", nullable=true)
+     * @ORM\Column(name="phoneNumber", type="integer", nullable=true)
      */
     private $phoneNumber;
 
     /**
-     * Get id
+     * @var int
      *
-     * @return int
+     * @ORM\Column(name="code_postal", type="integer", nullable=true)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $codePostal;
 
     /**
-     * Set nom
+     * @var string
      *
-     * @param string $nom
-     *
-     * @return utilisateur
+     * @ORM\Column(name="adresse", type="string",nullable=true)
      */
-    public function setNom($nom)
+    private $adresse;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="socity", type="string", nullable=true)
+     */
+    private $socity;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="job", type="string",nullable=true)
+     */
+    private $job;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nation", type="string", nullable=true)
+     */
+    private $nation;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", nullable=true)
+     */
+    private $city;
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return User
+     */
+    public function setLastName($lastName)
     {
-        $this->nom = $nom;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get lastName
      *
      * @return string
      */
-    public function getNom()
+    public function getLastName()
     {
-        return $this->nom;
+        return $this->lastName;
     }
 
     /**
-     * Set prenom
+     * Set firstName
      *
-     * @param string $prenom
+     * @param string $firstName
      *
-     * @return utilisateur
+     * @return User
      */
-    public function setPrenom($prenom)
+    public function setFirstName($firstName)
     {
-        $this->prenom = $prenom;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     /**
-     * Get prenom
+     * Get firstName
      *
      * @return string
      */
-    public function getPrenom()
+    public function getFirstName()
     {
-        return $this->prenom;
+        return $this->firstName;
     }
-
     /**
-     * Set tel
+     * Set phoneNumber
      *
-     * @param integer $tel
+     * @param integer $phoneNumber
      *
-     * @return utilisateur
+     * @return User
      */
-    public function setTel($tel)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->tel = $tel;
+        $this->phoneNumber = $phoneNumber;
 
         return $this;
     }
 
     /**
-     * Get tel
+     * Get phoneNumber
      *
-     * @return int
+     * @return integer
      */
-    public function getTel()
+    public function getPhoneNumber()
     {
-        return $this->tel;
+        return $this->phoneNumber;
+    }
+
+    /**
+     * Set socity
+     *
+     * @param string $socity
+     *
+     * @return User
+     */
+    public function setSocity($socity)
+    {
+        $this->socity = $socity;
+
+        return $this;
+    }
+
+    /**
+     * Get socity
+     *
+     * @return string
+     */
+    public function getSocity()
+    {
+        return $this->socity;
+    }
+
+    /**
+     * Set job
+     *
+     * @param string $job
+     *
+     * @return User
+     */
+    public function setJob($job)
+    {
+        $this->job = $job;
+
+        return $this;
+    }
+
+    /**
+     * Get job
+     *
+     * @return string
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * Set nation
+     *
+     * @param string $nation
+     *
+     * @return User
+     */
+    public function setNation($nation)
+    {
+        $this->nation = $nation;
+
+        return $this;
+    }
+
+    /**
+     * Get nation
+     *
+     * @return string
+     */
+    public function getNation()
+    {
+        return $this->nation;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return User
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set codePostal
+     *
+     * @param integer $codePostal
+     *
+     * @return User
+     */
+    public function setCodePostal($codePostal)
+    {
+        $this->codePostal = $codePostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codePostal
+     *
+     * @return integer
+     */
+    public function getCodePostal()
+    {
+        return $this->codePostal;
     }
 }
