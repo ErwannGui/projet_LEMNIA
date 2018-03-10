@@ -59,189 +59,183 @@ Commandes - Portail utilisateur LEMNIA
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col s12 m12">
-                    <div class="z-depth-1 er_table-container white" style="margin-top:0;">
-                        <div class="row">
-                            <div class="input-field col s12 m6 l3">
-                                <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
-                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons er_close-search">close</i>
-                            </div>
-                            <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
-                                <select id="ma_selectColumn_bill" class="grey-text er_table-sort-select">
-                                    <option value="0">ID</option>
-                                    <option value="1">Service</option>
-                                    <option value="2">N° de commande</option>
-                                    <option value="3">Date</option>
-                                    <option value="4">Etat</option>
-                                </select>
-                                <label>Recherche par</label>
-                            </div>
-                            <div class="input-field col l2 offset-l4 hide-on-med-and-down">
-                                <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
-                                    <option value="4" selected>Défaut</option>
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                </select>
-                                <label>Afficher par</label>
-                            </div>
+                <div class="row z-depth-1 er_table-container white">
+                    <div class="row">
+                        <div class="input-field col s12 m6 l3">
+                            <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons er_close-search">close</i>
                         </div>
-                        <table id="indent-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Service</th>
-                                <th>N° commande</th>
-                                <th>Date</th>
-                                <th class="er_centered-chips">Etat</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody id="myTable" class="er_elem-table_indent">
-                            <tr>
-                                <td>1</td>
-                                <td>Location logiciel A</td>
-                                <td>1234567890</td>
-                                <td>01-03-2018</td>
-                                <td class="er_centered-chips">
-                                    <div class="chip er_chips-status amber lighten-4">
-                                        Envoyée
-                                    </div>
-                                </td>
-                                <td class="er_fab-toolbar_indent">
-                                    <div class="fixed-action-btn horizontal er_fab-action_indent">
-                                        <a class="btn-floating btn-large transparent right er_fab-btn_indent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                                        </a>
-                                        <ul class="left">
-                                            <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
-                                            <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Location logiciel B</td>
-                                <td>1234567890</td>
-                                <td>01-03-2018</td>
-                                <td class="er_centered-chips">
-                                    <div class="chip er_chips-status amber lighten-4">
-                                        Envoyée
-                                    </div>
-                                </td>
-                                <td class="er_fab-toolbar_indent">
-                                    <div class="fixed-action-btn horizontal er_fab-action_indent">
-                                        <a class="btn-floating btn-large transparent right er_fab-btn_indent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                                        </a>
-                                        <ul class="left">
-                                            <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
-                                            <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Intervention humaine</td>
-                                <td>1234567890</td>
-                                <td>01-03-2018</td>
-                                <td class="er_centered-chips">
-                                    <div class="chip er_chips-status green lighten-4">
-                                        Réceptionnée
-                                    </div>
-                                </td>
-                                <td class="er_fab-toolbar_indent">
-                                    <div class="fixed-action-btn horizontal er_fab-action_indent">
-                                        <a class="btn-floating btn-large transparent right er_fab-btn_indent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                                        </a>
-                                        <ul class="left">
-                                            <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
-                                            <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>License Artica Proxy</td>
-                                <td>1234567890</td>
-                                <td>01-03-2018</td>
-                                <td class="er_centered-chips">
-                                    <div class="chip er_chips-status blue lighten-4">
-                                        Validée
-                                    </div>
-                                </td>
-                                <td class="er_fab-toolbar_indent">
-                                    <div class="fixed-action-btn horizontal er_fab-action_indent">
-                                        <a class="btn-floating btn-large transparent right er_fab-btn_indent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                                        </a>
-                                        <ul class="left">
-                                            <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
-                                            <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Hébergement web</td>
-                                <td>1234567890</td>
-                                <td>01-03-2018</td>
-                                <td class="er_centered-chips">
-                                    <div class="chip er_chips-status grey lighten-2">
-                                        Expirée
-                                    </div>
-                                </td>
-                                <td class="er_fab-toolbar_indent">
-                                    <div class="fixed-action-btn horizontal er_fab-action_indent">
-                                        <a class="btn-floating btn-large transparent right er_fab-btn_indent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                                        </a>
-                                        <ul class="left">
-                                            <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
-                                            <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la facture"><i class="material-icons grey-text">details</i></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="col s12 row center er_pagination_bill">
-                            <span class="col s6 m4 l3 left-align er_elem-number_bill" id="total_reg"></span>
-                            <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+                        <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
+                            <select id="ma_selectColumn" class="grey-text er_table-sort-select">
+                                <option value="0">ID</option>
+                                <option value="1">Service</option>
+                                <option value="2">N° de commande</option>
+                                <option value="3">Date</option>
+                                <option value="4">Etat</option>
+                            </select>
+                            <label>Recherche par</label>
                         </div>
-                        <!-- Modal de détails de la commande -->
-                        <div id="modal_details" class="modal modal-fixed-footer">
-                            <div class="modal-content row">
-                                <h4>Détails de la commande n°1234567890</h4>
-                                <span class="col s12 er_up-status">Réceptionnée</span>
-                                <strong class="col s12">Description : </strong>
-                                <p class="er_details-content grey-text col s12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mi a purus lacinia rhoncus. Phasellus non aliquet neque, vel ornare purus. Nam id sapien tempor, placerat dolor vel, porta odio. In eros risus, consequat non gravida ac, mollis ut est. In hac habitasse platea dictumst. Cras consequat lobortis sapien eget mollis. Maecenas eu ante eu metus dapibus blandit non quis augue. Phasellus vestibulum mi odio, vitae porttitor dui sodales non. Quisque pellentesque ut sem vitae semper. Pellentesque tincidunt elit metus, at vestibulum ipsum ultricies et. Proin at consequat libero, eget pellentesque nibh. Ut sit amet tincidunt metus, vitae elementum neque. Praesent nibh velit, lobortis vel aliquam quis, dictum id massa.</p>
-                                <div class="col row">
-                                    <strong class="col s12">Durée :</strong>
-                                    <p class="col s12 er_details-content grey-text">1 an</p>
-                                </div>
-                                <div class="col row">
-                                    <strong class="col s12">Numéro de commande :</strong>
-                                    <p class="col s12 er_details-content grey-text">1234567890</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer er_modal-details-footer">
-                                <a href="{{ path('lemnia_customer_portal_bill') }}" class="modal-action modal-close btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">content_paste</i>Voir la facture</a>
-                                <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">refresh</i>Annuler la commande</a>
-                            </div>
+                        <div class="input-field col l2 offset-l4 hide-on-med-and-down">
+                            <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
+                                <option value="4" selected>Défaut</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                            <label>Afficher par</label>
                         </div>
                     </div>
-
+                    <table id="indent-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Service</th>
+                            <th>N° commande</th>
+                            <th>Date</th>
+                            <th class="er_centered-chips">Etat</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="myTable" class="er_elem-table">
+                        <tr>
+                            <td>1</td>
+                            <td>Location logiciel A</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td class="er_centered-chips">
+                                <div class="chip er_chips-status amber lighten-4">
+                                    Envoyée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la commande"><i class="material-icons grey-text">remove_red_eye</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Location logiciel B</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td class="er_centered-chips">
+                                <div class="chip er_chips-status amber lighten-4">
+                                    Envoyée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la commande"><i class="material-icons grey-text">remove_red_eye</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Intervention humaine</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td class="er_centered-chips">
+                                <div class="chip er_chips-status green lighten-4">
+                                    Réceptionnée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la commande"><i class="material-icons grey-text">remove_red_eye</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>License Artica Proxy</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td class="er_centered-chips">
+                                <div class="chip er_chips-status blue lighten-4">
+                                    Validée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la commande"><i class="material-icons grey-text">remove_red_eye</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Hébergement web</td>
+                            <td>1234567890</td>
+                            <td>01-03-2018</td>
+                            <td class="er_centered-chips">
+                                <div class="chip er_chips-status grey lighten-2">
+                                    Expirée
+                                </div>
+                            </td>
+                            <td class="er_fab-toolbar_indent">
+                                <div class="fixed-action-btn horizontal er_fab-action_indent">
+                                    <a class="btn-floating btn-large transparent right er_fab-btn_indent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="grey" width="36" height="56" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                                    </a>
+                                    <ul class="left">
+                                        <li><a href="{{ path('lemnia_customer_portal_bill') }}" class="btn-floating grey lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aller à la facture"><i class="material-icons grey-text">content_paste</i></a></li>
+                                        <li><a href="#modal_details" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Voir le détails de la commande"><i class="material-icons grey-text">remove_red_eye</i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="col s12 row center er_table-pagination">
+                        <span class="col s6 m4 l3 left-align er_elem-number" id="total_reg"></span>
+                        <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+                    </div>
+                    <!-- Modal de détails de la commande -->
+                    <div id="modal_details" class="modal modal-fixed-footer">
+                        <div class="modal-content row">
+                            <h4>Détails de la commande n°1234567890</h4>
+                            <span class="col s12 er_up-status">Réceptionnée</span>
+                            <strong class="col s12">Description : </strong>
+                            <p class="er_details-content grey-text col s12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mi a purus lacinia rhoncus. Phasellus non aliquet neque, vel ornare purus. Nam id sapien tempor, placerat dolor vel, porta odio. In eros risus, consequat non gravida ac, mollis ut est. In hac habitasse platea dictumst. Cras consequat lobortis sapien eget mollis. Maecenas eu ante eu metus dapibus blandit non quis augue. Phasellus vestibulum mi odio, vitae porttitor dui sodales non. Quisque pellentesque ut sem vitae semper. Pellentesque tincidunt elit metus, at vestibulum ipsum ultricies et. Proin at consequat libero, eget pellentesque nibh. Ut sit amet tincidunt metus, vitae elementum neque. Praesent nibh velit, lobortis vel aliquam quis, dictum id massa.</p>
+                            <div class="col row">
+                                <strong class="col s12">Durée :</strong>
+                                <p class="col s12 er_details-content grey-text">1 an</p>
+                            </div>
+                            <div class="col row">
+                                <strong class="col s12">Numéro de commande :</strong>
+                                <p class="col s12 er_details-content grey-text">1234567890</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer er_modal-details-footer">
+                            <a href="{{ path('lemnia_customer_portal_bill') }}" class="modal-action modal-close btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">content_paste</i>Voir la facture</a>
+                            <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">delete</i>Annuler la commande</a>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
         </section>
     </main>
 {% endblock %}
@@ -307,6 +301,12 @@ Commandes - Portail utilisateur LEMNIA
             }
         });
 
+        $("tbody tr").each(function() {
+            if ($('.er_chips-status').text() == 'Validée') {
+                $('<li><a href="#modal_payment" class="btn-floating grey lighten-2 tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Payer le devis"><i class="material-icons grey-text">credit_card</i></a></li>').appendTo($('.er_fab-toolbar_indent ul'));
+            }
+        });
+
     });
 
     $('.tooltipped').tooltip({delay: 50});
@@ -322,7 +322,7 @@ Commandes - Portail utilisateur LEMNIA
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
-            var value = document.getElementById("ma_selectColumn_bill");
+            var value = document.getElementById("ma_selectColumn");
             var selectedColumn = value.options[value.selectedIndex].value;
             td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
             if (td) {

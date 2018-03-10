@@ -32,7 +32,7 @@ class HomePageController extends Controller
         $users = $em->getRepository('LemniaUserBundle:User')->findAll();*/
 
         return $this->render('homepage/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
 

@@ -244,11 +244,20 @@ header nav a{ color: black!important; }
     width: 240px!important;
 }
 
-.dataTables_wrapper select{
-    display: block!important;
+#action_user{
+    width: 220px!important;
+    right: 10%!important;
 }
 
-@media only screen and (max-width : 1080px) {
+#action_user li > a > i{
+    margin-right: 12px;
+}
+
+#action_user li > a{
+    padding-right: 0;
+}
+
+@media only screen and (max-width : 1170px) {
     .er_hide-column_listuser{
         display: none!important;
     }
@@ -261,19 +270,23 @@ header nav a{ color: black!important; }
 
 /* -- Table de factures -- */
 
-.er_pagination_bill{
+.er_table-pagination{
     display: inline-block;
     vertical-align: top;
     margin-top: 15px;
     margin-bottom: 0!important;
 }
 
-.er_elem-number_bill{
+.er_table-pagination li{
+    cursor: pointer;
+}
+
+.er_elem-number{
     padding-top: 18px!important;
     height: 30px;
 }
 
-.er_elem-table_bill tr:hover .er_chips-action{
+.er_elem-table tr:hover .er_chips-action{
     visibility: visible!important;
 }
 
