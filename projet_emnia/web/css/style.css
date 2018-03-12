@@ -1161,4 +1161,10 @@ input{
 #addCard{
     top: -200px;
 }
+canvas{
+    background-color: white;
+}
+#dateSignature{
+    padding-left: 20px;
+}
 /*----------------------------Fin contenu Mael --------------------------------------*/

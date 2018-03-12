@@ -55,6 +55,7 @@ class UserController extends Controller
 		$carteBancaire = $this->getDoctrine()
             ->getRepository(CarteBancaire::class)
             ->findBy(array("userId"=>$userId));
+
         $formInfoPerso = $this -> createFormBuilder()
             ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
@@ -100,18 +101,24 @@ class UserController extends Controller
             ->add('bic', NumberType::class)
             ->getForm();
 
+//
+//        $data_uri = "data:img/png;base64,iVBORw0K...";
+//        $encoded_image = explode(",", $data_uri)[1];
+//        $decoded_image = base64_decode($encoded_image);
+//        file_put_contents("signature.png", $decoded_image);
+
         $formSepa->handleRequest($request);
         $userUpdate = $em->getRepository('LemniaUserBundle:User')->find($userId);
         if ($formSepa->isSubmitted() && $formSepa->isValid()) {
             $iban = $formSepa->get('iban')->getData();
             $bic = $formSepa->get('bic')->getData();
-            $date = date("Y/m/d");
+            $date = new \DateTime('now');
 
 
             $sepa->setIban($iban);
             $sepa->setBic($bic);
             $sepa->setDateSignature($date);
-            $sepa->setUserId($userUpdate->getId());
+            $sepa->setUserId($user);
 
             $em->flush();
         }

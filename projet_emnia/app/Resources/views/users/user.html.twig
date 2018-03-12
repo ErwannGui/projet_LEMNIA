@@ -161,9 +161,10 @@ Compte utilisateur - Portail utilisateur LEMNIA
 
                                     <label for="signature" class="white-text">Signature électronique</label>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
-                                        <input type="text" placeholder="signature" id="signature" class="validate white-text">
+                                        <canvas class="pad" id="pad" width="300" height="150"></canvas>
+                                        <input type="hidden" id="output" name="output" class="output">
                                         {% if sepa != null %}
-                                            <p class="white-text" style="font-size: 14px">Signé le {{sepa.getDateSignature|date('d/m/Y')}}</p>
+                                            <p class="white-text" id="dateSignature" style="font-size: 14px">Signé le {{sepa.getDateSignature|date('d/m/Y')}}</p>
                                         {% endif %}
                                     </div>
                                     <div id="validerSepa">
@@ -231,7 +232,8 @@ Compte utilisateur - Portail utilisateur LEMNIA
     </main>
 {% endblock %}
 {% block javascripts %}
-     <script src="{{ asset('js/user.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="{{ asset('js/user.js') }}"></script>
 {% endblock %}
 
 {% block stylesheets %}
