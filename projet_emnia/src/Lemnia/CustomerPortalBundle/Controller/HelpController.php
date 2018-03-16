@@ -26,7 +26,7 @@ class HelpController extends Controller
         $user = $this->getUser();
 
         return $this->render('help/help.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user, 
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
 }

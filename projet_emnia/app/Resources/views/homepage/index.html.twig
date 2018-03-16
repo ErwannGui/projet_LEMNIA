@@ -105,12 +105,87 @@
             <div class="row">
                 <div class="col s12 m12">
                     <div class="white card-panel z-depth-1">
-                        <p>Amazing status block</p>
+                        <p>Commandes</p>
+                        <!--Commande envoyée-->
+                        <div class="an_commande_envoyee">
+                            <div class="co_statusCardCirleIcon yellow lighten-4">
+                                <i class="material-icons amber-text text-lighten-3">send</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande envoyée</span>
+                                <span class="black-text text-lighten-1">2</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Commande reçue-->
+                        <div class="an_commande_recue">
+                            <div class="co_statusCardCirleIcon green lighten-4">
+                                <i class="material-icons green-text text-lighten-3">file_download</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande reçue</span>
+                                <span class="black-text text-lighten-1">1</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Commande validée-->
+                        <div class="an_commande_validee">
+                            <div class="co_statusCardCirleIcon light-blue lighten-5">
+                                <i class="material-icons light-blue-text text-lighten-3">check</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande validée</span>
+                                <span class="black-text text-lighten-1">2</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Commande expirée-->
+                        <div class="an_commande_expiree">
+                            <div class="co_statusCardCirleIcon grey lighten-4">
+                                <i class="material-icons grey-text text-lighten-2">watch_later</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande expirée</span>
+                                <span class="black-text text-lighten-1">1</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col s12 m12">
                     <div class="white card-panel z-depth-1">
-                        <p>Amazing other status block</p>
+                        <p>Licences et abonnements</p>
+                        <!--Date de validitée lointaine-->
+                        <div class="an_validite_lointaine">
+                            <div class="co_statusCardCirleIcon green lighten-5">
+                                <i class="material-icons green-text text-lighten-3">check</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité lointaine</span>
+                                <span class="black-text text-lighten-1">5</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Date de validitée proche-->
+                        <div class="an_validite_proche">
+                            <div class="co_statusCardCirleIcon yellow lighten-4">
+                                <i class="material-icons amber-text text-lighten-3">hourglass_empty</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité proche</span>
+                                <span class="black-text text-lighten-1">2</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Date de validitée dépasée-->
+                        <div class="an_validite_depasee">
+                            <div class="co_statusCardCirleIcon red lighten-4">
+                                <i class="material-icons red-text text-lighten-3">warning</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité dépassé</span>
+                                <span class="black-text text-lighten-1">1</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,62 +200,62 @@
         font: 18px/1.5 sans-serif;
         overflow-x: hidden;
     }
-    
+
     h1,
     h2 {
         line-height: 1.2;
         margin: 0 0 .5em;
     }
-    
+
     h1 {
         font-size: 36px;
     }
-    
+
     h2 {
         font-size: 21px;
         margin-bottom: 1em;
     }
-    
+
     p {
         margin: 0 0 1em 0;
     }
-    
+
     a {
         color: #0000F0;
     }
-    
+
     a:hover {
         text-decoration: none;
     }
-    
+
     code {
         background: #F5F5F5;
         max-width: 100px;
         padding: 2px 6px;
         word-wrap: break-word;
     }
-    
+
     #wrapper {
         background: #FFF;
         margin: 1em auto;
         max-width: 800px;
         width: 95%;
     }
-    
+
     #container {
         padding: 2em;
     }
-    
+
     #welcome,
     #status {
         margin-bottom: 2em;
     }
-    
+
     #welcome h1 span {
         display: block;
         font-size: 75%;
     }
-    
+
     #icon-status,
     #icon-book {
         float: left;
@@ -189,11 +264,11 @@
         margin-top: -4px;
         width: 64px;
     }
-    
+
     #icon-book {
         display: none;
     }
-    
+
     @media (min-width: 768px) {
         #wrapper {
             width: 80%;
@@ -228,6 +303,5 @@
             animation: fade-in 1s .2s forwards;
         }
     }
-
 </style>
 {% endblock %}

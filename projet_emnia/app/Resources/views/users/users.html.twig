@@ -9,14 +9,40 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
     <main class="main-content row">
         <h3>Liste des utilisateurs</h3>
         <section class="col s12 l12">
-            <div class="row">
-                <!--Affichage du tableau de tout les utilisateurs-->
-                <table id="users" class="display restponsive-table" cellspacing="0" width="90%">
+            <div class="row z-depth-1 white er_table-container">
+                <div class="row">
+                    <div class="input-field col s12 m6 l3">
+                        <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons er_close-search">close</i>
+                    </div>
+                    <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
+                        <select id="ma_selectColumn" class="grey-text er_table-sort-select">
+                            <option value="0">ID</option>
+                            <option value="2">Prénom</option>
+                            <option value="1">Nom</option>
+                            <option value="3">Entreprise</option>
+                            <option value="4">Téléphone</option>
+                            <option value="5">Mail</option>
+                        </select>
+                        <label>Recherche par</label>
+                    </div>
+                    <div class="input-field col l2 offset-l4 hide-on-med-and-down">
+                        <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
+                            <option value="6" selected>Défaut</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <label>Afficher par</label>
+                    </div>
+                </div>
+                <table id="users-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight col s12" >
                     <thead>
                         <tr>
-                            <th class="hide-on-med-and-down er_hide-column_listuser">ID</th>
-                            <th>Nom</th>
+                            <th class="hide-on-med-and-down er_hide-column_listuser">#</th>
                             <th>Prénom</th>
+                            <th>Nom</th>
                             <th>Entreprise</th>
                             <th class="hide-on-med-and-down er_hide-column_listuser">Téléphone</th>
                             <th>Mail</th>
@@ -25,8 +51,7 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
                             <th class="hide-on-med-and-down er_hide-column_listuser"></th>
                         </tr>
                     </thead>
-
-                    <tbody>
+                    <tbody id="myTable" class="er_elem-table_users">
                         {% for userN in users %}
                         <tr>
                             <td class="hide-on-med-and-down er_hide-column_listuser">{{ userN.id }}</td>
@@ -35,11 +60,11 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
                             <td>Société</td>
                             <td class="hide-on-med-and-down er_hide-column_listuser">{{ userN.phoneNumber }}</td>
                             <td>{{ userN.email }}</td>
-                            <td class="hide-on-med-and-down er_hide-column_listuser"><a class="btn-floating btn tooltipped waves-effect waves-light cyan darken-2 right" data-tooltip="Se connecter avec ce compte. En tant qu'administrateur, vous pouvez modifier toutes les données de cet utilisateur." data-position="top" data-delay="50" href="" style="width: 25px; height: 25px;"><i class="material-icons" style="width: 25px; line-height: 25px; transform: scale(0.8);">search</i></a></td>
+                            <td class="hide-on-med-and-down er_hide-column_listuser"><a class="btn-floating btn tooltipped waves-effect waves-light light-blue darken-1 right" data-tooltip="Se connecter avec ce compte. En tant qu'administrateur, vous pouvez modifier toutes les données de cet utilisateur." data-position="top" data-delay="50" href="" style="width: 36px; height: 36px;"><i class="material-icons" style="width: 36px; line-height: 36px; transform: scale(0.7);">search</i></a></td>
                             <td class="hide-on-large-only er_show-column_listuser"><a class="dropdown-button" href="#!" data-activates="action_user"><i class="material-icons right">arrow_drop_down</i></a></td>
-                            <td class="hide-on-med-and-down er_hide-column_listuser"><a class="btn-floating btn waves-effect waves-light cyan darken-2 right" href="#modal_edit_user{{ userN.id }}" style="width: 25px; height: 25px;"><i class="material-icons" style="width: 25px; line-height: 25px; transform: scale(0.8);">edit</i></a></td>
+                            <td class="hide-on-med-and-down er_hide-column_listuser"><a class="btn-floating btn modal-trigger waves-effect waves-light light-blue darken-1 right" href="#modal_edit_user{{ userN.id }}" style="width: 36px; height: 36px;"><i class="material-icons" style="width: 36px; line-height: 36px; transform: scale(0.7);">edit</i></a></td>
                         </tr>
-                        <ul id='action_user' class='dropdown-content er_dropdown-user_listuser'>
+                        <ul id='action_user' class='dropdown-content'>
                             <li><a class="modal-trigger" href="#modal_edit_user{{ userN.id }}">Modifier l'utilisateur<i class="material-icons right">edit</i></a></li>
                             <li><a href="{{ path('lemnia_customer_portal_homepage') }}">Se connecter<i class="material-icons right">search</i></a></li>
                             <li class="divider"></li>
@@ -61,7 +86,7 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">phone</i>
                                         <input  id="tel" type="tel" class="validate" value="{{ userN.phoneNumber }}">
-                                        <label for="tel" data-error="Type de numéro correct" data-success="Type de numéro incorrect">Tléphone</label>
+                                        <label for="tel" data-error="Type de numéro correct" data-success="Type de numéro incorrect">Téléphone</label>
                                     </div>
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">email</i>
@@ -77,6 +102,10 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
                         {% endfor %}
                     </tbody>
                 </table>
+                <div class="col s12 row center er_table-pagination">
+                    <span class="col s6 m4 l3 left-align er_elem-number" id="total_reg"></span>
+                    <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+                </div>
             </div>
         </section>
     </main>
@@ -114,10 +143,67 @@ Liste des utilisateurs - Portail utilisateur LEMNIA
 {% endblock %}
 
 {% block javascripts %}
-<script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-            $('#users').DataTable();
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Prev',
+          nextText:'Next',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:6
         });
+
+    });
+
+    $('.dropdown-button').dropdown();
+    $('.tooltipped').tooltip({delay: 50});
+    /*$('.fixed-action-btn').openFAB();*/
+
+    function find() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("users-table");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            var value = document.getElementById("ma_selectColumn");
+            var selectedColumn = value.options[value.selectedIndex].value;
+            td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        
+    }
+
+    function sort() {
+        var number = $('#er_nb-elmt_table option:selected').val();
+        var element = document.getElementById("myPager");
+
+        // boucle tant qu'un enfant existe
+        while (element.firstChild) {
+           // le supprime
+           element.removeChild(element.firstChild);
+        }
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Précédent',
+          nextText:'Suivant',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:number
+        });
+    }
 </script>
 {% endblock %}

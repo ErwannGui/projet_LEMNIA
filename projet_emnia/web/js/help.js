@@ -10,7 +10,7 @@ $('#co_sendMessageWindowClose_help').click(function(){
 
 var discussionModal = $('#co_discussionModalContainer_help');
 //modal discussion
-$('#co_openDiscussionModalButton_help').click(function() {
+$('.co_openDiscussionModalButton_help').click(function() {
     discussionModal.css('display', 'flex');
     discussionModal.animate({
         opacity: 1
