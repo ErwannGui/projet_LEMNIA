@@ -230,7 +230,11 @@ header nav a {
 
 .er_logo-entreprise_header {
     filter: brightness(1.2);
-    height: 70%;
+    height: 40%;
+    width: 40%;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .er_user_header {
@@ -1222,6 +1226,23 @@ header nav a {
 
 /*------------------------------- Contenu Andrei---------------------------------*/
 
+/*------------------------------- LOGO VETICAL MENU---------------------------------*/
+
+.an_logo_texte_verticalmenu {
+    display: flex;
+    height: 100px;
+    background-color: #202026;
+    width: 100%;
+    margin-top: -15px;
+    margin-bottom: 50px;
+}
+
+.an_texte_entreprise_verticalmenu {
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
 /*------------------------------- Tableau de bord---------------------------------*/
 
 .an_statusCardTextContent {
@@ -1231,8 +1252,8 @@ header nav a {
     width: 80%;
     margin-top: 15px;
 }
- 
-.divider{
+
+.divider {
     margin: 10px;
 }
 
