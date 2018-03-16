@@ -1173,11 +1173,29 @@ input{
 }
 #addCard{
     top: -200px;
+    z-index: -1;
 }
 canvas{
     background-color: white;
 }
 #dateSignature{
     padding-left: 20px;
+}
+#form_dateExpiration{
+    display: flex;
+}
+#form_dateExpiration .select-wrapper:nth-of-type(2){
+    visibility: hidden;
+    position: absolute;
+}
+.select-dropdown{
+    color: white;
+}
+#buttonAddCard{
+    width: 250px;
+    align-self: flex-end;
+}
+.buttonUser{
+    background-color: #03A9F4 !important;
 }
 /*----------------------------Fin contenu Mael --------------------------------------*/

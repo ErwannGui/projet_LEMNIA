@@ -24,7 +24,7 @@ class Sepa
     /**
      * @var string
      *
-     * @ORM\COlumn(name="iban", type="string", nullable=true)
+     * @ORM\Column(name="iban", type="string", nullable=true)
      */
     private $iban;
 
@@ -36,6 +36,13 @@ class Sepa
     private $bic;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="signature", type="string", nullable=true)
+     */
+    private $signature;
+
+    /**
      * @var date
      *
      * @ORM\Column(name="date_signature", type="date", nullable=true)
@@ -43,7 +50,7 @@ class Sepa
     private $dateSignature;
 
     /**
-     * @ORM\OneToOne(targetEntity="Lemnia\UserBundle\Entity\User")
+     * @ORM\OneToOne(targetEntity="Lemnia\UserBundle\Entity\User", cascade={"persist"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $userId;
@@ -57,5 +64,124 @@ class Sepa
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set iban
+     *
+     * @param string $iban
+     *
+     * @return Sepa
+     */
+    public function setIban($iban)
+    {
+        $this->iban = $iban;
+
+        return $this;
+    }
+
+    /**
+     * Get iban
+     *
+     * @return string
+     */
+    public function getIban()
+    {
+        return $this->iban;
+    }
+
+    /**
+     * Set bic
+     *
+     * @param integer $bic
+     *
+     * @return Sepa
+     */
+    public function setBic($bic)
+    {
+        $this->bic = $bic;
+
+        return $this;
+    }
+
+    /**
+     * Get bic
+     *
+     * @return integer
+     */
+    public function getBic()
+    {
+        return $this->bic;
+    }
+
+    /**
+     * Set dateSignature
+     *
+     * @param \DateTime $dateSignature
+     *
+     * @return Sepa
+     */
+    public function setDateSignature($dateSignature)
+    {
+        $this->dateSignature = $dateSignature;
+
+        return $this;
+    }
+
+    /**
+     * Get dateSignature
+     *
+     * @return \DateTime
+     */
+    public function getDateSignature()
+    {
+        return $this->dateSignature;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param \Lemnia\UserBundle\Entity\User $userId
+     *
+     * @return Sepa
+     */
+    public function setUserId(\Lemnia\UserBundle\Entity\User $userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return \Lemnia\UserBundle\Entity\User
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set signature
+     *
+     * @param string $signature
+     *
+     * @return Sepa
+     */
+    public function setSignature($signature)
+    {
+        $this->signature = $signature;
+
+        return $this;
+    }
+
+    /**
+     * Get signature
+     *
+     * @return string
+     */
+    public function getSignature()
+    {
+        return $this->signature;
+    }
+}

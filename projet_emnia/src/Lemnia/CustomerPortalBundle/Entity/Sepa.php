@@ -24,7 +24,7 @@ class Sepa
     /**
      * @var string
      *
-     * @ORM\COlumn(name="iban", type="string", nullable=true)
+     * @ORM\Column(name="iban", type="string", nullable=true)
      */
     private $iban;
 
@@ -36,9 +36,16 @@ class Sepa
     private $bic;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="signature", type="text", nullable=true)
+     */
+    private $signature;
+
+    /**
      * @var date
      *
-     * @ORM\Column(name="date_signature", type="date", nullable=true)
+     * @ORM\Column(name="date_signature", type="date" ,nullable=true)
      */
     private $dateSignature;
 
@@ -152,5 +159,29 @@ class Sepa
     public function getUserId()
     {
         return $this->userId;
+    }
+
+    /**
+     * Set signature
+     *
+     * @param string $signature
+     *
+     * @return Sepa
+     */
+    public function setSignature($signature)
+    {
+        $this->signature = $signature;
+
+        return $this;
+    }
+
+    /**
+     * Get signature
+     *
+     * @return string
+     */
+    public function getSignature()
+    {
+        return $this->signature;
     }
 }

@@ -3,20 +3,15 @@
 namespace Lemnia\CustomerPortalBundle\Controller;
 
 use Lemnia\CustomerPortalBundle\Entity\CarteBancaire;
-use Lemnia\UserBundle\LemniaUserBundle;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Lemnia\UserBundle\Entity\User;
-use Lemnia\CustomerPortalBundle\Entity\Sepa;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
 class UserController extends Controller
@@ -97,6 +92,7 @@ class UserController extends Controller
         $formSepa = $this -> createFormBuilder()
             ->add('iban', TextType::class)
             ->add('bic', NumberType::class)
+            ->add('signature',HiddenType::class)
             ->getForm();
 
 //
@@ -106,30 +102,52 @@ class UserController extends Controller
 //        file_put_contents("signature.png", $decoded_image);
 
         $formSepa->handleRequest($request);
-        $userUpdate = $em->getRepository('LemniaUserBundle:User')->find($userId);
+
         if ($formSepa->isSubmitted() && $formSepa->isValid()) {
             $iban = $formSepa->get('iban')->getData();
             $bic = $formSepa->get('bic')->getData();
             $date = new \DateTime('now');
+            $signature = $formSepa->get('signature')->getData();
 
 
             $sepa->setIban($iban);
             $sepa->setBic($bic);
             $sepa->setDateSignature($date);
             $sepa->setUserId($user);
+            $sepa->setSignature($signature);
 
             $em->flush();
         }
 
 
         $formCarteBancaire = $this -> createFormBuilder()
-            ->add('type', TextType::class)
-            ->add('numeroCarte', NumberType::class)
-            ->add('dateExpiration', DateType::class)
-            ->add('pictogramme', NumberType::class)
+            ->add('type', ChoiceType::class, array(
+                'choices' => array(
+                    'Visa' => 'Visa',
+                    'MasterCard' => 'MasterCard'
+                )
+            ))
+            ->add('numeroCarte', NumberType::class,array(
+                'attr' => array(
+                    'placeholder' => 'numéro de la carte',
+                    'style' => 'margin-left:20px; color:white'
+                )
+            ))
+            ->add('dateExpiration', DateType::class, array(
+                'attr'=>array(
+                    'style'=>'width:150px; margin-right:20px; color:white'
+                ),
+                'label' => 'Date d\'expiration: '
+            ))
+            ->add('pictogramme', NumberType::class, array(
+                'attr'=>array(
+                    'style'=>'width:150px; color:white',
+                    'placeholder'=>'Pictogramme'
+                )
+            ))
             ->getForm();
-
         $formCarteBancaire->handleRequest($request);
+
         if ($formCarteBancaire->isSubmitted() && $formCarteBancaire->isValid()) {
             $type = $formCarteBancaire->get('type')->getData();
             $numeroCarte = $formCarteBancaire->get('numeroCarte')->getData();
@@ -137,13 +155,17 @@ class UserController extends Controller
             $pictogramme = $formCarteBancaire->get('pictogramme')->getData();
 
             $addCarteBancaire = new CarteBancaire();
+            if (($type == "Visa" && substr($numeroCarte,0,1) == "4") or ($type == "MasterCard" && substr($numeroCarte,0,1) == "5")){
+                $addCarteBancaire->setType($type);
+                $addCarteBancaire->setNumeroCarte($numeroCarte);
+                $addCarteBancaire->setDateExpiration($date);
+                $addCarteBancaire->setPictogramme($pictogramme);
+                $addCarteBancaire->setUserId($user);
+                $em->flush();
+            }else{
 
-            $addCarteBancaire->setType($type);
-            $addCarteBancaire->setNumeroCarte($numeroCarte);
-            $addCarteBancaire->setDateExpiration($date);
-            $addCarteBancaire->setPictogramme($pictogramme);
+            }
 
-            $em->flush();
         }
 
 

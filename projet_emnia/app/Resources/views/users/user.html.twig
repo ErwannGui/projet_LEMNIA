@@ -106,7 +106,7 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                         <input type="password" placeholder="Valider le mot de passe" id="validatePassword" class="validate white-text">
                                     </div>
                                     <div id="validerInfosCo ">
-                                        <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Valider les modifications</button>
+                                        <button class="waves-effect waves-light btn buttonUser col s6 offset-s3" data-action="save-jpg" type="submit">Valider les modifications</button>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,10 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                                 <td class="grey-text text-lighten-1" style="font-size: 14px">{{sepa.getDateSignature|date("d/m/Y")}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="grey-text" style="font-size: 16px">SIGNATURE</td>
+                                                <td class="grey-text" style="font-size: 16px;vertical-align:text-top">SIGNATURE</td>
+                                                {% if sepa.getSignature != null %}
+                                                <td class="grey-text" style="font-size: 16px"><img src="{{sepa.getSignature}}" alt="signature"/></td>
+                                                {% endif %}
                                             </tr>
                                         </tbody>
                                     </table>
@@ -162,13 +165,13 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     <label for="signature" class="white-text">Signature électronique</label>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
                                         <canvas class="pad" id="pad" width="300" height="150"></canvas>
-                                        <input type="hidden" id="output" name="output" class="output">
+                                        {{form_widget(formSepa.signature)}}
                                         {% if sepa != null %}
                                             <p class="white-text" id="dateSignature" style="font-size: 14px">Signé le {{sepa.getDateSignature|date('d/m/Y')}}</p>
                                         {% endif %}
                                     </div>
                                     <div id="validerSepa">
-                                        <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Valider les modifications</button>
+                                        <button id="boutonSepa" class="waves-effect waves-light btn buttonUser col s6 offset-s3" type="submit">Valider les modifications</button>
                                     </div>
                                     {{ form_end(formSepa) }}
                                 </div>
@@ -202,7 +205,7 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                         {% endfor %}
                                         </tbody>
                                     </table>
-                                    <a class="btn blue lighten-1 modal-trigger" id="addNewCard" href="#">Ajoutez une carte</a>
+                                    <a class="btn buttonUser modal-trigger" id="addNewCard" href="#">Ajoutez une carte</a>
                                 </div>
                             </div>
                         </div>
@@ -213,14 +216,15 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                 {{ form_start(formCarteBancaire) }}
                                 <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
                                     {{form_widget(formCarteBancaire.type)}}
-                                    {{form_widget(formCarteBancaire.numeroCarte)}}
+                                    {{form_widget(formCarteBancaire.numeroCarte,{'type': 'number'})}}
                                 </div>
                                 <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <p style="margin-right:20px; font-size:14px;color:white ">Date d'expiration: </p>
                                     {{form_widget(formCarteBancaire.dateExpiration)}}
-                                    {{form_widget(formCarteBancaire.pictogramme)}}
+                                    {{form_widget(formCarteBancaire.pictogramme,{'type': 'number'})}}
                                 </div>
                                 <div class="ma_carteBancaire_contenu">
-                                    <button class="waves-effect waves-light btn blue blue-lighten-3 col s6 offset-s3" type="submit">Ajoutez la carte</button>
+                                    <button class="waves-effect waves-light btn buttonUser col s6 offset-s3" type="submit" id="buttonAddCard">Ajoutez la carte</button>
                                 </div>
                                 {{form_end(formCarteBancaire)}}
                             </div>
