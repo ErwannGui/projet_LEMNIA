@@ -34,7 +34,8 @@
                 <!-- Graph -->
                 <div class="col s12 m12">
                     <div class="white card-panel z-depth-1">
-                        <canvas id="myChart"></canvas>
+                        <span class="title_card">Dépenses mensuelles</span>
+                        <canvas style="margin-top: 20px" id="myChart"></canvas>
                         <script>
                             var ctx = document.getElementById('myChart').getContext('2d');
                             var chart = new Chart(ctx, {
@@ -43,36 +44,36 @@
                                 data: {
                                     labels: ["January", "February", "March", "April", "May", "June", "July"],
                                     datasets: [{
-                                        label: "Statistiques",
+                                        label: "Dépenses totales",
                                         fill: true,
-                                        //yAxisID: 'k',
                                         borderColor: '#87CEFA',
                                         backgroundColor: '#87CEFA',
+                                        pointBackgroundColor: '#1E90FF',
+                                        pointBorderColor: '#4169E1',
+                                        pointRadius: 4,
+                                        pointHoverRadius: 7,
                                         // Dans le data faudra remplacer avec les requête dans l'API
                                         data: [15, 20, 12, 25, 18, 25, 32],
                                     }]
                                 },
 
                                 options: {
+                                    //on enlève la légende de base 
                                     legend: {
                                         display: false,
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: 'Statistique',
-                                        fontSize: 20,
-                                        fontStyle: 'italic',
-                                        padding: 20,
+
                                     },
                                     scales: {
+                                        //on affiche une légende pour l'axe y
                                         yAxes: [{
                                             display: true,
                                             scaleLabel: {
                                                 display: true,
-                                                labelString: 'Dépenses Mensuelles',
+                                                labelString: 'Montant des dépenses',
                                             },
 
                                             ticks: {
+                                                //On fait commencer l'axe à 0 et on rajoute un k après la valeur 
                                                 beginAtZero: true,
                                                 userCallback: function(tick) {
                                                     return tick.toString() + 'k';
