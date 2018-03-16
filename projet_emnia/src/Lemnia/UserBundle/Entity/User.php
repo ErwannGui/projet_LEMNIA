@@ -50,6 +50,44 @@ class User extends FosUser
     private $phoneNumber;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="code_postal", type="integer", nullable=true)
+     */
+    private $codePostal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string",nullable=true)
+     */
+    private $adresse;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="socity", type="string", nullable=true)
+     */
+    private $socity;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="job", type="string",nullable=true)
+     */
+    private $job;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nation", type="string", nullable=true)
+     */
+    private $nation;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", nullable=true)
+     */
+    private $city;
+
+    /**
      * Set lastName
      *
      * @param string $lastName
@@ -96,7 +134,6 @@ class User extends FosUser
     {
         return $this->firstName;
     }
-
     /**
      * Set phoneNumber
      *
@@ -119,5 +156,149 @@ class User extends FosUser
     public function getPhoneNumber()
     {
         return $this->phoneNumber;
+    }
+
+    /**
+     * Set socity
+     *
+     * @param string $socity
+     *
+     * @return User
+     */
+    public function setSocity($socity)
+    {
+        $this->socity = $socity;
+
+        return $this;
+    }
+
+    /**
+     * Get socity
+     *
+     * @return string
+     */
+    public function getSocity()
+    {
+        return $this->socity;
+    }
+
+    /**
+     * Set job
+     *
+     * @param string $job
+     *
+     * @return User
+     */
+    public function setJob($job)
+    {
+        $this->job = $job;
+
+        return $this;
+    }
+
+    /**
+     * Get job
+     *
+     * @return string
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * Set nation
+     *
+     * @param string $nation
+     *
+     * @return User
+     */
+    public function setNation($nation)
+    {
+        $this->nation = $nation;
+
+        return $this;
+    }
+
+    /**
+     * Get nation
+     *
+     * @return string
+     */
+    public function getNation()
+    {
+        return $this->nation;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return User
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set codePostal
+     *
+     * @param integer $codePostal
+     *
+     * @return User
+     */
+    public function setCodePostal($codePostal)
+    {
+        $this->codePostal = $codePostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codePostal
+     *
+     * @return integer
+     */
+    public function getCodePostal()
+    {
+        return $this->codePostal;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return User
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
     }
 }

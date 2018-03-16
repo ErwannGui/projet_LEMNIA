@@ -1,0 +1,67 @@
+<?php
+
+namespace Lemnia\CustomerPortalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CarteBancaire
+ *
+ * @ORM\Table(name="carte_bancaire")
+ * @ORM\Entity(repositoryClass="Lemnia\CustomerPortalBundle\Repository\CarteBancaireRepository")
+ */
+class CarteBancaire
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", nullable=true)
+     */
+    private $type;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="numero_carte", type="integer", nullable=true)
+     */
+    private $numeroCarte;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="date_expiration", type="date", nullable=true)
+     */
+    private $dateExpiration;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="pictogramme", type="integer", nullable=true)
+     */
+    private $pictogramme;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Lemnia\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     */
+    private $userId;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+

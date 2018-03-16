@@ -9,6 +9,8 @@ parameters:
     locale: en
 
 framework:
+    serializer:
+        enabled: true
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'

@@ -1,0 +1,407 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Assistance - Portail utilisateur LEMNIA
+{% endblock %}
+
+{% block body %}
+    <!--Contenu de la page-->
+    <main class="main-content row">
+        <h3>Assistance</h3>
+        <section class="col s12 l12">
+            <div class="row">
+                <!--Affichage du tableau de tout les utilisateurs-->
+                <!-- <h5 class="an_page_title">Assistance</h5> -->
+                <div class="an_white_middle">
+                    <h6 class="an_secondary_title">Vous rencontrez un problème? Contactez nous.</h6>
+                    <div class="row z-depth-1 white er_table-container" style="margin-top: 25px;">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l3">
+                                <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons er_close-search">close</i>
+                            </div>
+                            <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
+                                <select id="ma_selectColumn" class="grey-text er_table-sort-select">
+                                    <option value="0">ID</option>
+                                    <option value="2">Objet</option>
+                                    <option value="1">Priorité</option>
+                                    <option value="3">Date d'expiration</option>
+                                    <option value="4">Statut</option>
+                                </select>
+                                <label>Recherche par</label>
+                            </div>
+                            <div class="input-field col l2 offset-l4 hide-on-med-and-down">
+                                <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
+                                    <option value="6" selected>Défaut</option>
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                </select>
+                                <label>Afficher par</label>
+                            </div>
+                        </div>
+                        <table id="help-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Objet</th>
+                                    <th>Priorité</th>
+                                    <th>Date fin validité</th>
+                                    <th class="er_centered-chips">Etat</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTable" class="er_elem-table">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Probleme logiciel</td>
+                                    <td>Urgent</td>
+                                    <td>01-03-2019</td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip er_chips-status amber lighten-4">
+                                            En attente
+                                        </div>
+                                    </td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip transparent er_chips-action z-depth-4">
+                                            <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Objet test</td>
+                                    <td>Important</td>
+                                    <td>01-03-2019</td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip er_chips-status amber lighten-4">
+                                            En attente
+                                        </div>
+                                    </td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip transparent er_chips-action z-depth-4">
+                                            <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Encore un autre objet</td>
+                                    <td>Secondaire</td>
+                                    <td>01-03-2019</td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip er_chips-status amber lighten-4">
+                                            En attente
+                                        </div>
+                                    </td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip transparent er_chips-action z-depth-4">
+                                            <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>... et encore un !!</td>
+                                    <td>Urgent</td>
+                                    <td>01-03-2019</td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip er_chips-status blue lighten-4">
+                                            Répondu
+                                        </div>
+                                    </td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip transparent er_chips-action z-depth-4">
+                                            <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Bon j'arrete maintenant ^^</td>
+                                    <td>Notable</td>
+                                    <td>01-03-2019</td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip er_chips-status green lighten-4">
+                                            Résolu
+                                        </div>
+                                    </td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip transparent er_chips-action z-depth-4">
+                                            <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Un dernier pour la route ...</td>
+                                    <td>Secondaire</td>
+                                    <td>01-03-2019</td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip er_chips-status green lighten-4">
+                                            Résolu
+                                        </div>
+                                    </td>
+                                    <td class="er_centered-chips">
+                                        <div class="chip transparent er_chips-action z-depth-4">
+                                            <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col s12 row center er_table-pagination">
+                            <span class="col s6 m4 l3 left-align er_elem-number" id="total_reg"></span>
+                            <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fab button with blue window to add a contact -->
+        <section id="co_sendMessageBlock_help" class="co_addBlueWindowWithFabBlock col s12 m10 l8 xl5" style="right:0;">
+            <!-- Blue window body -->
+            <div id="co_sendMessageFormBlock_help" class="z-depth-1 co_blueWindowBody">
+                <!-- blue window header -->
+                <div class="co_blueWindowHeader">
+                    <p class="white-text" style="font-size: 18px">Envoyer un ticket</p>
+                    <i id="co_sendMessageWindowClose_help" class="white-text material-icons" style="font-size: 18px">close</i>
+                </div>
+                <!-- blue window add contact form -->
+                <div class="co_sendMessageForm_help co_blueWindowMiddle">
+                    <div id="co_sendMessageUserInformationBlock_help">
+                        <p id="co_sendMessageUserInformationTitle_help" class="white-text">Votre message sera envoyé avec ces informations</p>
+                        <div class="co_sendMessageUserInfoLine_help" id="co_sendMessageUserInformationBlockLine1_help">
+                            <p class="white-text">{{ app.user.firstname }} {{ app.user.lastname }}</p>
+                            <p class="white-text">Web Developer</p>
+                            <p class="white-text">Startup Palace</p>
+                        </div>
+                        <div class="co_sendMessageUserInfoLine_help" id="co_sendMessageUserInformationBlockLine2_help">
+                            <p class="white-text">{{ app.user.email }}</p>
+                            <p class="white-text">{{ app.user.phoneNumber }}</p>
+                        </div>
+                    </div>
+                    <div id="co_sendMessageMailInputBlock_help">
+                        <div class="co_sendMessagePriorityInputBlock_help">
+                            <label for="co_prioritySelect_help" class="white-text" style="font-size: 14px"></label>
+                            <select id="co_prioritySelect_help" class="browser-default co_materializeBrowserDefaultInput">
+                                <option value="" disabled selected >Priorité</option>
+                                <option value="1">Priorité basse</option>
+                                <option value="2">Priorité normal</option>
+                                <option value="3">Priorité élevée</option>
+                                <option value="3">Priorité majeure</option>
+                            </select>
+                        </div>
+                        <input id="co_mailObjectInput_help" placeholder="Objet" type="text" class="co_whiteMaterialInput white-text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Objet'"/>
+                        <label for="co_mailObjectInput_help"></label>
+                        <div class="input-field">
+                            <textarea id="co_messageContentTextArea_help" class="materialize-textarea white" placeholder="Ecrivez votre message ici . . . "onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ecrivez votre message ici . . . '"></textarea>
+                            <label for="co_messageContentTextArea_help"></label>
+                        </div>
+                    </div>
+                    <!--<form class="an_formulaire_assistance_help">
+                        <div class="an_left_side_help">
+                            <select class="an_select_assistance_help co_whiteMaterialInput white-text" name="select_priorities">
+                                <option class="an_option_assistance_help" selected value="none_selection">Selectionnez</option>
+                                <option class="an_option_assistance_help" value="low_priority">Priorité basse</option>
+                                <option class="an_option_assistance_help"  value="basic_priority">Priorité normale</option>
+                                <option class="an_option_assistance_help"  value="high_priority">Priorité élevée</option>
+                                <option class="an_option_assistance_help"  value="urgent_priority">Priorité majeure</option>
+                            </select>
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="text" size="30" value="Votre nom" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_hel co_whiteMaterialInput white-textp" type="text" size="30" value="Votre prénom" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="email" size="30" value="Votre mail" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="tel" size="30" value="Votre télèphone" onclick="javascript:this.value = '';" />
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="text" size="30" value="Votre job" onclick="javascript:this.value = '';" />
+                        </div>
+                        <div class="an_right_side_help">
+                            <input class="an_input_assistance_help co_whiteMaterialInput white-text" type="text" size="30" cols="2" value="Objet" onclick="javascript:this.value = '';" />
+                            <textarea class="an_textarea_assistance_help" rows="5" cols="50"onclick="javascript:this.value = '';" >Votre message ici</textarea>
+                            <input class="an_submit_assistance_help co_roundedButton light-blue darken-1 white-text" type="submit" value=" Envoyer ">
+                        </div>
+                    </form>-->
+                    <!-- Submit Button Block -->
+                    <div class="co_sendMessageSubmitBlock_help">
+                        <a href="#co_seeDiscussionModal_help" class="modal-trigger"><button class="co_roundedButton waves-effect waves-light light-blue darken-1 white-text z-depth-1">Envoyer le message</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="co_trickyAlignArrowAndFabDiv">
+                <div class="co_blueWindowArrowBottomRight z-depth-1"></div>
+                <a id="co_sendMessageFab_help" class="btn-floating btn-large waves-effect waves-light light-blue darken-1 right"><i class="material-icons">add</i></a>
+            </div>
+        </section>
+
+
+
+        <!-- Modal See Discussion -->
+        <section class="co_modal_container" id="co_discussionModalContainer_help">
+            <!-- Modal Structure -->
+            <div id="co_seeDiscussionModal_help" class="white co_modal z-depth-2 col s12 m10 l8 xl6">
+
+                <!-- header modal -->
+                <div class="co_modalHeader">
+                    <div class="co_blueWindowHeader co_blueWindowModalHeader" style="background-color: white">
+                        <p class="grey-text text-darken-1" style="font-size: 18px; width:auto">Objet discussion</p>
+                        <i id="co_modalDiscussionCloseButton" class="grey-text text-darken-1 material-icons modal-action modal-close" style="font-size: 18px">close</i>
+                    </div>
+                    <p class="grey-text text-lighten-2" style="font-size:14px">Urgent</p>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- content block 1 -->
+                <div id="co_modalDiscussionBlock_help">
+
+                    <div class="co_modalDiscussionMessageLine_help co_modalDiscussionLemniaMessageLine_help row">
+                        <div class="co_modalDiscussionOneMessage_help co_modalDiscussionLemniaAnswer_help">
+                            <div class="co_nameCircle" style="background:#EEEEEE">
+                                <p class="grey-text">LEMNIA</p>
+                            </div>
+                            <div class="co_modalDiscussionBubbleBlock_help col s9 m8 l6">
+                                <div class="co_modalDiscussionMessageBody">
+                                    <p class="grey-text text-darken-1" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                                </div>
+                                <p class="grey-text" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="co_modalDiscussionMessageLine_help co_modalDiscussionUserMessageLine_help row">
+                        <div class="co_modalDiscussionOneMessage_help co_modalDiscussionUserAnswer_help">
+                            <div class="co_nameCircle">
+                                <p class="white-text">CD</p>
+                            </div>
+                            <div class="co_modalDiscussionBubbleBlock_help col s9 m8 l6">
+                                <div class="co_modalDiscussionMessageBody">
+                                    <p class="white-text" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                                </div>
+                                <p class="grey-text" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="co_modalDiscussionMessageLine_help co_modalDiscussionLemniaMessageLine_help row">
+                        <div class="co_modalDiscussionOneMessage_help co_modalDiscussionLemniaAnswer_help">
+                            <div class="co_nameCircle" style="background:#EEEEEE">
+                                <p class="grey-text">LEMNIA</p>
+                            </div>
+                            <div class="co_modalDiscussionBubbleBlock_help col s9 m8 l6">
+                                <div class="co_modalDiscussionMessageBody">
+                                    <p class="grey-text text-darken-1" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                                </div>
+                                <p class="grey-text" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="divider"></div>
+                <!-- modal footer -->
+                <div class="co_modalFooter">
+                    <div id="co_modalDiscussionSendAnswerBlock_help">
+                        <textarea id="co_modalDiscussionTextArea_help" class="materialize-textarea grey lighten-3" placeholder="Ecrivez votre message ici . . . "onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ecrivez votre message ici . . . '" style="font-size: 12px"></textarea>
+                        <button id="co_modalDiscussionSendMessageButton_help" class="co_roundedButton waves-effect white grey-text z-depth-1">Envoyer</button>
+                    </div>
+                    <div id="co_modalDiscussionActionBlock_help">
+                        <button class="co_roundedButton waves-effect waves-light light-blue darken-1 white-text z-depth-1">Marquer comme résolu</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    body { background: #F5F5F5; font: 18px/1.5 sans-serif; overflow-x: hidden; }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+    #container { padding: 2em; }
+    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+    #icon-book { display: none; }
+    
+    @media (min-width: 768px) {
+        #wrapper { width: 80%; margin: 2em auto; }
+        #icon-book { display: inline-block; }
+        #status a, #next a { display: block; }
+
+        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
+
+</style>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/help.js') }}"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Précédent',
+          nextText:'Suivant',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:4
+        }); 
+    });
+
+    function find() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("help-table");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            var value = document.getElementById("ma_selectColumn");
+            var selectedColumn = value.options[value.selectedIndex].value;
+            td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        
+    }
+
+    function sort() {
+        var number = $('#er_nb-elmt_table option:selected').val();
+        var element = document.getElementById("myPager");
+
+        // boucle tant qu'un enfant existe
+        while (element.firstChild) {
+           // le supprime
+           element.removeChild(element.firstChild);
+        }
+        $('#myTable').pageMe({
+          pagerSelector:'#myPager',
+          activeColor: 'blue',
+          prevText:'Précédent',
+          nextText:'Suivant',
+          showPrevNext:true,
+          hidePageNumbers:false,
+          perPage:number
+        });
+    }
+</script>
+{% endblock %}

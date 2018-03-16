@@ -1,3 +1,35 @@
 lemnia_customer_portal_homepage:
     path:     /
-    defaults: { _controller: LemniaCustomerPortalBundle:Default:index }
+    defaults: { _controller: LemniaCustomerPortalBundle:HomePage:homePage }
+
+lemnia_customer_portal_bill:
+    path:     /bill
+    defaults: { _controller: LemniaCustomerPortalBundle:Bill:listBill }
+
+lemnia_customer_portal_indent:
+    path:     /indent
+    defaults: { _controller: LemniaCustomerPortalBundle:Indent:listIndent }
+
+lemnia_customer_portal_subscription:
+    path:     /subscription
+    defaults: { _controller: LemniaCustomerPortalBundle:Subscription:listSubscription }
+
+lemnia_customer_portal_help:
+    path:     /help
+    defaults: { _controller: LemniaCustomerPortalBundle:Help:help }
+
+lemnia_customer_portal_listuser:
+    path:     /listuser
+    defaults: { _controller: LemniaCustomerPortalBundle:User:listUser }
+
+lemnia_customer_portal_user:
+    path:     /user
+    defaults: { _controller: LemniaCustomerPortalBundle:User:user }
+
+lemnia_customer_portal_edituser:
+    path:     /user/edit
+    defaults: { _controller: LemniaCustomerPortalBundle:User:editUser }
+
+lemnia_customer_portal_contacts:
+    path:     /contacts
+    defaults: { _controller: LemniaCustomerPortalBundle:User:contacts }

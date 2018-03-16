@@ -5,7 +5,6 @@
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle",
             "Lemnia\\UserBundle\\": "src/Lemnia/UserBundle",
             "Lemnia\\CoreBundle\\": "src/Lemnia/CoreBundle",
             "Lemnia\\CustomerPortalBundle\\": "src/Lemnia/CustomerPortalBundle"
@@ -20,8 +19,10 @@
         "php": ">=5.5.9",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
+        "friendsofsymfony/rest-bundle": "^2.3",
         "friendsofsymfony/user-bundle": "~2.0",
         "incenteev/composer-parameter-handler": "^2.0",
+        "jms/serializer": "^1.11",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
         "symfony/monolog-bundle": "^3.1.0",

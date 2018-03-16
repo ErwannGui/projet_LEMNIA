@@ -1,0 +1,61 @@
+<?php
+
+namespace Lemnia\CustomerPortalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Sepa
+ *
+ * @ORM\Table(name="sepa")
+ * @ORM\Entity(repositoryClass="Lemnia\CustomerPortalBundle\Repository\SepaRepository")
+ */
+class Sepa
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\COlumn(name="iban", type="string", nullable=true)
+     */
+    private $iban;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="bic", type="integer", nullable=true)
+     */
+    private $bic;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="date_signature", type="date", nullable=true)
+     */
+    private $dateSignature;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Lemnia\UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     */
+    private $userId;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+

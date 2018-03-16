@@ -1,17 +1,170 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    </head>
-    <body style="height: 0;">
-        {% block body %}{% endblock %}
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('materialize/css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/pagination.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+</head>
+
+<body class="grey lighten-4">
+    <header class="navbar-fixed">
+        <nav class="white  z-depth-1">
+            <div class="nav-wrapper">
+                <a href="#" id="co_companyName_header" class="right grey-text text-darken-3">Nom Entreprise</a>
+
+                <!-- -------------------- Menu Nav Bar ----------------- -->
+                <div id="co_rightNavMenu_header" class="right">
+                    <div class="co_verticalDivider_header grey lighten-2"></div>
+                    <!-- Notifications -->
+                    <div id="co_rightNavNotifications_header">
+                        <!-- notification icon-->
+                        <i class="material-icons grey-text text-lighten-2 co_iconRightNav_header">notifications
+                                <div id="co_notificationCircle_header" class="orange"></div>
+                            </i>
+                        <!-- notification tab -->
+                        <div id="co_notificationBlock_header" class="grey lighten-5 z-depth-1">
+                            <p class="white grey-text text-darken-3">Notifications</p>
+                            <div id="co_allNotificationsBlock_header">
+                                <!-- One Notification -->
+                                <div class="co_oneNotification_header">
+                                    <div class="co_oneNotificationCircle_header light-blue lighten-3"></div>
+                                    <div class="co_notificationInfo_header">
+                                        <p class="co_notificationInfoTitle_header grey-text text-darken-3">Tickets</p>
+                                        <p class="co_notificationInfoDesc_header grey-text text-lighten-2">Votre ticket du 02 - 03 - 2018 à reçu une réponse</p>
+                                    </div>
+                                </div>
+                                <!-- One Notification -->
+                                <div class="co_oneNotification_header">
+                                    <div class="co_oneNotificationCircle_header amber lighten-3"></div>
+                                    <div class="co_notificationInfo_header">
+                                        <p class="co_notificationInfoTitle_header grey-text text-darken-3">Tickets</p>
+                                        <p class="co_notificationInfoDesc_header grey-text text-lighten-2">Votre ticket du 02 - 03 - 2018 à reçu une réponse</p>
+                                    </div>
+                                </div>
+                                <!-- One Notification -->
+                                <div class="co_oneNotification_header">
+                                    <div class="co_oneNotificationCircle_header red lighten-3"></div>
+                                    <div class="co_notificationInfo_header">
+                                        <p class="co_notificationInfoTitle_header grey-text text-darken-3">Tickets</p>
+                                        <p class="co_notificationInfoDesc_header grey-text text-lighten-2">Votre ticket du 02 - 03 - 2018 à reçu une réponse</p>
+                                    </div>
+                                </div>
+                                <!-- One Notification -->
+                                <div class="co_oneNotification_header">
+                                    <div class="co_oneNotificationCircle_header light-blue lighten-3"></div>
+                                    <div class="co_notificationInfo_header">
+                                        <p class="co_notificationInfoTitle_header grey-text text-darken-3">Tickets</p>
+                                        <p class="co_notificationInfoDesc_header grey-text text-lighten-2">Votre ticket du 02 - 03 - 2018 à reçu une réponse</p>
+                                    </div>
+                                </div>
+                                <!-- One Notification -->
+                                <div class="co_oneNotification_header">
+                                    <div class="co_oneNotificationCircle_header green lighten-3"></div>
+                                    <div class="co_notificationInfo_header">
+                                        <p class="co_notificationInfoTitle_header grey-text text-darken-3">Tickets</p>
+                                        <p class="co_notificationInfoDesc_header grey-text text-lighten-2">Votre ticket du 02 - 03 - 2018 à reçu une réponse</p>
+                                    </div>
+                                </div>
+                                <!-- One Notification -->
+                                <div class="co_oneNotification_header">
+                                    <div class="co_oneNotificationCircle_header light-blue lighten-3"></div>
+                                    <div class="co_notificationInfo_header">
+                                        <p class="co_notificationInfoTitle_header grey-text text-darken-3">Tickets</p>
+                                        <p class="co_notificationInfoDesc_header grey-text text-lighten-2">Votre ticket du 02 - 03 - 2018 à reçu une réponse</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons light-blue-text">menu</i></a>
+                <!-- <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                    </ul> -->
+                <ul class="side-nav er_side-nav" id="mobile-demo">
+                    <div class="er_logo-entreprise_side-nav">
+                        <a class="er_menu_logo_header center" href=""><img class="er_logo-entreprise_header" src="{{ asset('img/logo_lemnia.png') }}" alt="Logo entreprise"></a>
+                    </div>
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_homepage') }}"><i class="material-icons light-blue-text darken-1">home</i>Tableau de bord</a></li>
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_bill') }}"><i class="material-icons light-blue-text darken-1">content_paste</i>Factures</a></li>
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_indent') }}"><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_subscription') }}"><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_help') }}"><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_contacts') }}"><i class="material-icons light-blue-text darken-1">contacts</i>Contacts</a></li>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
+                    {% endif %}
+                    <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_user') }}"><i class="material-icons light-blue-text darken-1">account_circle</i>Mon compte</a></li>
+                    <div class="center er_user_header">
+                        <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
+                        <br>
+                        <span>{{ app.user.username }}</span>
+                    </div>
+                    <div class="valign-wrapper">
+                        <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <!--Barre latérale affichée sous format desktop-->
+        <nav class="er_vertical-menu_header hide-on-med-and-down ">
+            <a class="er_menu_logo_header center" href=""><img class="er_logo-entreprise_header" src="{{ asset('img/logo_lemnia.png') }}" alt="Logo entreprise"></a>
+            <ul class="er_vertical-bar_header center-align">
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_homepage') }}"><i class="material-icons light-blue-text darken-1">home</i>Tableau de bord</a></li>
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_bill') }}"><i class="material-icons light-blue-text darken-1">content_paste</i>Factures</a></li>
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_indent') }}"><i class="material-icons light-blue-text darken-1">shopping_cart</i>Commandes</a></li>
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_subscription') }}"><i class="material-icons light-blue-text darken-1">insert_drive_file</i>Licenses et abonnements</a></li>
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_help') }}"><i class="material-icons light-blue-text darken-1">live_help</i>Assistance</a></li>
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_contacts') }}"><i class="material-icons light-blue-text darken-1">contacts</i>Contacts</a></li>
+                {% if is_granted("ROLE_ADMIN") %}
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
+                {% endif %}
+                <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_user') }}"><i class="material-icons light-blue-text darken-1">account_circle</i>Mon compte</a></li>
+            </ul>
+            <div class="center er_user_header">
+                <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
+                <br>
+                <span>{{ app.user.username }}</span>
+            </div>
+            <div class="valign-wrapper">
+                <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>
+            </div>
+        </nav>
+    </header>
+    {% block body %}{% endblock %}
+    <script>
+        $(document).ready(function() {
+            /*Initialisation des accordéons et modal*/
+            $(".button-collapse").sideNav();
+            $('select').material_select();
+            $('.collapsible').collapsible();
+            $('.modal').modal();
+            $('.dropdown-button').dropdown();
+        });
+
+    </script>
+    <script src="{{ asset('js/header.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+</body>
+
 </html>

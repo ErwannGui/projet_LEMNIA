@@ -1,0 +1,1183 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+/*-- Header Portail -- */
+
+header nav a{ color: black!important; }
+
+.main-content{
+    width: calc(100vw - 300px);
+    margin-left: 300px!important;
+    top: 64px;
+    padding-top: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+#sidenav-overlay{
+    width: 100vw;
+    z-index: 4!important;
+    background-color: rgba(0,0,0,0.7)!important;
+}
+
+
+/* -----------------------  NAV BAR ELEMENT --------------------- */
+#co_companyName_header{
+    margin-right:20px;
+}
+
+.co_verticalDivider_header{
+    width:2px;
+    height:40px;
+    margin:0 10px;
+}
+
+/* right nav menu */
+#co_rightNavMenu_header{
+    display:flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    margin-right:10px;
+}
+
+/* all child of right nav menu */
+ #co_rightNavMenu_header>*:not(:first-child){
+     padding:0 10px;
+ }
+
+ #co_rightNavMenu_header>*:not(:first-child):hover{
+     cursor:pointer;
+ }
+
+ /* notifications button */
+ #co_rightNavNotifications_header{
+    position:relative;
+ }
+
+/* notifications circle */
+ #co_notificationCircle_header{
+     position:absolute;
+     top:25%;
+     right:0;
+     width:10px;
+     height:10px;
+     border-radius:50%;
+ }
+
+ /* nav icons */
+.co_iconRightNav_header{
+    position:relative;
+    margin:0;
+}
+
+/* Notification block */
+ #co_notificationBlock_header{
+     position:absolute;
+     width:400px;
+     height:500px;
+     right:0;
+     top:80%;
+     display:none;
+
+ }
+
+/* all p of notification tab */
+#co_notificationBlock_header p{
+    margin:0;
+    padding:0;
+}
+ /* notification tab header */
+#co_notificationBlock_header>p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:15%;
+    font-size:18px;
+}
+
+/* notification list */
+#co_allNotificationsBlock_header{
+    height:85%!important;
+    overflow-y: scroll;
+}
+
+/* all element of notification list */
+#co_allNotificationsBlock_header>*{
+    border-bottom: 1px solid #DDDDDD;
+}
+
+/* one notification */
+.co_oneNotification_header{
+    height:18%;
+    display : flex;
+    flex-direction: row;
+    padding:15px 20px;
+    align-items: center;
+}
+
+.co_oneNotification_header:hover{
+    background-color:#EEEEEE;
+}
+
+/* colored circle for one notification */
+.co_oneNotificationCircle_header{
+    position: relative;
+    border-radius: 50%;
+    width: 20px;
+    height:20px;
+    margin-right:20px;
+}
+
+/* one notification content */
+.co_notificationInfo_header{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:100%;
+}
+
+/* Notification title */
+.co_notificationInfoTitle_header{
+    font-size:14px;
+    margin:0;
+    padding:0;
+    height:auto;
+    line-height: 14px;
+}
+
+/* Notification Description */
+.co_notificationInfoDesc_header{
+    font-size:12px;
+    margin:0;
+    padding:0;
+    height:auto;
+    line-height: 12px;
+}
+
+/* Mobile Notifications */
+@media all and (max-width: 768px){
+    #co_notificationBlock_header{
+        width:80vw;
+        right:10vw;
+        top:100%;
+    }
+    #co_rightNavNotifications_header{
+        position:inherit;
+    }
+}
+
+/*Menu vertical en grand écran*/
+
+.er_vertical-menu_header, .er_side-nav{
+    top: 0;
+    z-index: 1;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    height: calc(100% - 36px)!important; /*taille du menu a modifier en configuration de prod*/
+    transition-duration: 1s;
+    background-color: #25262C!important;
+}
+
+.er_vertical-bar_header i, .er_side-nav i{
+    font-size: 20px!important;
+    margin-right: 15px;
+}
+
+.er_vertical-bar_header{
+    font-size: 20px;
+}
+
+.er_vertical-link_header{
+    display: flex!important;
+    flex-direction: row;
+    line-height: 25px!important;
+    width: 300px;
+    padding-left: 26px;
+}
+
+.er_vertical-link_header:hover{
+    border-left: solid 4px #039be5;
+}
+
+.er_logo-entreprise_header{
+    filter: brightness(1.2);
+    height:70%;
+}
+
+.er_user_header{
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+}
+
+.er_user_header img{
+    width: 100px;
+    margin-bottom: -25px;
+}
+
+.er_disconnect_header{
+    left: 30px!important;
+    margin: 0!important;
+    width: 240px;
+    height: 56px!important;
+    line-height: 56px!important;
+    position: absolute!important;
+    bottom: 30px!important;
+}
+
+@media only screen and (max-width: 992px) {
+    .main-content{
+        width: 100vw;
+        margin-left: 0!important;
+    }
+}
+
+/* -- Table responsive liste des utilisateurs -- */
+
+.er_dropdown-user_listuser{
+    width: 240px!important;
+}
+
+#action_user{
+    width: 220px!important;
+    right: 10%!important;
+}
+
+#action_user li > a > i{
+    margin-right: 12px;
+}
+
+#action_user li > a{
+    padding-right: 0;
+}
+
+@media only screen and (max-width : 1170px) {
+    .er_hide-column_listuser{
+        display: none!important;
+    }
+
+    .er_show-column_listuser{
+        display: block!important;
+    }
+}
+
+
+/* -- Table de factures -- */
+
+.er_table-pagination{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-bottom: 0!important;
+}
+
+.er_table-pagination li{
+    cursor: pointer;
+}
+
+.er_elem-number{
+    padding-top: 18px!important;
+    height: 30px;
+}
+
+.er_elem-table tr:hover .er_chips-action{
+    visibility: visible!important;
+}
+
+/* -- Classes utilisées pour le modal de payment, réutilisables ailleurs -- */
+
+    .er_type-payment{
+        margin-left: 15px;
+    }
+
+    #container-card tbody tr:hover{
+        background-color: #e1f5fe!important;
+    }
+
+    #container-sepa table thead{
+        border-bottom: none!important;
+    }
+
+    .er_hide-container{
+        display: none;
+    }
+
+    #container-sepa table th, #container-sepa table td{
+        display: flex!important;
+        flex-direction: column!important;
+    }
+
+    #container-sepa table tr{
+        display: inline-block!important;
+    }
+
+    .er_next-tab-payment{
+        border-radius: 18px!important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .er_hide-tab{
+        display: none;
+    }
+
+    .er_cgv-payment{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 360px!important;
+    }
+
+    .er_validate-cgv_checkbox{
+        margin-left: 5%;
+    }
+
+    .er_payment-done_icon{
+        position: relative;
+        width: 16.5vw;
+        height: 16.5vw;
+        margin-left: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+        background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    }
+
+    .er_payment-done_icon i{   
+        font-size: 8vw;
+    }
+
+    @media only screen and (max-width: 992px) {
+        .er_payment-done_icon{   
+            width: 24vw;
+            height: 24vw;
+        }
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .er_payment-done_icon{   
+            width: 11vw;
+            height: 11vw;
+            margin-left: 40%;
+        }
+
+        .er_payment-done_icon i{   
+            font-size: 6vw;
+        }
+    }
+
+    .er_price-payment{
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+
+.er_payment-action{
+    border-radius: 46px;
+    width: 100%;
+    margin-top: -10px!important;
+}
+
+.er_payment-action .btn{
+    margin: 3%!important;
+}
+
+/* -- Table des commandes -- */
+
+.er_fab-toolbar_indent .er_fab-action_indent{
+    position: inherit;
+    width: 200px!important;
+    visibility: hidden;
+}
+
+.er_fab-toolbar_indent .er_fab-action_indent ul{
+    position: inherit;
+    height: 10px!important;
+    width: 120px!important;
+    margin-left: 9px;
+    transition-duration: 1s;
+}
+
+.er_fab-btn_indent{
+    box-shadow: none!important;
+}
+
+.er_fab-toolbar_indent{
+    width: 200px!important;
+}
+
+.er_elem-table_indent tr:hover .er_fab-action_indent{
+    visibility: visible!important;
+}
+
+/* -- Modal de détails d'une commande (réutilisable pour le modal de détails d'un abonnement) -- */
+
+    .er_up-status{
+        padding: 10px!important;
+        font-size: 14px!important;
+        margin-bottom: 50px;
+    }
+
+    .er_details-content{
+        font-size: 14px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .er_modal-details-footer a{
+        margin-left: 15px!important;
+        border-radius: 16px;
+    }
+
+/****************************************************************************************************************************************/
+    /**//**//**//**//**/
+            /**/        /* -- Appliqué sur toutes les pages utilisant un tableau -- */
+            /**/
+            /**/        .er_chips-status{
+            /**/            width: 125px;
+            /**/            text-align: center;
+            /**/        }
+            /**/
+            /**/        .er_table-container{
+            /**/            padding: 30px!important;
+            /**/        }
+            /**/
+            /**/        #container-card .er_table-container{
+            /**/            margin-top: 0;
+            /**/        }
+            /**/
+            /**/        #container-sepa .er_table-container{
+            /**/            margin-top: 0;
+            /**/        }
+            /**/
+            /**/        .er_chips-action{
+            /**/            visibility: hidden;
+            /**/        }
+            /**/
+            /**/        .er_chips-action:hover{
+            /**/            box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+            /**/            transition-duration: 0.5s;
+            /**/        }
+            /**/
+            /**/        .er_icon-action{
+            /**/            margin-top: 4px!important;
+            /**/        }
+            /**/
+            /**/        @media only screen and (min-width : 992px) and (max-width : 1220px) {
+            /**/            .er_icon-action{
+            /**/                display: none!important;
+            /**/            }
+            /**/        }
+    /**//**//**//**//**/ 
+
+                        .er_table-container #search{
+                            padding-left: 40px;
+                        } 
+                        .er_table-container .er_close-search{
+                            top: 10px!important;
+                            right: -25px!important;
+                        }
+                        .er_table-container .select-dropdown{
+                            font-size: 14px!important;
+                        }
+                        .er_table-container .select-dropdown li{
+                            font-size: 14px!important;
+                        } 
+                        .er_table-container .select-dropdown li span{
+                            color: #9e9e9e!important;
+                        } 
+                        .er_table-container table th{
+                            text-transform: uppercase;
+                            font-size: 16px;
+                        } 
+                        .er_table-container table{
+                            font-size: 14px;
+                        }
+                        .er_table-container table thead{
+                            background-color: #eeeeee!important;
+                        } 
+                        .er_table-container table tr th:first-child, .er_table-container table tr td:first-child{
+                            padding-right: 50px;
+                        }
+                        .er_centered-chips{
+                            text-align: center!important;
+                        }
+                        .er_hide-pager{
+                            display: none!important;
+                        }
+/****************************************************************************************************************************************/
+
+/*------------------------------- Contenu Corentin---------------------------------*/
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- GLOBAL ---------------------------------- */
+/* ------------------------------------------------------------------------ */
+
+/*.co_statusCardRowContainer .col:first-child{
+    padding-left: 0!important;
+}
+
+.co_statusCardRowContainer .col:last-child{
+    padding-right: 0!important;
+}
+
+.co_statusCardRowContainer>*{
+    padding:0!important;
+}*/
+
+.co_statusCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    padding:30px!important;
+    border-radius: 2px;
+}
+
+.co_statusCardCirleIcon{
+    width:50px!important;
+    height:50px!important;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.co_statusCardSurroundedIcon{
+    border-style: solid;
+    border-width: 1px;
+}
+
+.co_goldBorders{
+    border-color: #F1D04D;
+}
+
+.co_orangeBorders{
+    border-color: #FFB637;
+}
+
+.co_statusCardTextContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Name circle of contact card */
+.co_nameCircle{
+    width:90px;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    border-radius: 50%;
+}
+
+/* Changes for standard materialize input */
+.co_whiteMaterialInput{
+    border-bottom: solid 1px white!important;
+    font-size:14px!important;
+    height:40px!important;
+    margin:0!important;
+    padding-bottom:5px!important;
+}
+
+.co_whiteMaterialInput::placeholder{
+    color:white;
+    padding-left:10px;
+}
+
+.co_whiteMaterialInput>*{
+    color:white;
+}
+
+/* Changes for standard materialize select */
+.co_select{
+    border: #CCCCCC 2px solid!important;
+    border-radius: 5px!important;
+    background-color: white!important;
+}
+
+/* Button with rounded effect on side borders*/
+.co_roundedButton{
+    font-size: 14px;
+    padding:8px 20px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+/* Block containing all of the blue window popup (example in contacts and assistance)*/
+.co_addBlueWindowWithFabBlock{
+    bottom:20px;
+    right:20px;
+    position:fixed;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index:100;
+}
+
+/* Blue gradient window body */
+.co_blueWindowBody{
+    position:relative;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    z-index:100;
+    display: flex;
+    flex-direction: column;
+    padding:0!important;
+}
+
+.co_blueWindowBody p{
+    margin:0;
+    padding:0;
+}
+
+/* Align the fab button with the arrow of the blue window */
+.co_trickyAlignArrowAndFabDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:10;
+}
+
+/* The arrow of the blue window */
+.co_blueWindowArrowBottomRight{
+    display: none;
+    transform: translateY(-20px) rotate(45deg) ;
+    width:40px;
+    height:40px;
+    margin-bottom:10px;
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+}
+
+/* Head of the blue window (title and cross) */
+.co_blueWindowHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:30px 30px 15px 30px;
+}
+
+.co_blueWindowModalHeader{
+    padding:0;
+}
+
+.co_blueWindowModalHeader>p{
+    margin:0;
+}
+
+.co_blueWindowHeader>i:hover{
+    cursor:pointer;
+}
+
+.co_blueWindowMiddle{
+    height:70vh;
+    overflow-y: scroll;
+    padding: 15px 30px 30px 30px;
+}
+/* Center a modal in col */
+.co_centeredModal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* change modal scrollbar aspect */
+.modal::-webkit-scrollbar, .co_blueWindowMiddle::-webkit-scrollbar, #co_allNotificationsBlock_header::-webkit-scrollbar, #co_modalDiscussionBlock_help::-webkit-scrollbar{
+    width:10px;
+}
+
+.modal::-webkit-scrollbar-track, .co_blueWindowMiddle::-webkit-scrollbar-track, #co_allNotificationsBlock_header::-webkit-scrollbar-track, #co_modalDiscussionBlock_help::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb, .co_blueWindowMiddle::-webkit-scrollbar-thumb, #co_allNotificationsBlock_header::-webkit-scrollbar-thumb, #co_modalDiscussionBlock_help::-webkit-scrollbar-thumb{
+    background-color:#00000022;
+    border-radius: 5px;
+}
+
+/* modify browser default materialize select */
+.co_materializeBrowserDefaultInput{
+    font-size: 12px;
+    width:175px;
+    border-radius:6px;
+    border-color: #cccccc;
+    height:30px;
+    background-color:white;
+}
+
+/* personal modal container*/
+.co_modal_container{
+    z-index: 1000;
+    display:none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    background-color:#00000088;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+
+/* personal modal */
+.co_modal{
+    padding:30px!important;
+    margin:0!important;
+}
+
+.co_modalFooter{
+    padding-top:30px;
+}
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- CONTACTS ---------------------------------- */
+/* ------------------------------------------------------------------------ */
+
+/* all p of first part of contact card*/
+.co_contactInfoBlock_contacts p{
+    margin:0;
+    padding:0;
+}
+
+/* first part of contact card */
+.co_contactInfoBlock_contacts{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+/* top part of contact card */
+.co_contactInfoTopBlock_contacts{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+    margin-top: 10px;
+}
+
+/* Text information of a contact */
+.co_contactInfoTopBlockText_contacts{
+    display:flex;
+    flex-direction: column;
+    width:calc(100% - 100px);
+}
+
+/* middle block info contact card */
+.co_contactInfoMiddleBlock_contacts{
+    margin:20px 0;
+}
+
+/* one info middle block contact card*/
+.co_contactOneInfoMiddleBlock_contacts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:5px 0;
+}
+
+.co_contactOneInfoMiddleBlock_contacts>i{
+    margin-right: 15px;
+}
+
+
+/* Global block of the add contact block (fab and window) */
+#co_addContactBlock_contacts{
+
+}
+
+/* Body of the add contact window */
+#co_addContactFormBlock_contacts{
+    display: none;
+    width:100%;
+}
+
+/* Name part of contact form */
+.co_contactNameBlock_contacts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 40px 0;
+    width:100%;
+}
+
+/* only input for name part of contact form */
+.co_contactInputNameBlock_contacts{
+    width:calc(100% - 100px);
+}
+
+/* Info part of contact form */
+.co_contactInfoBlock{
+    margin:40px 0;
+}
+
+/* connection info part of contact form */
+.co_contactConnectionBlock{
+    margin:40px 0;
+}
+
+/* access choice part of contact form */
+.co_contactAccessBlock{
+    margin:40px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* submit part of contact form */
+.co_contactSubmitBlock{
+    margin-top:80px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- ASSISTANCE -------------------------------- */
+/* ------------------------------------------------------------------------ */
+
+/* Body of the add contact window */
+#co_sendMessageFormBlock_help{
+    display: none;
+    width:100%;
+}
+
+/* All element of help form */
+.co_sendMessageForm_help>*{
+    margin:30px 0;
+}
+
+/* User information send message block */
+#co_sendMessageUserInformationBlock_help{
+    margin-bottom:60px;
+}
+
+/* All element of information send message block */
+#co_sendMessageUserInformationBlock_help>*{
+    margin-bottom:15px;
+}
+
+/* all p of information send message block */
+#co_sendMessageUserInformationBlock_help p{
+    font-size:14px;
+}
+
+/* Title of information send message block */
+#co_sendMessageUserInformationTitle_help{
+    border-bottom:solid 1px white;
+    height:30px;
+}
+
+/* One line for send message user info block */
+.co_sendMessageUserInfoLine_help{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Priority select block */
+.co_sendMessagePriorityInputBlock_help{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* send message text area */
+#co_messageContentTextArea_help{
+    height:200px;
+}
+
+/* Submit block of send message window */
+.co_sendMessageSubmitBlock_help{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:0;
+}
+
+/* all element of mail inputs block */
+#co_sendMessageMailInputBlock_help>*{
+    margin-bottom:15px;
+}
+
+/* ----------------------- Modal Discussion ---------------------*/
+
+/* Discussion part of discussion modal */
+#co_modalDiscussionBlock_help{
+    height:55vh;
+    overflow-y: scroll;
+}
+
+#co_modalDiscussionBlock_help p{
+    margin:0;
+    padding:0;
+}
+
+#co_modalDiscussionBlock_help .co_nameCircle{
+    margin:0
+}
+
+/* One line of discussion */
+.co_modalDiscussionMessageLine_help{
+    width:100%;
+    display: flex;
+}
+
+/* one lemnia line */
+.co_modalDiscussionLemniaMessageLine_help{
+    justify-content: flex-start;
+}
+
+.co_modalDiscussionUserMessageLine_help{
+    justify-content: flex-end;
+}
+
+/* One message of discussion */
+.co_modalDiscussionOneMessage_help{
+    display:flex;
+    margin:20px 0;
+    align-items: flex-end;
+}
+
+/* lemnia message line */
+.co_modalDiscussionLemniaAnswer_help{
+    flex-direction: row;
+}
+
+/* User message line */
+.co_modalDiscussionUserAnswer_help{
+    flex-direction: row-reverse;
+}
+
+/* The bubble body of lemnia's message */
+.co_modalDiscussionLemniaAnswer_help .co_modalDiscussionMessageBody{
+    background-color:#EEEEEE;
+    border-radius:20px 20px 20px 0;
+}
+
+/* Bubble block of lemnia's answers */
+.co_modalDiscussionLemniaAnswer_help .co_modalDiscussionBubbleBlock_help{
+    margin:0 0 0 20px!important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The bubble body of user message */
+.co_modalDiscussionUserAnswer_help .co_modalDiscussionMessageBody{
+    background:linear-gradient(to top right, #0092CC, #3BBFFE);
+    border-radius:20px 20px 0 20px;
+}
+
+/* Bubble block of user's answers */
+.co_modalDiscussionUserAnswer_help .co_modalDiscussionBubbleBlock_help{
+    margin:0 20px 0 0!important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The bubble of a message */
+.co_modalDiscussionMessageBody{
+    padding:10px;
+}
+
+/* The block with bubble and name circle */
+.co_modalDiscussionBubbleBlock_help{
+    transform: translateY(18px);/* date and hour font size +4px */
+}
+
+/* discussion modal footer */
+#co_discussionModalContainer_help .co_modalFooter{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+#co_modalDiscussionSendAnswerBlock_help{
+    width:70%;
+    position:relative
+}
+
+#co_modalDiscussionSendMessageButton_help{
+    position:absolute;
+    bottom:15px;
+    right:5px;
+}
+
+/* discussion modal footer text area */
+#co_modalDiscussionTextArea_help{
+    height:100px;
+    margin: 0 !important;
+}
+
+/* discussion modal footer action block */
+#co_modalDiscussionActionBlock_help{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width:30%;
+    padding-bottom: 10px;
+}
+
+
+
+
+/*------------------------------- Fin Contenu Corentin---------------------------------*/
+
+/****************************************************************************************************************************************/
+
+/*------------------------------- Contenu Andrei---------------------------------*/
+.an_page_title_help{
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+.an_white_middle_help{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 800px;
+    height: 700px;
+}
+
+.an_secondary_title_help{
+    font-family: sans-serif;
+    font-size: 0.9em;
+    margin-bottom: 100px;
+}
+
+.an_left_side_help{
+    display: flex;
+    flex-direction: column;
+    order:1;
+}
+
+.an_right_side_help{
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+.an_input_assistance_help{
+    margin-bottom: 30px;
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+    color:#CCCCCC;
+}
+
+.an_input_assistance_help:focus{
+    outline: none;
+}
+
+.an_select_assistance_help:focus{
+    outline: none;
+}
+
+.an_textarea_assistance_help:focus{
+    outline: none;
+}
+
+.an_submit_assistance_help:focus{
+    outline: none;
+}
+
+.an_select_assistance_help{
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 120px;
+    color: #CCCCCC;
+}
+
+.an_submit_assistance_help{
+    margin-top: 40px;
+    background-color: #0199D1;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-left: 130px;
+}
+
+.an_textarea_assistance_help{
+    color:#CCCCCC;
+    border-color: #CCCCCC;
+}
+
+@media only screen and (max-width: 800px) {
+    .an_white_middle_help{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*------------------------------- Fin Contenu Andrei---------------------------------*/
+
+/*----------------------------------- Contenu Mael ---------------------------------*/
+
+.ma_carteBancaire_contenu{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.ma_carteBancaire_contenu a{
+    width: 250px;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+.ma_titreBlock_user{
+    display: flex;
+    justify-content: space-between;
+}
+.ma_nameCircle_modify{
+    width:90px;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background:white;
+    border-radius: 50%;
+}
+
+.ma_modifyBackground{
+    background: linear-gradient(to top right, #0092CC, #3BBFFE);
+}
+.ma_modifier_info input{
+    border-bottom: 1px solid white !important;
+}
+input{
+    margin-right: 20px !important;
+}
+#ma_new_password{
+    margin-top: 20px;
+}
+#addCard{
+    top: -200px;
+}
+canvas{
+    background-color: white;
+}
+#dateSignature{
+    padding-left: 20px;
+}
+/*----------------------------Fin contenu Mael --------------------------------------*/
