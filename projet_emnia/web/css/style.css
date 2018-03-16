@@ -658,17 +658,16 @@ header nav a {
     border-radius: 2px;
 }
 
-.co_statusCardCirleIcon{
-    width:50px!important;
-    height:50px!important;
+.co_statusCardCirleIcon {
+    width: 50px!important;
+    height: 50px!important;
     border-radius: 50%;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 20px;
 }
 
-.co_statusCardSurroundedIcon{
 .co_statusCardSurroundedIcon {
     border-style: solid;
     border-width: 1px;
