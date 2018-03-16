@@ -162,6 +162,7 @@ class UserController extends Controller
                 $addCarteBancaire->setPictogramme($pictogramme);
                 $addCarteBancaire->setUserId($user);
                 $em->flush();
+
             }else{
 
             }
