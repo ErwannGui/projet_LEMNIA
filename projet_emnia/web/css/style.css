@@ -230,10 +230,9 @@ header nav a {
 
 .er_logo-entreprise_header {
     filter: brightness(1.2);
-    height: 40%;
-    width: 40%;
+    width: 35%;
     display: flex;
-    margin-top: 20px;
+    margin-top: 18px;
     margin-left: 30px;
 }
 
@@ -1230,7 +1229,7 @@ header nav a {
 
 .an_logo_texte_verticalmenu {
     display: flex;
-    height: 100px;
+    height: 65px;
     background-color: #202026;
     width: 100%;
     margin-top: -15px;
@@ -1240,7 +1239,7 @@ header nav a {
 .an_texte_entreprise_verticalmenu {
     white-space: nowrap;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 /*------------------------------- Tableau de bord---------------------------------*/
