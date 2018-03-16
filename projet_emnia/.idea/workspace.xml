@@ -66,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="541">
@@ -112,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="1198" column="41" lean-forward="false" selection-start-line="1198" selection-start-column="41" selection-end-line="1198" selection-end-column="41" />
+            <state relative-caret-position="453">
+              <caret line="1477" column="0" lean-forward="true" selection-start-line="1477" selection-start-column="0" selection-end-line="1477" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/Sepa.php" />
         <option value="$PROJECT_DIR$/web/js/user.js" />
         <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/users/user.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
       </list>
     </option>
   </component>
@@ -502,12 +502,12 @@
       <workItem from="1521014872696" duration="3202000" />
       <workItem from="1521018402437" duration="436000" />
       <workItem from="1521189707096" duration="30000" />
-      <workItem from="1521189853113" duration="11621000" />
+      <workItem from="1521189853113" duration="12146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107840000" />
+    <option name="totallyTimeSpent" value="108365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -804,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="1198" column="41" lean-forward="false" selection-start-line="1198" selection-start-column="41" selection-end-line="1198" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/users/user.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -839,6 +831,14 @@
             <element signature="e#6729#6751#0#PHP" expanded="true" />
             <element signature="e#7862#7888#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="1477" column="0" lean-forward="true" selection-start-line="1477" selection-start-column="0" selection-end-line="1477" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
