@@ -36,6 +36,9 @@ Factures - Portail utilisateur LEMNIA
                         <label>Afficher par</label>
                     </div>
                 </div>
+                {% if(error == true) %}
+                <div class="er_error amber lighten-4 grey-text center">Vous n'avez pas de factures</div>
+                {% endif %}
                 <table id="bill-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
                     <thead>
                         <tr>
@@ -48,6 +51,7 @@ Factures - Portail utilisateur LEMNIA
                         </tr>
                     </thead>
                     <tbody id="myTable" class="er_elem-table">
+                        {% if(error == true) %}
                         <tr>
                             <td>1</td>
                             <td>Location logiciel A</td>
@@ -1200,6 +1204,32 @@ Factures - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                         </tr>
+                        {% else %}
+                            {% for listBill in listBills %}
+                            <tr>
+                                <td>{{ listBill.id }}</td>
+                                <td>{{ listBill.service }}</td>
+                                <td>{{ listBill.numCommande }}</td>
+                                <td>{{ listBill.date }}</td>
+                                <td class="er_centered-chips">
+                                    <div class="chip er_chips-status green lighten-4">
+                                        {% if(listBill.status == 'paid') %}
+                                        Payée
+                                        {% elseif(listBill.status == 'retard') %}
+                                        En retard
+                                        {% elseif(listBill.status == 'unpaid') %}
+                                        Non payée
+                                        {% endif %}
+                                    </div>
+                                </td>
+                                <td class="er_centered-chips">
+                                    <div class="chip transparent er_chips-action z-depth-4">
+                                        <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% endif %}
                     </tbody>
                 </table>
                 <div class="col s12 row center er_table-pagination">

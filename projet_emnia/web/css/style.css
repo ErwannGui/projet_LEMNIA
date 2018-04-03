@@ -444,7 +444,7 @@ header nav a {
     width: 200px!important;
 }
 
-.er_elem-table_indent tr:hover .er_fab-action_indent {
+.er_elem-table tr:hover .er_fab-action_indent {
     visibility: visible!important;
 }
 
@@ -496,6 +496,13 @@ header nav a {
 }
 
 /**/
+
+.er_error{
+    width: auto;
+    font-size: 16px;
+    border-radius: 2px;
+    height: 24px;
+}
 
 /**/
 
