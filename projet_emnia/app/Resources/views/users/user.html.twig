@@ -96,15 +96,7 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
                                         <input type="text" placeholder="identifiant" id="identifiant" class="validate white-text" value="{{user}}">
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
-                                        <input type="password" placeholder="Mot de passe courant" id="currentPassword" class="validate white-text">
-                                    </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info" id="ma_new_password">
-                                        <input type="password" placeholder="Nouveau mot de passe" id="newPassword" class="validate white-text">
-                                    </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
-                                        <input type="password" placeholder="Valider le mot de passe" id="validatePassword" class="validate white-text">
-                                    </div>
+                                    <a class="white-text" style="font-size:0.8em">Modifier Mots de passe</a>
                                     <div id="validerInfosCo ">
                                         <button class="waves-effect waves-light btn buttonUser col s6 offset-s3" data-action="save-jpg" type="submit">Valider les modifications</button>
                                     </div>
@@ -122,6 +114,7 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     <a class="grey-text" id="ma_modif_sepa" href="#"><i class="material-icons" id="editSepa" style="font-size:18px">edit</i><i class="material-icons white-text" id="closeSepa" style="font-size:20px">clear</i></a>
                                 </div>
                                 <div id="ma_apercu_sepa">
+                                {% if sepa != null %}
                                     <table>
                                         <tbody>
                                             <tr>
@@ -144,6 +137,7 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                             </tr>
                                         </tbody>
                                     </table>
+                                 {% endif %}
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts" id="ma_modifier_sepa">
                                     {{ form_start(formSepa) }}
