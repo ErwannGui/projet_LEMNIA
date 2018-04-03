@@ -8,6 +8,8 @@ $('#ma_modifier_infos_co').hide();
 $('#validerSepa').hide();
 $('#ma_modifier_sepa').hide();
 $('#addCard').hide();
+$('#form_dateExpiration_time').hide();
+
 // modification des informations personnels
 $('#ma_modif_info_perso').click(function(){
     if ($('#ma_info_perso').hasClass('ma_modifyBackground')){
@@ -98,6 +100,7 @@ canvas.addEventListener('mouseup', function(){
     var canvaConverti = canvas.toDataURL();
     $('#form_signature').attr({value : canvaConverti});
 });
+
 
 
 

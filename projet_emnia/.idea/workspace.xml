@@ -51,6 +51,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="lemnia: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lemnia@147.135.249.241" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lemnia: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="carte_bancaire: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -59,17 +66,17 @@
       <file leaf-file-name="Sepa.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/Sepa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="537">
               <caret line="40" column="47" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2652">
-              <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+            <state relative-caret-position="279">
+              <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
               <folding>
                 <element signature="e#58#111#0#PHP" expanded="true" />
               </folding>
@@ -77,36 +84,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="carte_bancaire" pinned="false" current-in-tab="false">
+        <entry file="das://78d1fd12-3f75-4c28-94a6-4f67cbf3f471/schema/lemnia/table/carte_bancaire">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/users/user.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="98" column="80" selection-start-line="98" selection-start-column="80" selection-end-line="98" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarteBancaire.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/CarteBancaire.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25092">
-              <caret line="1476" column="21" selection-start-line="1476" selection-start-column="21" selection-end-line="1476" selection-end-column="21" />
+            <state relative-caret-position="189">
+              <caret line="197" column="110" selection-start-line="197" selection-start-column="110" selection-end-line="197" selection-end-column="110" />
             </state>
           </provider>
         </entry>
@@ -129,6 +129,8 @@
       <find>core</find>
       <find>statusCard</find>
       <find>sep</find>
+      <find>path</find>
+      <find>er_menu_logo_header</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,13 +146,15 @@
         <option value="$PROJECT_DIR$/src/Lemnia/UserBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Lemnia/UserBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/CarteBancaire.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/users/users.html.twig" />
         <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/Sepa.php" />
         <option value="$PROJECT_DIR$/web/js/user.js" />
+        <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/CarteBancaire.php" />
+        <option value="78d1fd12-3f75-4c28-94a6-4f67cbf3f471/schema/lemnia/table/carte_bancaire.sql" />
+        <option value="$PROJECT_DIR$/app/Resources/views/users/user.html.twig" />
+        <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/users/user.html.twig" />
       </list>
     </option>
   </component>
@@ -279,29 +283,6 @@
               <item name="projet_emnia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Lemnia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projet_emnia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projet_emnia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lemnia" type="462c0819:PsiDirectoryNode" />
-              <item name="CustomerPortalBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projet_emnia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projet_emnia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lemnia" type="462c0819:PsiDirectoryNode" />
-              <item name="CustomerPortalBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projet_emnia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projet_emnia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lemnia" type="462c0819:PsiDirectoryNode" />
-              <item name="CustomerPortalBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projet_emnia" type="b2602c69:ProjectViewProjectNode" />
@@ -462,12 +443,12 @@
       <workItem from="1521549110297" duration="8000" />
       <workItem from="1521549135462" duration="20000" />
       <workItem from="1522743107233" duration="206000" />
-      <workItem from="1522743365425" duration="1178000" />
+      <workItem from="1522743365425" duration="18144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113363000" />
+    <option name="totallyTimeSpent" value="130329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -483,8 +464,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4936034" visible="true" weight="0.32570806" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4936034" weight="0.32570806" />
       <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Database Console" visible="true" weight="0.32897604" />
       <window_info id="Designer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
       <window_info anchor="right" id="Database" order="5" weight="0.63432837" />
@@ -610,7 +592,6 @@
     <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/LemniaCustomerPortalBundle.php" />
     <entry file="file://$PROJECT_DIR$/src/Lemnia/CoreBundle/Resources/views/layout.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Resources/config/services.yml" />
-    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Resources/config/routing.yml" />
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -681,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/Sepa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="47" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/8b4041b6/78d1fd12-3f75-4c28-94a6-4f67cbf3f471/lemnia.sepa">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -702,34 +676,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/users/users.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/Sepa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="63" column="135" selection-start-line="63" selection-start-column="135" selection-end-line="63" selection-end-column="135" />
+        <state relative-caret-position="537">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+        <state relative-caret-position="442">
+          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+    <entry file="das://78d1fd12-3f75-4c28-94a6-4f67cbf3f471/schema/lemnia/table/carte_bancaire.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25092">
-          <caret line="1476" column="21" selection-start-line="1476" selection-start-column="21" selection-end-line="1476" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Controller/UserController.php">
+    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/CarteBancaire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
-          <folding>
-            <element signature="e#58#111#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="262">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/users/users.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="68" column="73" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/users/user.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="197" column="110" selection-start-line="197" selection-start-column="110" selection-end-line="197" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -740,15 +725,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Entity/CarteBancaire.php">
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306" />
+        <state relative-caret-position="316">
+          <caret line="238" column="28" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="28" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/users/user.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="98" column="80" selection-start-line="98" selection-start-column="80" selection-end-line="98" selection-end-column="80" />
+        <state relative-caret-position="449">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lemnia/CustomerPortalBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+          <folding>
+            <element signature="e#58#111#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

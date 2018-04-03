@@ -232,8 +232,11 @@ header nav a {
     filter: brightness(1.2);
     width: 35%;
     display: flex;
-    margin-top: 18px;
-    margin-left: 30px;
+}
+.er_menu_logo_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .er_user_header {
