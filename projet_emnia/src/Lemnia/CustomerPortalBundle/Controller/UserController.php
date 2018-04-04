@@ -26,6 +26,8 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('LemniaUserBundle:User')->findAll();
 
+        /*La possibilité de se connecter à un utilisateur en tant qu'admin est à déployer. Il faut pour cela ajouter une verification de variable (boolean admin true ou false) au chargement des pages avec les fonctions __construct*/
+
         return $this->render('users/users.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users,
         ]);

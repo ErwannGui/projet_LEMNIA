@@ -82,9 +82,18 @@ class BillController extends Controller
         }
 
         $user = $this->getUser();
+        $userId = $user->getId();
+
+        $sepa = $this->getDoctrine()
+            ->getRepository('LemniaCustomerPortalBundle:Sepa')
+            ->findOneBy(array("userId"=>$userId));
+
+        $carteBancaire = $this->getDoctrine()
+            ->getRepository('LemniaCustomerPortalBundle:CarteBancaire')
+            ->findBy(array("userId"=>$userId));
 
         return $this->render('bill/bill.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'error' => $error, 'listBills' => $listBills
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'error' => $error, 'listBills' => $listBills, 'sepa'=>$sepa, 'carteBancaires'=>$carteBancaire,
         ]);
     }
 }

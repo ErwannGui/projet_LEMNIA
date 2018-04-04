@@ -472,7 +472,7 @@ Factures - Portail utilisateur LEMNIA
                                               <label for="card" onclick="showCard()">Carte</label>
                                             </p>
                                             <p class="col s12 m6">
-                                              <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
+                                              <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" {% if sepa == null %} disabled {% endif %}/>
                                               <label for="sepa" onclick="showSepa()">Prélèvement SEPA</label>
                                             </p>
                                           </form>
@@ -491,11 +491,12 @@ Factures - Portail utilisateur LEMNIA
                                                     </thead>
 
                                                     <tbody>
+                                                        {% for carteBancaire in carteBancaires %}
                                                         <tr>
-                                                            <td>1</td>
-                                                            <td>Visa</td>
-                                                            <td>**** **** **** 5682</td>
-                                                            <td>10-2019</td>
+                                                            <td>#</td>
+                                                            <td>{{carteBancaire.getType}}</td>
+                                                            <td>{{carteBancaire.getNumeroCarte}}</td>
+                                                            <td>{{carteBancaire.getDateExpiration|date('m/Y')}}</td>
                                                             <td>
                                                                 <p>
                                                                     <input type="checkbox" id="card1" name="card-choice" />
@@ -504,8 +505,8 @@ Factures - Portail utilisateur LEMNIA
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>2</td>
-                                                            <td>Master Card</td>
+                                                            <td>#</td>
+                                                            <td>Carte test</td>
                                                             <td>**** **** **** 9534</td>
                                                             <td>03-2020</td>
                                                             <td>
@@ -515,6 +516,7 @@ Factures - Portail utilisateur LEMNIA
                                                                 </p>
                                                             </td>
                                                         </tr>
+                                                        {% endfor %}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -531,11 +533,13 @@ Factures - Portail utilisateur LEMNIA
                                                         </tr>
                                                     </thead>
                                                     <tbody class="col s9 row">
+                                                        {% if sepa != null %}
                                                         <tr class="col s12">
-                                                            <td>**** **** **** 5682</td>
-                                                            <td>0123456789</td>
-                                                            <td>10-2019</td>
+                                                            <td>{{sepa.getIban}}</td>
+                                                            <td>{{sepa.getBic}}</td>
+                                                            <td>{{sepa.getDateSignature|date("d/m/Y")}}</td>
                                                         </tr>
+                                                        {% endif %}
                                                     </tbody>
                                                 </table>
                                             </div>
