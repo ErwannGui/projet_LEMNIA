@@ -499,9 +499,8 @@ header nav a {
 
 .er_error{
     width: auto;
-    font-size: 16px;
-    border-radius: 2px;
-    height: 24px;
+    font-size: 14px;
+    margin-bottom: 15px;
 }
 
 /**/

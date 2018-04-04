@@ -93,7 +93,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
                             <td>Serveur Test</td>
                             <td>01-03-2019</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Actif
                                 </div>
                             </td>
@@ -109,7 +109,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
                             <td>Serveur Test</td>
                             <td>01-03-2019</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Actif
                                 </div>
                             </td>
@@ -125,7 +125,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
                             <td>Serveur Test</td>
                             <td>01-03-2019</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Desactivé
                                 </div>
                             </td>
@@ -141,7 +141,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
                             <td>Serveur Test</td>
                             <td>01-03-2019</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
+                                <div class="chip er_chips-status">
                                     Danger
                                 </div>
                             </td>
@@ -157,7 +157,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
                             <td>Serveur Test</td>
                             <td>01-03-2019</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Desactivé
                                 </div>
                             </td>
@@ -173,7 +173,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
                             <td>Serveur Test</td>
                             <td>01-03-2019</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Actif
                                 </div>
                             </td>
@@ -377,6 +377,21 @@ Licenses et abonnements - Portail utilisateur LEMNIA
             }
             else if ($(this).text() == 'Désactivé') {
                 $(this).addClass('grey lighten-2 grey-text');
+            }
+            else {
+                $(this).addClass('grey lighten-2 grey-text');
+            }
+        });
+
+        $(".er_chips-status").each(function() {
+            if ($(this).text().trim() == 'Danger') {
+                $(this).addClass('amber lighten-4');
+            }
+            else if ($(this).text().trim() == 'Actif') {
+                $(this).addClass('green lighten-4');
+            }
+            else if ($(this).text().trim() == 'Désactivé') {
+                $(this).addClass('grey lighten-2');
             }
             else {
                 $(this).addClass('grey lighten-2 grey-text');

@@ -36,9 +36,6 @@ Factures - Portail utilisateur LEMNIA
                         <label>Afficher par</label>
                     </div>
                 </div>
-                {% if(error == true) %}
-                <div class="er_error amber lighten-4 grey-text center">Vous n'avez pas de factures</div>
-                {% endif %}
                 <table id="bill-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
                     <thead>
                         <tr>
@@ -52,13 +49,14 @@ Factures - Portail utilisateur LEMNIA
                     </thead>
                     <tbody id="myTable" class="er_elem-table">
                         {% if(error == true) %}
+                        <!-- Lignes en brut afin de tester notre affichage sans données réelles -->
                         <tr>
                             <td>1</td>
                             <td>Location logiciel A</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -74,7 +72,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -90,7 +88,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -106,7 +104,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
+                                <div class="chip er_chips-status">
                                     En retard
                                 </div>
                             </td>
@@ -122,7 +120,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -138,7 +136,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -154,7 +152,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -170,7 +168,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -186,7 +184,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -202,7 +200,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
+                                <div class="chip er_chips-status">
                                     En retard
                                 </div>
                             </td>
@@ -218,7 +216,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -234,7 +232,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -250,7 +248,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -260,13 +258,13 @@ Factures - Portail utilisateur LEMNIA
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>2</td>
                             <td>Location logiciel B</td>
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -282,7 +280,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -298,7 +296,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
+                                <div class="chip er_chips-status">
                                     En retard
                                 </div>
                             </td>
@@ -314,7 +312,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -330,7 +328,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -346,7 +344,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -362,7 +360,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -378,7 +376,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -394,7 +392,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
+                                <div class="chip er_chips-status">
                                     En retard
                                 </div>
                             </td>
@@ -410,7 +408,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
+                                <div class="chip er_chips-status">
                                     Non payée
                                 </div>
                             </td>
@@ -426,7 +424,7 @@ Factures - Portail utilisateur LEMNIA
                             <td>1234567890</td>
                             <td>01-03-2018</td>
                             <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
+                                <div class="chip er_chips-status">
                                     Payée
                                 </div>
                             </td>
@@ -435,799 +433,156 @@ Factures - Portail utilisateur LEMNIA
                                     <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Et bah oui ca marche !!</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Location logiciel A</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Location logiciel B</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Intervention humaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>License Artica Proxy</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    En retard
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Hébergement web</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Non payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">credit_card</i>Payer</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Nom de domaine</td>
-                            <td>1234567890</td>
-                            <td>01-03-2018</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Payée
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
+                        </tr> -->
+                        <div class="er_error grey-text center">Vous n'avez pas de factures<!-- Du moins pas en données réelles --></div>
                         {% else %}
-                            {% for listBill in listBills %}
+                            {% for bill in listBills %}
                             <tr>
-                                <td>{{ listBill.id }}</td>
-                                <td>{{ listBill.service }}</td>
-                                <td>{{ listBill.number }}</td>
-                                <td>{{ listBill.date }}</td>
+                                <td>{{ bill.id }}</td>
+                                <td>{{ bill.service }}</td>
+                                <td>{{ bill.number }}</td>
+                                <td>{{ bill.date }}</td>
                                 <td class="er_centered-chips">
-                                    <div class="chip er_chips-status green lighten-4">
-                                        {% if(listBill.status == 'paid') %}
+                                    <div class="chip er_chips-status">
+                                        {% if(bill.status == 'paid') %}
                                         Payée
-                                        {% elseif(listBill.status == 'retard') %}
+                                        {% elseif(bill.status == 'retard') %}
                                         En retard
-                                        {% elseif(listBill.status == 'unpaid') %}
+                                        {% elseif(bill.status == 'unpaid') %}
                                         Non payée
                                         {% endif %}
                                     </div>
                                 </td>
                                 <td class="er_centered-chips">
                                     <div class="chip transparent er_chips-action z-depth-4">
-                                        <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
+                                        <a class="modal-trigger grey-text right" href="{% if(bill.status == 'unpaid') %}#modal_details_{{ bill.id }}{% else %}#modal_payment_{{ bill.id }}{% endif %}"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
                                     </div>
                                 </td>
                             </tr>
+                            {% if(bill.status == 'unpaid') %}
+                            <!-- Modal de payment réutilisable ailleurs -->
+                            <div id="modal_payment_{{ bill.id }}" class="modal modal-fixed-footer">
+                                <div class="modal-content">
+                                    <h4>Paiement de la facture n°{{ bill.id }}</h4>
+                                    <div id="tab_choice-payment" class="tab_payment">
+                                        <span class="er_type-payment">Méthode de paiement : </span>
+                                        <form action="#" class="row">
+                                            <p class="col s12 m6">
+                                              <input class="with-gap" name="payment-choice" type="radio" id="card" value="card" checked/>
+                                              <label for="card" onclick="showCard()">Carte</label>
+                                            </p>
+                                            <p class="col s12 m6">
+                                              <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
+                                              <label for="sepa" onclick="showSepa()">Prélèvement SEPA</label>
+                                            </p>
+                                          </form>
+                                        <div id="container-card" class="">
+                                            <div class="z-depth-1 white grey-text col s12 er_table-container">
+                                                <span>Choix de la carte</span>
+                                                <table class="highlight bordered responsive-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Type</th>
+                                                            <th>N° Carte</th>
+                                                            <th>Date d'expiration</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Visa</td>
+                                                            <td>**** **** **** 5682</td>
+                                                            <td>10-2019</td>
+                                                            <td>
+                                                                <p>
+                                                                    <input type="checkbox" id="card1" name="card-choice" />
+                                                                    <label id="label-card1" class="card-choice" for="card1"></label>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Master Card</td>
+                                                            <td>**** **** **** 9534</td>
+                                                            <td>03-2020</td>
+                                                            <td>
+                                                                <p>
+                                                                    <input type="checkbox" id="card2" name="card-choice" />
+                                                                    <label id="label-card2" class="card-choice" for="card2"></label>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div id="container-sepa" class="er_hide-container">
+                                            <div class="z-depth-1 white grey-text col s12 er_table-container">
+                                                <span>Informations de prélèvelement</span>
+                                                <table class="highlight row grey lighten-3">
+                                                    <thead class="col s3">
+                                                        <tr>
+                                                            <th>IBAN</th>
+                                                            <th>BIC</th>
+                                                            <th>Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="col s9 row">
+                                                        <tr class="col s12">
+                                                            <td>**** **** **** 5682</td>
+                                                            <td>0123456789</td>
+                                                            <td>10-2019</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="right-align">
+                                            <strong class="er_price-payment">{{ bill.price }} €</strong><br>
+                                            <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_validate-cgv" onclick="loadTab('tab_validate-cgv')">Continuer</a>
+                                        </div>
+                                    </div>
+                                    <div id="tab_validate-cgv" class="tab_payment er_hide-tab">
+                                        <iframe src="" class="er_cgv-payment"></iframe>
+                                        <p class="er_validate-cgv_checkbox">
+                                            <input type="checkbox" id="cgv" name="card-choice" />
+                                            <label id="label-cgv" for="cgv">J'accepte les conditions générals de vente</label>
+                                        </p>
+                                        <div class="right-align">
+                                            <strong class="er_price-payment">{{ bill.price }} €</strong><br>
+                                            <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_payment-done" onclick="loadTab('tab_payment-done')">Continuer</a>
+                                        </div>
+                                    </div>
+                                    <div id="tab_payment-done" class="tab_payment er_hide-tab">
+                                        <div class="center">
+                                            <div class="er_payment-done_icon circle">
+                                                <i class="material-icons white-text center">done</i>
+                                            </div>
+                                            <span class="col s12">Félicitation. Le paiement de la facture à été éffectué.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                                </div>
+                            </div>
+                            {% else %}
+                            <!-- Modals de payment et détails de la facture -->
+                            <div id="modal_details_{{ bill.id }}" class="modal modal-fixed-footer">
+                                <div class="modal-content">
+                                    <h4>Détails de la facture n°{{ bill.number }}</h4>
+                                    <p>Voici la facture payée</p>
+                                    <!-- <iframe src="" height="480" class="col s12"></iframe> -->
+                                    Affichage du PDF
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                                </div>
+                            </div>
+                            {% endif %}
                             {% endfor %}
                         {% endif %}
                     </tbody>
@@ -1414,6 +769,21 @@ Factures - Portail utilisateur LEMNIA
             }
             if ($(this.prop('id', 'label-card2'))) {
                 $('#card2').prop('checked', true);
+            }
+        });
+
+        $(".er_chips-status").each(function() {
+            if ($(this).text().trim() == 'En retard') {
+                $(this).addClass('amber lighten-4');
+            }
+            else if ($(this).text().trim() == 'Payée') {
+                $(this).addClass('green lighten-4');
+            }
+            else if ($(this).text().trim() == 'Non payée') {
+                $(this).addClass('red lighten-4');
+            }
+            else {
+                $(this).addClass('grey lighten-2 grey-text');
             }
         });
     });
