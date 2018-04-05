@@ -1,389 +1,466 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %} Licenses et abonnements - Portail utilisateur LEMNIA {% endblock %} {% block body %}
+<!--Contenu de la page-->
+<main class="main-content row">
+    <h3>Vos licenses et abonnements</h3>
+    <section class="col s12 l12">
+        <div class="row co_statusCardRowContainer">
 
-{% block title %}
-Licenses et abonnements - Portail utilisateur LEMNIA
-{% endblock %}
-
-{% block body %}
-    <!--Contenu de la page-->
-    <main class="main-content row">
-        <h3>Vos licenses et abonnements</h3>
-        <section class="col s12 l12">
-            <div class="row co_statusCardRowContainer">
-
-                <div class="col s12 m4">
-                    <div class="white co_statusCard z-depth-1">
-                        <div class="co_statusCardCirleIcon green lighten-5">
-                            <i class="material-icons green-text text-lighten-3">check</i>
-                        </div>
-                        <div class="co_statusCardTextContent">
-                            <span class="black-text text-lighten-1">2</span>
-                            <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité lointaine</span>
-                        </div>
+            <div class="col s12 m4">
+                <div class="white co_statusCard z-depth-1">
+                    <div class="co_statusCardCirleIcon green lighten-5">
+                        <i class="material-icons green-text text-lighten-3">check</i>
+                    </div>
+                    <div class="co_statusCardTextContent">
+                        <span class="black-text text-lighten-1">2</span>
+                        <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité lointaine</span>
                     </div>
                 </div>
-
-                <div class="col s12 m4">
-                    <div class="white co_statusCard z-depth-1">
-                        <div class="co_statusCardCirleIcon yellow lighten-4">
-                            <i class="material-icons amber-text text-lighten-3">hourglass_empty</i>
-                        </div>
-                        <div class="co_statusCardTextContent">
-                            <span class="black-text text-lighten-1">2</span>
-                            <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité proche</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="white co_statusCard z-depth-1">
-                        <div class="co_statusCardCirleIcon red lighten-4">
-                            <i class="material-icons red-text text-lighten-3">warning</i>
-                        </div>
-                        <div class="co_statusCardTextContent">
-                            <span class="black-text text-lighten-1">2</span>
-                            <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité dépassé</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <div class="row z-depth-1 white er_table-container">
-                <div class="row">
-                    <div class="input-field col s12 m6 l3">
-                        <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons er_close-search">close</i>
+
+            <div class="col s12 m4">
+                <div class="white co_statusCard z-depth-1">
+                    <div class="co_statusCardCirleIcon yellow lighten-4">
+                        <i class="material-icons amber-text text-lighten-3">hourglass_empty</i>
                     </div>
-                    <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
-                        <select id="ma_selectColumn" class="grey-text er_table-sort-select">
+                    <div class="co_statusCardTextContent">
+                        <span class="black-text text-lighten-1">2</span>
+                        <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité proche</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="white co_statusCard z-depth-1">
+                    <div class="co_statusCardCirleIcon red lighten-4">
+                        <i class="material-icons red-text text-lighten-3">warning</i>
+                    </div>
+                    <div class="co_statusCardTextContent">
+                        <span class="black-text text-lighten-1">2</span>
+                        <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité dépassé</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row z-depth-1 white er_table-container">
+            <div class="row">
+                <div class="input-field col s12 m6 l3">
+                    <input id="search" type="search" placeholder="Recherche ..." class="input-search" onkeyup="find()" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons er_close-search">close</i>
+                </div>
+                <div class="input-field col s12 m5 l2 offset-l1 offset-m1">
+                    <select id="ma_selectColumn" class="grey-text er_table-sort-select">
                             <option value="0">ID</option>
                             <option value="2">Type</option>
                             <option value="1">Service</option>
                             <option value="3">Date d'expiration</option>
                             <option value="4">Etat</option>
                         </select>
-                        <label>Recherche par</label>
-                    </div>
-                    <div class="input-field col l2 offset-l4 hide-on-med-and-down">
-                        <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
+                    <label>Recherche par</label>
+                </div>
+                <div class="input-field col l2 offset-l4 hide-on-med-and-down">
+                    <select id="er_nb-elmt_table" class="grey-text er_table-sort-select" onchange="sort()">
                             <option value="4" selected>Défaut</option>
                             <option value="10">10</option>
                             <option value="25">25</option>
                             <option value="50">50</option>
                         </select>
-                        <label>Afficher par</label>
-                    </div>
-                </div>
-                <table id="subscription-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12" >
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Type</th>
-                            <th>Service</th>
-                            <th>Date fin validité</th>
-                            <th class="er_centered-chips">Etat</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="myTable" class="er_elem-table">
-                        <tr>
-                            <td>1</td>
-                            <td>Hébergement</td>
-                            <td>Serveur Test</td>
-                            <td>01-03-2019</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Actif
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Hébergement</td>
-                            <td>Serveur Test</td>
-                            <td>01-03-2019</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Actif
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Hébergement</td>
-                            <td>Serveur Test</td>
-                            <td>01-03-2019</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Desactivé
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">refresh</i>Renouveller</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Hébergement</td>
-                            <td>Serveur Test</td>
-                            <td>01-03-2019</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status amber lighten-4">
-                                    Danger
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">refresh</i>Renouveller</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Hébergement</td>
-                            <td>Serveur Test</td>
-                            <td>01-03-2019</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status red lighten-4">
-                                    Desactivé
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Details</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nom de domaine</td>
-                            <td>Serveur Test</td>
-                            <td>01-03-2019</td>
-                            <td class="er_centered-chips">
-                                <div class="chip er_chips-status green lighten-4">
-                                    Actif
-                                </div>
-                            </td>
-                            <td class="er_centered-chips">
-                                <div class="chip transparent er_chips-action z-depth-4">
-                                    <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="col s12 row center er_table-pagination">
-                    <span class="col s6 m4 l3 left-align er_elem-number" id="total_reg"></span>
-                    <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
-                </div>
-                <!-- Modals de payment et détails de la facture -->
-                <div id="modal_details" class="modal modal-fixed-footer">
-                    <div class="modal-content row">
-                        <h4>License logicielle GigaSoftware</h4>
-                        <label>#5896 - 9458 - 2458 - 2280</label>
-                        <span class="col s12 er_up-status">Actif</span>
-                        <strong class="col s12">Description : </strong>
-                        <p class="er_details-content grey-text col s12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mi a purus lacinia rhoncus. Phasellus non aliquet neque, vel ornare purus. Nam id sapien tempor, placerat dolor vel, porta odio. In eros risus, consequat non gravida ac, mollis ut est. In hac habitasse platea dictumst. Cras consequat lobortis sapien eget mollis. Maecenas eu ante eu metus dapibus blandit non quis augue. Phasellus vestibulum mi odio, vitae porttitor dui sodales non. Quisque pellentesque ut sem vitae semper. Pellentesque tincidunt elit metus, at vestibulum ipsum ultricies et. Proin at consequat libero, eget pellentesque nibh. Ut sit amet tincidunt metus, vitae elementum neque. Praesent nibh velit, lobortis vel aliquam quis, dictum id massa.</p>
-                        <div class="col row">
-                            <strong class="col s12">Durée :</strong>
-                            <p class="col s12 er_details-content grey-text">1 an</p>
-                        </div>
-                        <div class="col row">
-                            <strong class="col s12">Numéro de commande :</strong>
-                            <p class="col s12 er_details-content grey-text">1234567890</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer er_modal-details-footer">
-                        <a href="#modal_payment" class="modal-action modal-close modal-trigger btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">refresh</i>Renouveller</a>
-                        <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">not_interested</i>Résilier l'abonnement</a>
-                    </div>
-                </div>
-                <!-- Modal de payment réutilisable ailleurs -->
-                <div id="modal_payment" class="modal modal-fixed-footer">
-                    <div class="modal-content">
-                        <h4>Revouvellement de la license logicielle GigaSoftware</h4>
-                        <div id="tab_choice-payment" class="tab_payment">
-                            <span class="er_type-payment">Méthode de paiement : </span>
-                            <form action="#" class="row">
-                                <p class="col s12 m6">
-                                  <input class="with-gap" name="payment-choice" type="radio" id="card" value="card" checked/>
-                                  <label for="card" onclick="showCard()">Carte</label>
-                                </p>
-                                <p class="col s12 m6">
-                                  <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
-                                  <label for="sepa" onclick="showSepa()">Prélèvement SEPA</label>
-                                </p>
-                              </form>
-                            <div id="container-card" class="">
-                                <div class="z-depth-1 white grey-text col s12 er_table-container">
-                                    <span>Choix de la carte</span>
-                                    <table class="highlight bordered responsive-table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Type</th>
-                                                <th>N° Carte</th>
-                                                <th>Date d'expiration</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Visa</td>
-                                                <td>**** **** **** 5682</td>
-                                                <td>10-2019</td>
-                                                <td>
-                                                    <p>
-                                                        <input type="checkbox" id="card1" name="card-choice" />
-                                                        <label id="label-card1" class="card-choice" for="card1"></label>
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Master Card</td>
-                                                <td>**** **** **** 9534</td>
-                                                <td>03-2020</td>
-                                                <td>
-                                                    <p>
-                                                        <input type="checkbox" id="card2" name="card-choice" />
-                                                        <label id="label-card2" class="card-choice" for="card2"></label>
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div id="container-sepa" class="er_hide-container">
-                                <div class="z-depth-1 white grey-text col s12 er_table-container">
-                                    <span>Informations de prélèvelement</span>
-                                    <table class="highlight row grey lighten-3">
-                                        <thead class="col s3">
-                                            <tr>
-                                                <th>IBAN</th>
-                                                <th>BIC</th>
-                                                <th>Date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="col s9 row">
-                                            <tr class="col s12">
-                                                <td>**** **** **** 5682</td>
-                                                <td>0123456789</td>
-                                                <td>10-2019</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="right-align">
-                                <strong class="er_price-payment">1463.65 €</strong><br>
-                                <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_validate-cgv" onclick="loadTab('tab_validate-cgv')">Continuer</a>
-                            </div>
-                        </div>
-                        <div id="tab_validate-cgv" class="tab_payment er_hide-tab">
-                            <iframe src="http://neo-se.fr" class="er_cgv-payment"></iframe>
-                            <p class="er_validate-cgv_checkbox">
-                                <input type="checkbox" id="cgv" name="card-choice" />
-                                <label id="label-cgv" for="cgv">J'accepte les conditions générals de vente</label>
-                            </p>
-                            <div class="right-align">
-                                <strong class="er_price-payment">1463.65 €</strong><br>
-                                <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_payment-done" onclick="loadTab('tab_payment-done')">Continuer</a>
-                            </div>
-                        </div>
-                        <div id="tab_payment-done" class="tab_payment er_hide-tab">
-                            <div class="center">
-                                <div class="er_payment-done_icon circle">
-                                    <i class="material-icons white-text center">done</i>
-                                </div>
-                                <span class="col s12">Félicitation. Le paiement de la facture à été éffectué.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
-                    </div>
+                    <label>Afficher par</label>
                 </div>
             </div>
-        </section>
-    </main>
-{% endblock %}
+            {% if(error == true) %}
+            <div class="er_error amber lighten-4 grey-text center">Vous n'avez pas d'abonnement</div>
+            {% endif %}
+            <table id="subscription-table" cellpadding="1" cellspacing="1" class="table table-hover grey-text bordered highlight responsive-table col s12">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Service</th>
+                        <th>Date fin validité</th>
+                        <th class="er_centered-chips">Etat</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="myTable" class="er_elem-table">
+                    {% if(error == true) %}
+                    <tr>
+                        <td>2</td>
+                        <td>Hébergement</td>
+                        <td>Serveur Test</td>
+                        <td>01-03-2019</td>
+                        <td class="er_centered-chips">
+                            <div class="chip er_chips-status green lighten-4">
+                                Actif
+                            </div>
+                        </td>
+                        <td class="er_centered-chips">
+                            <div class="chip transparent er_chips-action z-depth-4">
+                                <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Hébergement</td>
+                        <td>Serveur Test</td>
+                        <td>01-03-2019</td>
+                        <td class="er_centered-chips">
+                            <div class="chip er_chips-status red lighten-4">
+                                Desactivé
+                            </div>
+                        </td>
+                        <td class="er_centered-chips">
+                            <div class="chip transparent er_chips-action z-depth-4">
+                                <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">refresh</i>Renouveller</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Hébergement</td>
+                        <td>Serveur Test</td>
+                        <td>01-03-2019</td>
+                        <td class="er_centered-chips">
+                            <div class="chip er_chips-status amber lighten-4">
+                                Danger
+                            </div>
+                        </td>
+                        <td class="er_centered-chips">
+                            <div class="chip transparent er_chips-action z-depth-4">
+                                <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">refresh</i>Renouveller</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Hébergement</td>
+                        <td>Serveur Test</td>
+                        <td>01-03-2019</td>
+                        <td class="er_centered-chips">
+                            <div class="chip er_chips-status red lighten-4">
+                                Desactivé
+                            </div>
+                        </td>
+                        <td class="er_centered-chips">
+                            <div class="chip transparent er_chips-action z-depth-4">
+                                <a class="modal-trigger grey-text right" href="#modal_payment"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Details</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Nom de domaine</td>
+                        <td>Serveur Test</td>
+                        <td>01-03-2019</td>
+                        <td class="er_centered-chips">
+                            <div class="chip er_chips-status green lighten-4">
+                                Actif
+                            </div>
+                        </td>
+                        <td class="er_centered-chips">
+                            <div class="chip transparent er_chips-action z-depth-4">
+                                <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% else %} {% for listSub in listSubs %}
+                    <tr>
+                        <td>1</td>
+                        <td>{{ listSub.type }}</td>
+                        <td> {{ listSub.test}}</td>
+                        <td>{{ listSub.end }}</td>
+                        <td class="er_centered-chips">
+                            <div class="chip er_chips-status green lighten-4">
+                                {% if (activity == 1) %} Actif {% else %} Désactivé {% endif %}
+                            </div>
+                        </td>
+                        <td class="er_centered-chips">
+                            <div class="chip transparent er_chips-action z-depth-4">
+                                <a class="modal-trigger grey-text right" href="#modal_details"><i class="material-icons grey-text left er_icon-action">remove_red_eye</i>Détails</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %} {% endif %}
+                </tbody>
+            </table>
+            <div class="col s12 row center er_table-pagination">
+                <span class="col s6 m4 l3 left-align er_elem-number" id="total_reg"></span>
+                <ul class="pagination pager col s6 m6 l5 offset-m2 offset-l4 right-align" id="myPager"></ul>
+            </div>
+            <!-- Modals de payment et détails de la facture -->
+            <div id="modal_details" class="modal modal-fixed-footer">
+                <div class="modal-content row">
+                    <h4>License logicielle GigaSoftware</h4>
+                    <label>#5896 - 9458 - 2458 - 2280</label>
+                    <span class="col s12 er_up-status">Actif</span>
+                    <strong class="col s12">Description : </strong>
+                    <p class="er_details-content grey-text col s12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mi a purus lacinia rhoncus. Phasellus non aliquet neque, vel ornare purus. Nam id sapien tempor, placerat dolor vel, porta odio. In eros risus, consequat non gravida ac, mollis ut est. In hac habitasse platea dictumst. Cras consequat lobortis sapien eget mollis. Maecenas eu ante eu metus dapibus blandit non quis augue. Phasellus vestibulum mi odio, vitae porttitor dui sodales non. Quisque pellentesque ut sem vitae semper. Pellentesque tincidunt elit metus, at vestibulum ipsum ultricies et. Proin at consequat libero, eget pellentesque nibh. Ut sit amet tincidunt metus, vitae elementum neque. Praesent nibh velit, lobortis vel aliquam quis, dictum id massa.</p>
+                    <div class="col row">
+                        <strong class="col s12">Durée :</strong>
+                        <p class="col s12 er_details-content grey-text">1 an</p>
+                    </div>
+                    <div class="col row">
+                        <strong class="col s12">Numéro de commande :</strong>
+                        <p class="col s12 er_details-content grey-text">1234567890</p>
+                    </div>
+                </div>
+                <div class="modal-footer er_modal-details-footer">
+                    <a href="#modal_payment" class="modal-action modal-close modal-trigger btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">refresh</i>Renouveller</a>
+                    <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">not_interested</i>Résilier l'abonnement</a>
+                </div>
+            </div>
+            <!-- Modal de payment réutilisable ailleurs -->
+            <div id="modal_payment" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4>Revouvellement de la license logicielle GigaSoftware</h4>
+                    <div id="tab_choice-payment" class="tab_payment">
+                        <span class="er_type-payment">Méthode de paiement : </span>
+                        <form action="#" class="row">
+                            <p class="col s12 m6">
+                                <input class="with-gap" name="payment-choice" type="radio" id="card" value="card" checked/>
+                                <label for="card" onclick="showCard()">Carte</label>
+                            </p>
+                            <p class="col s12 m6">
+                                <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
+                                <label for="sepa" onclick="showSepa()">Prélèvement SEPA</label>
+                            </p>
+                        </form>
+                        <div id="container-card" class="">
+                            <div class="z-depth-1 white grey-text col s12 er_table-container">
+                                <span>Choix de la carte</span>
+                                <table class="highlight bordered responsive-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Type</th>
+                                            <th>N° Carte</th>
+                                            <th>Date d'expiration</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
 
-{% block stylesheets %}
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Visa</td>
+                                            <td>**** **** **** 5682</td>
+                                            <td>10-2019</td>
+                                            <td>
+                                                <p>
+                                                    <input type="checkbox" id="card1" name="card-choice" />
+                                                    <label id="label-card1" class="card-choice" for="card1"></label>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Master Card</td>
+                                            <td>**** **** **** 9534</td>
+                                            <td>03-2020</td>
+                                            <td>
+                                                <p>
+                                                    <input type="checkbox" id="card2" name="card-choice" />
+                                                    <label id="label-card2" class="card-choice" for="card2"></label>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="container-sepa" class="er_hide-container">
+                            <div class="z-depth-1 white grey-text col s12 er_table-container">
+                                <span>Informations de prélèvelement</span>
+                                <table class="highlight row grey lighten-3">
+                                    <thead class="col s3">
+                                        <tr>
+                                            <th>IBAN</th>
+                                            <th>BIC</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="col s9 row">
+                                        <tr class="col s12">
+                                            <td>**** **** **** 5682</td>
+                                            <td>0123456789</td>
+                                            <td>10-2019</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="right-align">
+                            <strong class="er_price-payment">1463.65 €</strong><br>
+                            <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_validate-cgv" onclick="loadTab('tab_validate-cgv')">Continuer</a>
+                        </div>
+                    </div>
+                    <div id="tab_validate-cgv" class="tab_payment er_hide-tab">
+                        <iframe src="http://neo-se.fr" class="er_cgv-payment"></iframe>
+                        <p class="er_validate-cgv_checkbox">
+                            <input type="checkbox" id="cgv" name="card-choice" />
+                            <label id="label-cgv" for="cgv">J'accepte les conditions générals de vente</label>
+                        </p>
+                        <div class="right-align">
+                            <strong class="er_price-payment">1463.65 €</strong><br>
+                            <a class="waves-effect waves-light btn light-blue lighten-2 er_next-tab-payment z-depth-2" href="#tab_payment-done" onclick="loadTab('tab_payment-done')">Continuer</a>
+                        </div>
+                    </div>
+                    <div id="tab_payment-done" class="tab_payment er_hide-tab">
+                        <div class="center">
+                            <div class="er_payment-done_icon circle">
+                                <i class="material-icons white-text center">done</i>
+                            </div>
+                            <span class="col s12">Félicitation. Le paiement de la facture à été éffectué.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %} {% block stylesheets %}
 <style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; overflow-x: hidden; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
+    body {
+        background: #F5F5F5;
+        font: 18px/1.5 sans-serif;
+        overflow-x: hidden;
+    }
+    
+    h1,
+    h2 {
+        line-height: 1.2;
+        margin: 0 0 .5em;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 21px;
+        margin-bottom: 1em;
+    }
+    
+    p {
+        margin: 0 0 1em 0;
+    }
+    
+    a {
+        color: #0000F0;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    code {
+        background: #F5F5F5;
+        max-width: 100px;
+        padding: 2px 6px;
+        word-wrap: break-word;
+    }
+    
+    #wrapper {
+        background: #FFF;
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+    }
+    
+    #container {
+        padding: 2em;
+    }
+    
+    #welcome,
+    #status {
+        margin-bottom: 2em;
+    }
+    
+    #welcome h1 span {
+        display: block;
+        font-size: 75%;
+    }
+    
+    #icon-status,
+    #icon-book {
+        float: left;
+        height: 64px;
+        margin-right: 1em;
+        margin-top: -4px;
+        width: 64px;
+    }
+    
+    #icon-book {
+        display: none;
+    }
     
     @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+        #wrapper {
+            width: 80%;
+            margin: 2em auto;
+        }
+        #icon-book {
+            display: inline-block;
+        }
+        #status a,
+        #next a {
+            display: block;
+        }
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .sf-toolbar {
+            opacity: 0;
+            -webkit-animation: fade-in 1s .2s forwards;
+            animation: fade-in 1s .2s forwards;
+        }
     }
 
 </style>
-{% endblock %}
-
-{% block javascripts %}
+{% endblock %} {% block javascripts %}
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#myTable').pageMe({
-          pagerSelector:'#myPager',
-          activeColor: 'blue',
-          prevText:'Prev',
-          nextText:'Next',
-          showPrevNext:true,
-          hidePageNumbers:false,
-          perPage:4
+            pagerSelector: '#myPager',
+            activeColor: 'blue',
+            prevText: 'Prev',
+            nextText: 'Next',
+            showPrevNext: true,
+            hidePageNumbers: false,
+            perPage: 4
         });
 
         $(".er_up-status").each(function() {
             if ($(this).text() == 'Danger') {
                 $(this).addClass('amber lighten-4 amber-text text-lighten-2');
-            }
-            else if ($(this).text() == 'Actif') {
+            } else if ($(this).text() == 'Actif') {
                 $(this).addClass('green lighten-4 green-text text-lighten-2');
-            }
-            else if ($(this).text() == 'Désactivé') {
+            } else if ($(this).text() == 'Désactivé') {
                 $(this).addClass('grey lighten-2 grey-text');
-            }
-            else {
+            } else {
                 $(this).addClass('grey lighten-2 grey-text');
             }
         });
 
-        $('.card-choice').on('click', function () {
+        $('.card-choice').on('click', function() {
             $('input:checkbox').prop('checked', false);
             if ($(this.prop('id', 'label-card1'))) {
                 $('#card1').prop('checked', true);
@@ -395,41 +472,38 @@ Licenses et abonnements - Portail utilisateur LEMNIA
 
     });
 
-    $('.tooltipped').tooltip({delay: 50});
+    $('.tooltipped').tooltip({
+        delay: 50
+    });
 
     function loadTab(value) {
         $('.tab_payment').addClass('er_hide-tab');
         if (value == 'tab_validate-cgv') {
             if ($('#container-sepa').hasClass('er_hide-container')) {
                 if ($('input[name="card-choice"]').is(':checked')) {
-                    $('#'+value).removeClass('er_hide-tab');
+                    $('#' + value).removeClass('er_hide-tab');
                     $('.er_tab-valid-btn').removeAttr('disabled');
                     $('.er_tab-valid-btn').addClass('pulse');
-                }
-                else {
+                } else {
                     Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez choisir une carte', 4000, 'amber lighten-1');
                     $('#tab_choice-payment').removeClass('er_hide-tab');
                 }
-            }
-            else {
-                $('#'+value).removeClass('er_hide-tab');
+            } else {
+                $('#' + value).removeClass('er_hide-tab');
                 $('.er_tab-valid-btn').removeAttr('disabled');
                 $('.er_tab-valid-btn').addClass('pulse');
             }
-        }
-        else if (value == 'tab_payment-done') {
+        } else if (value == 'tab_payment-done') {
             if ($('#cgv').is(':checked')) {
-                $('#'+value).removeClass('er_hide-tab');
+                $('#' + value).removeClass('er_hide-tab');
                 $('.er_tab-done-btn').removeAttr('disabled');
                 $('.er_tab-done-btn').addClass('pulse');
-            }
-            else {
+            } else {
                 Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez accepter les CGV pour continuer', 4000, 'amber lighten-1');
                 $('#tab_validate-cgv').removeClass('er_hide-tab');
             }
-        }
-        else {
-            $('#'+value).removeClass('er_hide-tab');
+        } else {
+            $('#' + value).removeClass('er_hide-tab');
         }
     }
 
@@ -465,7 +539,7 @@ Licenses et abonnements - Portail utilisateur LEMNIA
             }
         }
 
-        
+
     }
 
     function sort() {
@@ -474,18 +548,19 @@ Licenses et abonnements - Portail utilisateur LEMNIA
 
         // boucle tant qu'un enfant existe
         while (element.firstChild) {
-           // le supprime
-           element.removeChild(element.firstChild);
+            // le supprime
+            element.removeChild(element.firstChild);
         }
         $('#myTable').pageMe({
-          pagerSelector:'#myPager',
-          activeColor: 'blue',
-          prevText:'Précédent',
-          nextText:'Suivant',
-          showPrevNext:true,
-          hidePageNumbers:false,
-          perPage:number
+            pagerSelector: '#myPager',
+            activeColor: 'blue',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            showPrevNext: true,
+            hidePageNumbers: false,
+            perPage: number
         });
     }
+
 </script>
 {% endblock %}
