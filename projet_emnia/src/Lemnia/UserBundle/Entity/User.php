@@ -88,6 +88,11 @@ class User extends FosUser
     private $city;
 
     /**
+     * @ORM\OneToMany(targetEntity="Lemnia\CustomerPortalBundle\Entity\Notification", mappedBy="user")
+     */
+    private $notification;
+
+    /**
      * Set lastName
      *
      * @param string $lastName
