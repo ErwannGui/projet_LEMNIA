@@ -89,10 +89,20 @@ class SubscriptionController extends Controller
                 }
             }
         }
+
+        $userId = $user->getId();
+
+        $sepa = $this->getDoctrine()
+            ->getRepository('LemniaCustomerPortalBundle:Sepa')
+            ->findOneBy(array("userId"=>$userId));
+
+        $carteBancaire = $this->getDoctrine()
+            ->getRepository('LemniaCustomerPortalBundle:CarteBancaire')
+            ->findBy(array("userId"=>$userId));
        
 
         return $this->render('subscription/subscription.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'error' => $error, 'subscriptions' => $listSubs, "activity" => $activity
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'error' => $error, 'listSubs' => $listSubs, "activity" => $activity, 'sepa'=>$sepa, 'carteBancaires'=>$carteBancaire,
         ]);
     }
 

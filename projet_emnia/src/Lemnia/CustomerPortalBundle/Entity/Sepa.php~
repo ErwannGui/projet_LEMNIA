@@ -38,14 +38,14 @@ class Sepa
     /**
      * @var string
      *
-     * @ORM\Column(name="signature", type="string", nullable=true)
+     * @ORM\Column(name="signature", type="text", nullable=true)
      */
     private $signature;
 
     /**
      * @var date
      *
-     * @ORM\Column(name="date_signature", type="date", nullable=true)
+     * @ORM\Column(name="date_signature", type="date" ,nullable=true)
      */
     private $dateSignature;
 

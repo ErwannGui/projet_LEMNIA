@@ -10,6 +10,10 @@ lemnia_customer_portal_indent:
     path:     /indent
     defaults: { _controller: LemniaCustomerPortalBundle:Indent:listIndent }
 
+lemnia_customer_portal_indentCancel:
+    path:     /indent
+    defaults: { _controller: LemniaCustomerPortalBundle:Indent:cancelIndent }
+
 lemnia_customer_portal_subscription:
     path:     /subscription
     defaults: { _controller: LemniaCustomerPortalBundle:Subscription:listSubscription }
