@@ -10,7 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
@@ -25,6 +25,8 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('LemniaUserBundle:User')->findAll();
+
+        /*La possibilité de se connecter à un utilisateur en tant qu'admin est à déployer. Il faut pour cela ajouter une verification de variable (boolean admin true ou false) au chargement des pages avec les fonctions __construct*/
 
         return $this->render('users/users.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'users' => $users,
@@ -95,12 +97,6 @@ class UserController extends Controller
             ->add('signature',HiddenType::class)
             ->getForm();
 
-//
-//        $data_uri = "data:img/png;base64,iVBORw0K...";
-//        $encoded_image = explode(",", $data_uri)[1];
-//        $decoded_image = base64_decode($encoded_image);
-//        file_put_contents("signature.png", $decoded_image);
-
         $formSepa->handleRequest($request);
 
         if ($formSepa->isSubmitted() && $formSepa->isValid()) {
@@ -133,7 +129,7 @@ class UserController extends Controller
                     'style' => 'margin-left:20px; color:white'
                 )
             ))
-            ->add('dateExpiration', DateType::class, array(
+            ->add('dateExpiration', DateTimeType::class, array(
                 'attr'=>array(
                     'style'=>'width:150px; margin-right:20px; color:white'
                 ),
@@ -161,18 +157,33 @@ class UserController extends Controller
                 $addCarteBancaire->setDateExpiration($date);
                 $addCarteBancaire->setPictogramme($pictogramme);
                 $addCarteBancaire->setUserId($user);
-                $em->flush();
-
-            }else{
 
             }
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($addCarteBancaire);
+            $em->flush();
 
         }
+        $i = 0;
 
 
         return $this->render('users/user.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,'formInfoPerso'=>$formInfoPerso->createView(), 'sepa'=>$sepa, 'formSepa'=>$formSepa->createView(), 'initial'=>$initial, 'formCarteBancaire'=>$formCarteBancaire->createView(),'carteBancaires'=>$carteBancaire,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,'formInfoPerso'=>$formInfoPerso->createView(), 'sepa'=>$sepa, 'formSepa'=>$formSepa->createView(), 'initial'=>$initial, 'formCarteBancaire'=>$formCarteBancaire->createView(),'carteBancaires'=>$carteBancaire,'i'=>$i,
         ]);
+    }
+    /**
+     * @Route("/user?id={id}", name="customer_portal_bundle_user_delete")
+     * On peut définir des droits spécifiques à cette route afin d'en limiter l'accès
+     */
+    public function deleteUserCreditCardAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $id = $request->query->get('id');
+        $carteBancaire = $this->getDoctrine()
+            ->getRepository('LemniaCustomerPortalBundle:CarteBancaire')
+            ->find($id);
+        $em->remove($carteBancaire);
+        $em->flush();
+        return $this->redirectToRoute('lemnia_customer_portal_user');
     }
 
     /**
@@ -257,4 +268,6 @@ class UserController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'listContacts' => $listContacts, 'error' => $error
         ]);
     }
+
+    
 }

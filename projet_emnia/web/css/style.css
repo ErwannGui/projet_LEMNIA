@@ -232,8 +232,11 @@ header nav a {
     filter: brightness(1.2);
     width: 35%;
     display: flex;
-    margin-top: 18px;
-    margin-left: 30px;
+}
+.er_menu_logo_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .er_user_header {
@@ -441,7 +444,7 @@ header nav a {
     width: 200px!important;
 }
 
-.er_elem-table_indent tr:hover .er_fab-action_indent {
+.er_elem-table tr:hover .er_fab-action_indent {
     visibility: visible!important;
 }
 
@@ -493,6 +496,12 @@ header nav a {
 }
 
 /**/
+
+.er_error{
+    width: auto;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
 
 /**/
 

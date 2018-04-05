@@ -33,3 +33,7 @@ lemnia_customer_portal_edituser:
 lemnia_customer_portal_contacts:
     path:     /contacts
     defaults: { _controller: LemniaCustomerPortalBundle:User:contacts }
+
+lemnia_customer_portal_delete_credit_card:
+    path:     /userdel
+    defaults: { _controller: LemniaCustomerPortalBundle:User:deleteUserCreditCard }

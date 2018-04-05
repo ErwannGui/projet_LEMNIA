@@ -53,6 +53,7 @@ Assistance - Portail utilisateur LEMNIA
                                 </tr>
                             </thead>
                             <tbody id="myTable" class="er_elem-table">
+                                {% if(error == true) %}
                                 <tr>
                                     <td>1</td>
                                     <td>Probleme logiciel</td>
@@ -149,6 +150,33 @@ Assistance - Portail utilisateur LEMNIA
                                         </div>
                                     </td>
                                 </tr>
+                                <div class="er_error grey-text center">Vous n'avez pas de ticket ouvert<!-- Du moins pas en données réelles --></div>
+                                {% else %}
+                                    {% for discussion in listDiscussions %}
+                                    <tr>
+                                        <td>{{ discussion.id }}</td>
+                                        <td>{{ discussion.object }}</td>
+                                        <td>{{ discussion.priority }}</td>
+                                        <td>{{ discussion.endDate }}</td>
+                                        <td class="er_centered-chips">
+                                            <div class="chip er_chips-status green lighten-4">
+                                                {% if(discussion.status == 'waiting') %}
+                                                En attente
+                                                {% elseif(indent.status == 'answered') %}
+                                                Répondu
+                                                {% elseif(indent.status == 'resolved') %}
+                                                Résolu
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                        <td class="er_centered-chips">
+                                            <div class="chip transparent er_chips-action z-depth-4">
+                                                <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                {% endif %}
                             </tbody>
                         </table>
                         <div class="col s12 row center er_table-pagination">
@@ -357,6 +385,21 @@ Assistance - Portail utilisateur LEMNIA
           hidePageNumbers:false,
           perPage:4
         }); 
+
+        $(".er_chips-status").each(function() {
+            if ($(this).text().trim() == 'En attente') {
+                $(this).addClass('amber lighten-4');
+            }
+            else if ($(this).text().trim() == 'Répondu') {
+                $(this).addClass('blue lighten-4');
+            }
+            else if ($(this).text().trim() == 'Résolu') {
+                $(this).addClass('green lighten-4');
+            }
+            else {
+                $(this).addClass('grey lighten-2 grey-text');
+            }
+        });
     });
 
     function find() {
