@@ -27,7 +27,7 @@
             {% endif %}
             <div class="login-space">
                 <button id="_submit" type="submit" name="_submit" class="btn" value="{{ 'security.login.submit'|trans }}">Connexion</button>
-                <a href="#">Mot de passe oublié ?</a>
+                <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a>
             </div>
         </div>
     </form>

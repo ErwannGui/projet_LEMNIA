@@ -79,3 +79,11 @@ fos_user:
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+    change_password:
+      form:
+        type: me_user_change_password
+    service:
+      mailer: fos_user.mailer.twig_swift
+    resetting:
+      email:
+        template: FOSUserBundle:Resetting:email.txt.twig

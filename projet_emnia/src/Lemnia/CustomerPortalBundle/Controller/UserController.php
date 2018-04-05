@@ -52,16 +52,56 @@ class UserController extends Controller
             ->findBy(array("userId"=>$userId));
 
         $formInfoPerso = $this -> createFormBuilder()
-            ->add('firstname', TextType::class)
-            ->add('lastname', TextType::class)
-            ->add('socity', TextType::class)
-            ->add('job', TextType::class)
-            ->add('pays', TextType::class)
-            ->add('ville', TextType::class)
-            ->add('cPostal', NumberType::class)
-            ->add('adresse', TextType::class)
-            ->add('telephone',NumberType::class)
-            ->add('email', EmailType::class)
+            ->add('firstname', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'prenom'
+                )
+            ))
+            ->add('lastname', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'nom'
+                )
+            ))
+            ->add('socity', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'société'
+                )
+            ))
+            ->add('job', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'job'
+                )
+            ))
+            ->add('pays', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'pays'
+                )
+            ))
+            ->add('ville', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'ville'
+                )
+            ))
+            ->add('cPostal', NumberType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'code Postal'
+                )
+            ))
+            ->add('adresse', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'adresse'
+                )
+            ))
+            ->add('telephone',NumberType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'telephone'
+                )
+            ))
+            ->add('email', EmailType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'email'
+                )
+            ))
             ->getForm();
 
         $request = Request::createFromGlobals();
@@ -91,9 +131,31 @@ class UserController extends Controller
 
             $em->flush();
         }
+
+        $formConnexion = $this -> createFormBuilder()
+            ->add('pseudo',TextType::class)
+            -> getForm();
+
+        $formConnexion->handleRequest($request);
+
+        if ($formConnexion->isSubmitted() && $formConnexion->isValid()){
+            $pseudo = $formConnexion->get('pseudo')->getData();
+
+            $user->setUsername($pseudo);
+            $em->flush();
+        }
+
         $formSepa = $this -> createFormBuilder()
-            ->add('iban', TextType::class)
-            ->add('bic', NumberType::class)
+            ->add('iban', TextType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'IBAN'
+                )
+            ))
+            ->add('bic', NumberType::class, array(
+                'attr'=>array(
+                    'placeholder'=>'BIC'
+                )
+            ))
             ->add('signature',HiddenType::class)
             ->getForm();
 
@@ -167,7 +229,7 @@ class UserController extends Controller
 
 
         return $this->render('users/user.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,'formInfoPerso'=>$formInfoPerso->createView(), 'sepa'=>$sepa, 'formSepa'=>$formSepa->createView(), 'initial'=>$initial, 'formCarteBancaire'=>$formCarteBancaire->createView(),'carteBancaires'=>$carteBancaire,'i'=>$i,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user,'formInfoPerso'=>$formInfoPerso->createView(), 'sepa'=>$sepa, 'formSepa'=>$formSepa->createView(), 'initial'=>$initial, 'formCarteBancaire'=>$formCarteBancaire->createView(),'carteBancaires'=>$carteBancaire,'i'=>$i,'formConnexion'=>$formConnexion->createView(),
         ]);
     }
     /**
