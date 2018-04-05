@@ -171,7 +171,7 @@ Assistance - Portail utilisateur LEMNIA
                                         </td>
                                         <td class="er_centered-chips">
                                             <div class="chip transparent er_chips-action z-depth-4">
-                                                <a href="#!" class="co_openDiscussionModalButton_help grey-text right"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
+                                                <a href="#!" class="co_openDiscussionModalButton_help grey-text right" onclick="openModal({{ discussion.id }})"><i class="material-icons grey-text left er_icon-action">chat</i>Voir la discussion</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -271,10 +271,10 @@ Assistance - Portail utilisateur LEMNIA
                 <!-- header modal -->
                 <div class="co_modalHeader">
                     <div class="co_blueWindowHeader co_blueWindowModalHeader" style="background-color: white">
-                        <p class="grey-text text-darken-1" style="font-size: 18px; width:auto">Objet discussion</p>
+                        <p id="discussionObject" class="grey-text text-darken-1" style="font-size: 18px; width:auto">Objet discussion</p>
                         <i id="co_modalDiscussionCloseButton" class="grey-text text-darken-1 material-icons modal-action modal-close" style="font-size: 18px">close</i>
                     </div>
-                    <p class="grey-text text-lighten-2" style="font-size:14px">Urgent</p>
+                    <p id="discussionPriority" class="grey-text text-lighten-2" style="font-size:14px">Urgent</p>
                     <div class="divider"></div>
                 </div>
 
@@ -284,13 +284,13 @@ Assistance - Portail utilisateur LEMNIA
                     <div class="co_modalDiscussionMessageLine_help co_modalDiscussionLemniaMessageLine_help row">
                         <div class="co_modalDiscussionOneMessage_help co_modalDiscussionLemniaAnswer_help">
                             <div class="co_nameCircle" style="background:#EEEEEE">
-                                <p class="grey-text">LEMNIA</p>
+                                <p class="grey-text messageAuthor">LEMNIA</p>
                             </div>
                             <div class="co_modalDiscussionBubbleBlock_help col s9 m8 l6">
                                 <div class="co_modalDiscussionMessageBody">
-                                    <p class="grey-text text-darken-1" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                                    <p class="grey-text text-darken-1 messageContent" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
                                 </div>
-                                <p class="grey-text" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
+                                <p class="grey-text messageDate" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
                             </div>
                         </div>
                     </div>
@@ -298,13 +298,13 @@ Assistance - Portail utilisateur LEMNIA
                     <div class="co_modalDiscussionMessageLine_help co_modalDiscussionUserMessageLine_help row">
                         <div class="co_modalDiscussionOneMessage_help co_modalDiscussionUserAnswer_help">
                             <div class="co_nameCircle">
-                                <p class="white-text">CD</p>
+                                <p class="white-text messageAuthor">CD</p>
                             </div>
                             <div class="co_modalDiscussionBubbleBlock_help col s9 m8 l6">
                                 <div class="co_modalDiscussionMessageBody">
-                                    <p class="white-text" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                                    <p class="white-text messageContent" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
                                 </div>
-                                <p class="grey-text" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
+                                <p class="grey-text messageDate" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
                             </div>
                         </div>
                     </div>
@@ -312,13 +312,13 @@ Assistance - Portail utilisateur LEMNIA
                     <div class="co_modalDiscussionMessageLine_help co_modalDiscussionLemniaMessageLine_help row">
                         <div class="co_modalDiscussionOneMessage_help co_modalDiscussionLemniaAnswer_help">
                             <div class="co_nameCircle" style="background:#EEEEEE">
-                                <p class="grey-text">LEMNIA</p>
+                                <p class="grey-text messageAuthor">LEMNIA</p>
                             </div>
                             <div class="co_modalDiscussionBubbleBlock_help col s9 m8 l6">
                                 <div class="co_modalDiscussionMessageBody">
-                                    <p class="grey-text text-darken-1" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                                    <p class="grey-text text-darken-1 messageContent" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet faucibus urna, ut cursus nisi. Proin mattis quam ex, nec cursus mi pulvinar in. Mauris malesuada eget quam eget congue. Maecenas ullamcorper lectus et facilisis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
                                 </div>
-                                <p class="grey-text" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
+                                <p class="grey-text messageDate" style="font-size: 12px">le 02 - 03 - 2018 à 14:48</p>
                             </div>
                         </div>
                     </div>
@@ -445,6 +445,39 @@ Assistance - Portail utilisateur LEMNIA
           hidePageNumbers:false,
           perPage:number
         });
+    }
+
+    var discussions = new Array();
+    var x = 1;
+    {% for discussion in listDiscussions %}
+        discussions['x'] = discussion;
+        x++;        
+    {% endfor %}
+
+    function openModal(id) {
+        $('#discussionObject').text(discussions[id]['object']);
+        $('#discussionPriority').text(discussions[id]['priority']);
+        var messages = new Array();
+        var y = 1;
+        var z = 1;
+        for each (var message in discussions[id]['message']) {
+            messages[y] = message;
+            y++;
+        }
+        if (messages.length() < 4) {
+            $('.messageAuthor').each(function(){
+                $(this).text(messages[z]['author']);
+            });
+
+            $('.messageContent').each(function(){
+                $(this).text(messages[z]['content']);
+            });
+
+            $('.messageDate').each(function(){
+                $(this).text(messages[z]['date']);
+            });
+            z++;
+        }
     }
 </script>
 {% endblock %}
