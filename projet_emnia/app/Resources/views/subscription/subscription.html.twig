@@ -574,143 +574,146 @@
 {% endblock %} {% block javascripts %}
 <script type="text/javascript">
     $(document).ready(function() {
-                $('#myTable').pageMe({
-                    pagerSelector: '#myPager',
-                    activeColor: 'blue',
-                    prevText: 'Prev',
-                    nextText: 'Next',
-                    showPrevNext: true,
-                    hidePageNumbers: false,
-                    perPage: 4
-                });
+        $('#myTable').pageMe({
+            pagerSelector: '#myPager',
+            activeColor: 'blue',
+            prevText: 'Prev',
+            nextText: 'Next',
+            showPrevNext: true,
+            hidePageNumbers: false,
+            perPage: 4
+        });
 
-                $(".er_up-status").each(function() {
-                    if ($(this).text() == 'Danger') {
-                        $(this).addClass('amber lighten-4 amber-text text-lighten-2');
-                    } else if ($(this).text() == 'Actif') {
-                        $(this).addClass('green lighten-4 green-text text-lighten-2');
-                    } else if ($(this).text() == 'Désactivé') {
-                        $(this).addClass('grey lighten-2 grey-text');
-                    } else {
-                        $(this).addClass('grey lighten-2 grey-text');
-                    }
-                });
+        $(".er_up-status").each(function() {
+            if ($(this).text() == 'Danger') {
+                $(this).addClass('amber lighten-4 amber-text text-lighten-2');
+            } else if ($(this).text() == 'Actif') {
+                $(this).addClass('green lighten-4 green-text text-lighten-2');
+            } else if ($(this).text() == 'Désactivé') {
+                $(this).addClass('grey lighten-2 grey-text');
+            } else {
+                $(this).addClass('grey lighten-2 grey-text');
+            }
+        });
 
-                $('.card-choice').on('click', function() {
+        $(".er_chips-status").each(function() {
+            if ($(this).text().trim() == 'Danger') {
+                $(this).addClass('amber lighten-4');
+            } else if ($(this).text().trim() == 'Actif') {
+                $(this).addClass('green lighten-4');
+            } else if ($(this).text().trim() == 'Désactivé') {
+                $(this).addClass('grey lighten-2');
+            } else {
+                $(this).addClass('grey lighten-2 grey-text');
+            }
+        });
 
-                    $(".er_chips-status").each(function() {
-                        if ($(this).text().trim() == 'Danger') {
-                            $(this).addClass('amber lighten-4');
-                        } else if ($(this).text().trim() == 'Actif') {
-                            $(this).addClass('green lighten-4');
-                        } else if ($(this).text().trim() == 'Désactivé') {
-                            $(this).addClass('grey lighten-2');
-                        } else {
-                            $(this).addClass('grey lighten-2 grey-text');
-                        }
-                    });
+        $('.card-choice').on('click', function() {
 
-                    $('.card-choice').on('click', function() {
-                        $('input:checkbox').prop('checked', false);
-                        if ($(this.prop('id', 'label-card1'))) {
-                            $('#card1').prop('checked', true);
-                        }
-                        if ($(this.prop('id', 'label-card2'))) {
-                            $('#card2').prop('checked', true);
-                        }
-                    });
+            
 
-                });
-
-                $('.tooltipped').tooltip({
-                    delay: 50
-                });
-
-                function loadTab(value) {
-                    $('.tab_payment').addClass('er_hide-tab');
-                    if (value == 'tab_validate-cgv') {
-                        if ($('#container-sepa').hasClass('er_hide-container')) {
-                            if ($('input[name="card-choice"]').is(':checked')) {
-                                $('#' + value).removeClass('er_hide-tab');
-                                $('.er_tab-valid-btn').removeAttr('disabled');
-                                $('.er_tab-valid-btn').addClass('pulse');
-                            } else {
-                                Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez choisir une carte', 4000, 'amber lighten-1');
-                                $('#tab_choice-payment').removeClass('er_hide-tab');
-                            }
-                        } else {
-                            $('#' + value).removeClass('er_hide-tab');
-                            $('.er_tab-valid-btn').removeAttr('disabled');
-                            $('.er_tab-valid-btn').addClass('pulse');
-                        }
-                    } else if (value == 'tab_payment-done') {
-                        if ($('#cgv').is(':checked')) {
-                            $('#' + value).removeClass('er_hide-tab');
-                            $('.er_tab-done-btn').removeAttr('disabled');
-                            $('.er_tab-done-btn').addClass('pulse');
-                        } else {
-                            Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez accepter les CGV pour continuer', 4000, 'amber lighten-1');
-                            $('#tab_validate-cgv').removeClass('er_hide-tab');
-                        }
-                    } else {
-                        $('#' + value).removeClass('er_hide-tab');
-                    }
+            $('.card-choice').on('click', function() {
+                $('input:checkbox').prop('checked', false);
+                if ($(this.prop('id', 'label-card1'))) {
+                    $('#card1').prop('checked', true);
                 }
-
-                function showCard() {
-                    $('#container-sepa').addClass('er_hide-container');
-                    $('#container-card').removeClass('er_hide-container');
+                if ($(this.prop('id', 'label-card2'))) {
+                    $('#card2').prop('checked', true);
                 }
+            });
 
-                function showSepa() {
-                    $('#container-card').addClass('er_hide-container');
-                    $('#container-sepa').removeClass('er_hide-container');
+        });
+
+        $('.tooltipped').tooltip({
+            delay: 50
+        });
+    });
+
+    function loadTab(value) {
+        $('.tab_payment').addClass('er_hide-tab');
+        if (value == 'tab_validate-cgv') {
+            if ($('#container-sepa').hasClass('er_hide-container')) {
+                if ($('input[name="card-choice"]').is(':checked')) {
+                    $('#' + value).removeClass('er_hide-tab');
+                    $('.er_tab-valid-btn').removeAttr('disabled');
+                    $('.er_tab-valid-btn').addClass('pulse');
+                } else {
+                    Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez choisir une carte', 4000, 'amber lighten-1');
+                    $('#tab_choice-payment').removeClass('er_hide-tab');
                 }
+            } else {
+                $('#' + value).removeClass('er_hide-tab');
+                $('.er_tab-valid-btn').removeAttr('disabled');
+                $('.er_tab-valid-btn').addClass('pulse');
+            }
+        } else if (value == 'tab_payment-done') {
+            if ($('#cgv').is(':checked')) {
+                $('#' + value).removeClass('er_hide-tab');
+                $('.er_tab-done-btn').removeAttr('disabled');
+                $('.er_tab-done-btn').addClass('pulse');
+            } else {
+                Materialize.toast('<i class="material-icons left white-text">report_problem</i>Veuillez accepter les CGV pour continuer', 4000, 'amber lighten-1');
+                $('#tab_validate-cgv').removeClass('er_hide-tab');
+            }
+        } else {
+            $('#' + value).removeClass('er_hide-tab');
+        }
+    }
 
-                function find() {
-                    // Declare variables
-                    var input, filter, table, tr, td, i;
-                    input = document.getElementById("search");
-                    filter = input.value.toUpperCase();
-                    table = document.getElementById("subscription-table");
-                    tr = table.getElementsByTagName("tr");
+    function showCard() {
+        $('#container-sepa').addClass('er_hide-container');
+        $('#container-card').removeClass('er_hide-container');
+    }
 
-                    // Loop through all table rows, and hide those who don't match the search query
-                    for (i = 0; i < tr.length; i++) {
-                        var value = document.getElementById("ma_selectColumn");
-                        var selectedColumn = value.options[value.selectedIndex].value;
-                        td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
-                        if (td) {
-                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                tr[i].style.display = "";
-                            } else {
-                                tr[i].style.display = "none";
-                            }
-                        }
-                    }
+    function showSepa() {
+        $('#container-card').addClass('er_hide-container');
+        $('#container-sepa').removeClass('er_hide-container');
+    }
 
+    function find() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("subscription-table");
+        tr = table.getElementsByTagName("tr");
 
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            var value = document.getElementById("ma_selectColumn");
+            var selectedColumn = value.options[value.selectedIndex].value;
+            td = tr[i].getElementsByTagName("td")[parseInt(selectedColumn)];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
                 }
+            }
+        }
 
-                function sort() {
-                    var number = $('#er_nb-elmt_table option:selected').val();
-                    var element = document.getElementById("myPager");
 
-                    // boucle tant qu'un enfant existe
-                    while (element.firstChild) {
-                        // le supprime
-                        element.removeChild(element.firstChild);
-                    }
-                    $('#myTable').pageMe({
-                        pagerSelector: '#myPager',
-                        activeColor: 'blue',
-                        prevText: 'Précédent',
-                        nextText: 'Suivant',
-                        showPrevNext: true,
-                        hidePageNumbers: false,
-                        perPage: number
-                    });
-                }
+    }
+
+    function sort() {
+        var number = $('#er_nb-elmt_table option:selected').val();
+        var element = document.getElementById("myPager");
+
+        // boucle tant qu'un enfant existe
+        while (element.firstChild) {
+            // le supprime
+            element.removeChild(element.firstChild);
+        }
+        $('#myTable').pageMe({
+            pagerSelector: '#myPager',
+            activeColor: 'blue',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            showPrevNext: true,
+            hidePageNumbers: false,
+            perPage: number
+        });
+    }
 
 </script>
 {% endblock %}
