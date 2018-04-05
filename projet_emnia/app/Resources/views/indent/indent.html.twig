@@ -270,7 +270,7 @@ Commandes - Portail utilisateur LEMNIA
                                 </div>
                                 <div class="modal-footer er_modal-details-footer">
                                     <a href="{{ path('lemnia_customer_portal_bill') }}" class="modal-action modal-close btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">content_paste</i>Voir la facture</a>
-                                    <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">delete</i>Annuler la commande</a>
+                                    <a href="{{ path('lemnia_customer_portal_indentCancel', {'id':indent.id}) }}" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">delete</i>Annuler la commande</a>
                                 </div>
                             </div>
                             {% endfor %}

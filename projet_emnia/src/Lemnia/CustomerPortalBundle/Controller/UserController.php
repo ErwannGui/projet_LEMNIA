@@ -330,5 +330,19 @@ class UserController extends Controller
         ]);
     }
 
+/*
+Nous aurions pu utiliser cette fonction pour ajouter des utilisateurs dans la base de symfony via cette fonction 
+$customer_name = "Acme Inc";
+ 
+    $clientSearch = json_decode(CallAPI("GET", $apiKey, $apiUrl."thirdparties", array(
+        "sortfield" => "t.rowid", 
+        "sortorder" => "ASC", 
+        "limit" => "1", 
+        "mode" => "1",
+        "sqlfilters" => "(t.nom:=:'".$customer_name."')"
+        )
+
+Ainsi, il serait possible d'ajouter dynamiquement des utilisateurs à symfony à eur première connexion en vérifiant leur existence en tant que contact dans dolibarr
+*/
     
 }

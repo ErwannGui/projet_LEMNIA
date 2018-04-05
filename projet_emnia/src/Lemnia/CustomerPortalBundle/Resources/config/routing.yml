@@ -6,13 +6,25 @@ lemnia_customer_portal_bill:
     path:     /bill
     defaults: { _controller: LemniaCustomerPortalBundle:Bill:listBill }
 
+lemnia_customer_portal_billPayment:
+    path:     /bill
+    defaults: { _controller: LemniaCustomerPortalBundle:Bill:paymentBill }
+
 lemnia_customer_portal_indent:
     path:     /indent
     defaults: { _controller: LemniaCustomerPortalBundle:Indent:listIndent }
 
+lemnia_customer_portal_indentCancel:
+    path:     /indent
+    defaults: { _controller: LemniaCustomerPortalBundle:Indent:cancelIndent }
+
 lemnia_customer_portal_subscription:
     path:     /subscription
     defaults: { _controller: LemniaCustomerPortalBundle:Subscription:listSubscription }
+
+lemnia_customer_portal_deleteSub:
+    path:     /subscription
+    defaults: { _controller: LemniaCustomerPortalBundle:Subscription:deleteSub }
 
 lemnia_customer_portal_help:
     path:     /help

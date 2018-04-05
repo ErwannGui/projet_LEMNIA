@@ -13,7 +13,7 @@
                             <i class="material-icons amber-text text-accent-3">check</i>
                         </div>
                         <div class="co_statusCardTextContent">
-                            <span class="amber-text text-accent-3">7 850 €</span>
+                            <span class="amber-text text-accent-3">{% if (error_sub == true) %}2356€{% else %}{{costbym}}{% endif %}</span>
                             <span class="grey-text text-darken-3" style="font-size: 12px">Coût mensuel de vos abonnements</span>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                             <i class="material-icons orange-text">check</i>
                         </div>
                         <div class="co_statusCardTextContent">
-                            <span class="orange-text">7 850 €</span>
+                            <span class="orange-text">{% if (error_sub == true) %}19759€{% else %}{{costbyyear}}{% endif %}</span>
                             <span class="grey-text text-darken-3" style="font-size: 12px">Coût total de vos abonnements</span>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                             </div>
                             <div class="an_statusCardTextContent">
                                 <span class="grey-text text-lighten-1" style="font-size: 14px">Commande reçue</span>
-                                <span class="black-text text-lighten-1">1</span>
+                                <span class="black-text text-lighten-1">{% if (error_order == true) %}13{% else %}{{listOrders.orderreceive}}{% endif %}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="an_statusCardTextContent">
                                 <span class="grey-text text-lighten-1" style="font-size: 14px">Commande validée</span>
-                                <span class="black-text text-lighten-1">2</span>
+                                <span class="black-text text-lighten-1">{% if(error_order == true) %}3{% else %}{{listOrders.orderok}}{% endif %}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -146,7 +146,7 @@
                             </div>
                             <div class="an_statusCardTextContent">
                                 <span class="grey-text text-lighten-1" style="font-size: 14px">Commande expirée</span>
-                                <span class="black-text text-lighten-1">1</span>
+                                <span class="black-text text-lighten-1">{% if (error_order == true) %}1{% else %}{{listOrders.orderoff}}{% endif %}</span>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                             </div>
                             <div class="an_statusCardTextContent">
                                 <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité lointaine</span>
-                                <span class="black-text text-lighten-1">5</span>
+                                <span class="black-text text-lighten-1">{% if (error_sub == true) %}5{% else %}{{subsok}}{% endif %}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="an_statusCardTextContent">
                                 <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité proche</span>
-                                <span class="black-text text-lighten-1">2</span>
+                                <span class="black-text text-lighten-1">{% if (error_sub == true) %}2{% else %}{{soonof}}{% endif %}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -183,7 +183,7 @@
                             </div>
                             <div class="an_statusCardTextContent">
                                 <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité dépassé</span>
-                                <span class="black-text text-lighten-1">1</span>
+                                <span class="black-text text-lighten-1">{% if (error_sub == true) %}1{% else %}{{subspast}}{% endif %}</span>
                             </div>
                         </div>
                     </div>
@@ -200,62 +200,62 @@
         font: 18px/1.5 sans-serif;
         overflow-x: hidden;
     }
-
+    
     h1,
     h2 {
         line-height: 1.2;
         margin: 0 0 .5em;
     }
-
+    
     h1 {
         font-size: 36px;
     }
-
+    
     h2 {
         font-size: 21px;
         margin-bottom: 1em;
     }
-
+    
     p {
         margin: 0 0 1em 0;
     }
-
+    
     a {
         color: #0000F0;
     }
-
+    
     a:hover {
         text-decoration: none;
     }
-
+    
     code {
         background: #F5F5F5;
         max-width: 100px;
         padding: 2px 6px;
         word-wrap: break-word;
     }
-
+    
     #wrapper {
         background: #FFF;
         margin: 1em auto;
         max-width: 800px;
         width: 95%;
     }
-
+    
     #container {
         padding: 2em;
     }
-
+    
     #welcome,
     #status {
         margin-bottom: 2em;
     }
-
+    
     #welcome h1 span {
         display: block;
         font-size: 75%;
     }
-
+    
     #icon-status,
     #icon-book {
         float: left;
@@ -264,11 +264,11 @@
         margin-top: -4px;
         width: 64px;
     }
-
+    
     #icon-book {
         display: none;
     }
-
+    
     @media (min-width: 768px) {
         #wrapper {
             width: 80%;
@@ -303,5 +303,6 @@
             animation: fade-in 1s .2s forwards;
         }
     }
+
 </style>
 {% endblock %}
