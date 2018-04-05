@@ -583,7 +583,7 @@ Factures - Portail utilisateur LEMNIA
                                     Affichage du PDF
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat ">Retour</a>
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat " onclick="reloadAfterPayment({{ bill.id }})">Retour</a>
                                 </div>
                             </div>
                             {% endif %}
@@ -622,7 +622,7 @@ Factures - Portail utilisateur LEMNIA
                                   <input class="with-gap" name="payment-choice" type="radio" id="sepa" value="sepa" />
                                   <label for="sepa" onclick="showSepa()">Prélèvement SEPA</label>
                                 </p>
-                              </form>
+                            </form>
                             <div id="container-card" class="">
                                 <div class="z-depth-1 white grey-text col s12 er_table-container">
                                     <span>Choix de la carte</span>
@@ -882,6 +882,23 @@ Factures - Portail utilisateur LEMNIA
         $('#container-card').addClass('er_hide-container');
         $('#container-sepa').removeClass('er_hide-container');
     }
+
+    function reloadAfterPayment(id){
+        var method = $('input[type=radio]:checked').val();
+        $.ajax({
+            url: '{{ path('lemnia_customer_portal_billPayment') }}',
+            type: 'POST',
+
+            data: {
+                'id': id,
+                'method': method
+            },
+            success: function(data)
+            {
+                location.reload(true);
+            }
+        });
+    };
 
 </script>
 {% endblock %}
