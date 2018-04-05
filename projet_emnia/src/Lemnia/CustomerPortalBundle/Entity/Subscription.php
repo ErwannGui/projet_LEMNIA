@@ -55,5 +55,100 @@ class Subscription
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Subscription
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set service
+     *
+     * @param string $service
+     *
+     * @return Subscription
+     */
+    public function setService($service)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * Get service
+     *
+     * @return string
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * Set endDate
+     *
+     * @param \DateTime $endDate
+     *
+     * @return Subscription
+     */
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * Get endDate
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+
+    /**
+     * Set state
+     *
+     * @param string $state
+     *
+     * @return Subscription
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+}

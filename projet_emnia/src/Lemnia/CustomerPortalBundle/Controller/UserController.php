@@ -162,7 +162,6 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($addCarteBancaire);
             $em->flush();
-
         }
         $i = 0;
 

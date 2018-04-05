@@ -73,5 +73,172 @@ class Notification
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set text
+     *
+     * @param string $text
+     *
+     * @return Notification
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * Get text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * Set strength
+     *
+     * @param string $strength
+     *
+     * @return Notification
+     */
+    public function setStrength($strength)
+    {
+        $this->strength = $strength;
+
+        return $this;
+    }
+
+    /**
+     * Get strength
+     *
+     * @return string
+     */
+    public function getStrength()
+    {
+        return $this->strength;
+    }
+
+    /**
+     * Set subject
+     *
+     * @param string $subject
+     *
+     * @return Notification
+     */
+    public function setSubject($subject)
+    {
+        $this->subject = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Get subject
+     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * Set subscritption
+     *
+     * @param \Lemnia\CustomerPortalBundle\Entity\Subscription $subscritption
+     *
+     * @return Notification
+     */
+    public function setSubscritption(\Lemnia\CustomerPortalBundle\Entity\Subscription $subscritption = null)
+    {
+        $this->subscritption = $subscritption;
+
+        return $this;
+    }
+
+    /**
+     * Get subscritption
+     *
+     * @return \Lemnia\CustomerPortalBundle\Entity\Subscription
+     */
+    public function getSubscritption()
+    {
+        return $this->subscritption;
+    }
+
+    /**
+     * Set intent
+     *
+     * @param \Lemnia\CustomerPortalBundle\Entity\Intent $intent
+     *
+     * @return Notification
+     */
+    public function setIntent(\Lemnia\CustomerPortalBundle\Entity\Intent $intent = null)
+    {
+        $this->intent = $intent;
+
+        return $this;
+    }
+
+    /**
+     * Get intent
+     *
+     * @return \Lemnia\CustomerPortalBundle\Entity\Intent
+     */
+    public function getIntent()
+    {
+        return $this->intent;
+    }
+
+    /**
+     * Set ticket
+     *
+     * @param \Lemnia\CustomerPortalBundle\Entity\Ticket $ticket
+     *
+     * @return Notification
+     */
+    public function setTicket(\Lemnia\CustomerPortalBundle\Entity\Ticket $ticket = null)
+    {
+        $this->ticket = $ticket;
+
+        return $this;
+    }
+
+    /**
+     * Get ticket
+     *
+     * @return \Lemnia\CustomerPortalBundle\Entity\Ticket
+     */
+    public function getTicket()
+    {
+        return $this->ticket;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Lemnia\UserBundle\Entity\User $user
+     *
+     * @return Notification
+     */
+    public function setUser(\Lemnia\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Lemnia\UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

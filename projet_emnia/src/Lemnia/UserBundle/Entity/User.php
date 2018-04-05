@@ -306,4 +306,38 @@ class User extends FosUser
     {
         return $this->adresse;
     }
+
+    /**
+     * Add notification
+     *
+     * @param \Lemnia\CustomerPortalBundle\Entity\Notification $notification
+     *
+     * @return User
+     */
+    public function addNotification(\Lemnia\CustomerPortalBundle\Entity\Notification $notification)
+    {
+        $this->notification[] = $notification;
+
+        return $this;
+    }
+
+    /**
+     * Remove notification
+     *
+     * @param \Lemnia\CustomerPortalBundle\Entity\Notification $notification
+     */
+    public function removeNotification(\Lemnia\CustomerPortalBundle\Entity\Notification $notification)
+    {
+        $this->notification->removeElement($notification);
+    }
+
+    /**
+     * Get notification
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNotification()
+    {
+        return $this->notification;
+    }
 }

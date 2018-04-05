@@ -37,7 +37,7 @@ class CarteBancaire
     /**
      * @var date
      *
-     * @ORM\Column(name="date_expiration", type="date", nullable=true)
+     * @ORM\Column(name="date_expiration", type="datetime", nullable=true)
      */
     private $dateExpiration;
 
@@ -49,7 +49,7 @@ class CarteBancaire
     private $pictogramme;
 
     /**
-     * @ORM\OneToOne(targetEntity="Lemnia\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Lemnia\UserBundle\Entity\User", cascade={"persist"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $userId;

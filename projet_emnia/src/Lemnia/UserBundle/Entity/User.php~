@@ -88,6 +88,11 @@ class User extends FosUser
     private $city;
 
     /**
+     * @ORM\OneToMany(targetEntity="Lemnia\CustomerPortalBundle\Entity\Notification", mappedBy="user")
+     */
+    private $notification;
+
+    /**
      * Set lastName
      *
      * @param string $lastName
@@ -276,5 +281,29 @@ class User extends FosUser
     public function getCodePostal()
     {
         return $this->codePostal;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return User
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
     }
 }

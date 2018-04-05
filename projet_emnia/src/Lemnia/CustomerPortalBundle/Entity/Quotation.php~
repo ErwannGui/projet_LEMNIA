@@ -43,52 +43,5 @@ class Quotation
     {
         return $this->id;
     }
-
-    /**
-     * Set amount
-     *
-     * @param float $amount
-     *
-     * @return Quotation
-     */
-    public function setAmount($amount)
-    {
-        $this->amount = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Get amount
-     *
-     * @return float
-     */
-    public function getAmount()
-    {
-        return $this->amount;
-    }
-
-    /**
-     * Set intent
-     *
-     * @param \Lemnia\CustomerPortalBundle\Entity\Intent $intent
-     *
-     * @return Quotation
-     */
-    public function setIntent(\Lemnia\CustomerPortalBundle\Entity\Intent $intent = null)
-    {
-        $this->intent = $intent;
-
-        return $this;
-    }
-
-    /**
-     * Get intent
-     *
-     * @return \Lemnia\CustomerPortalBundle\Entity\Intent
-     */
-    public function getIntent()
-    {
-        return $this->intent;
-    }
 }
+
