@@ -14,6 +14,10 @@ lemnia_customer_portal_subscription:
     path:     /subscription
     defaults: { _controller: LemniaCustomerPortalBundle:Subscription:listSubscription }
 
+lemnia_customer_portal_deleteSub:
+    path:     /subscription
+    defaults: { _controller: LemniaCustomerPortalBundle:Subscription:deleteSub }
+
 lemnia_customer_portal_help:
     path:     /help
     defaults: { _controller: LemniaCustomerPortalBundle:Help:help }
