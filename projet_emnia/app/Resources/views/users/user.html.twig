@@ -29,7 +29,7 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getJob}}</p>
                                         <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getSocity}}</p>
                                     </div>
-                                    <div class="co_contactInfoTopBlockText_contacts ma_modifier_info ma_modifier_info_perso">
+                                    <div class="co_contactInfoTopBlockText_contacts ma_modifier_info ma_modifier_info_perso white-text">
                                         {{ form_widget(formInfoPerso.lastname, {'value': user.getLastName }) }}
                                         {{ form_widget(formInfoPerso.firstname, {'value': user.getFirstName }) }}
                                     </div>
@@ -37,33 +37,33 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                 <div class="co_contactInfoMiddleBlock_contacts ma_apercu_info_perso">
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1" >location_on</i>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getAdresse}}, {{user.getCodePostal}} {{user.getCity}}, {{user.getNation}}</p>
+                                        <p class="grey-text text-lighten-1 white-text" style="font-size: 12px">{{user.getAdresse}}, {{user.getCodePostal}} {{user.getCity}}, {{user.getNation}}</p>
                                     </div>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1">email</i>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getEmail}}</p>
+                                        <p class="grey-text text-lighten-1 white-text" style="font-size: 12px">{{user.getEmail}}</p>
                                     </div>
                                     <div class="co_contactOneInfoMiddleBlock_contacts horizontal">
                                         <i class="material-icons grey-text text-lighten-1">phone</i>
-                                        <p class="grey-text text-lighten-1" style="font-size: 12px">{{user.getPhoneNumber}}</p>
+                                        <p class="grey-text text-lighten-1 white-text" style="font-size: 12px">{{user.getPhoneNumber}}</p>
                                     </div>
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts ma_modifier_info_perso">
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {{ form_widget(formInfoPerso.socity, {'value': user.getSocity }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {{ form_widget(formInfoPerso.job, {'value': user.getJob }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {{ form_widget(formInfoPerso.pays, {'value': user.getNation }) }}
                                         {{ form_widget(formInfoPerso.ville, {'value': user.getCity }) }}
                                         {{ form_widget(formInfoPerso.cPostal, {'value': user.getCodePostal }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {{ form_widget(formInfoPerso.adresse, {'value': user.getAdresse }) }}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {{ form_widget(formInfoPerso.telephone, {'value': user.getPhoneNumber }) }}
                                         {{ form_widget(formInfoPerso.email, {'value': user.getEmail }) }}
                                     </div>
@@ -93,12 +93,14 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                     </div>
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts" id="ma_modifier_infos_co">
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
-                                        <input type="text" placeholder="identifiant" id="identifiant" class="validate white-text" value="{{user}}">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
+                                        {{ form_start(formConnexion) }}
+                                            {{ form_widget(formConnexion.pseudo, {'value': user}) }}
                                     </div>
-                                    <a class="white-text" style="font-size:0.8em">Modifier Mots de passe</a>
+                                    <a class="white-text" style="font-size:0.8em" href="{{ path('fos_user_resetting_request') }}">Modifier Mots de passe</a>
                                     <div id="validerInfosCo ">
                                         <button class="waves-effect waves-light btn buttonUser col s6 offset-s3" data-action="save-jpg" type="submit">Valider les modifications</button>
+                                        {{ form_end(formConnexion) }}
                                     </div>
                                 </div>
                             </div>
@@ -141,18 +143,18 @@ Compte utilisateur - Portail utilisateur LEMNIA
                                 </div>
                                 <div class="co_contactInfoMiddleBlock_contacts" id="ma_modifier_sepa">
                                     {{ form_start(formSepa) }}
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {% if sepa != null %}
                                             {{ form_widget(formSepa.iban,{'value': sepa.getIban }) }}
                                         {% else %}
-                                            {{ form_widget(formSepa.iban,{'value': "IBAN" }) }}
+                                            {{ form_widget(formSepa.iban) }}
                                         {% endif %}
                                     </div>
-                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info">
+                                    <div class="co_contactOneInfoMiddleBlock_contacts horizontal ma_modifier_info white-text">
                                         {% if sepa != null %}
                                             {{ form_widget(formSepa.bic, {'value': sepa.getBic }) }}
                                         {% else %}
-                                            {{ form_widget(formSepa.bic, {'value': "BIC" }) }}
+                                            {{ form_widget(formSepa.bic) }}
                                         {% endif %}
                                     </div>
 

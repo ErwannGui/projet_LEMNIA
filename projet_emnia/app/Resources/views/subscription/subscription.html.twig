@@ -200,7 +200,7 @@
                         </div>
                         <div class="modal-footer er_modal-details-footer">
                             <a href="#modal_payment" class="modal-action modal-close modal-trigger btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">refresh</i>Renouveller</a>
-                            <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">not_interested</i>Résilier l'abonnement</a>
+                            <a href="{{ path('lemnia_customer_portal_deleteSub', {'id':listSub.id}) }}" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">not_interested</i>Résilier l'abonnement</a>
                         </div>
                     </div>
                     {% elseif activity == 0 %}
@@ -344,7 +344,7 @@
                 </div>
                 <div class="modal-footer er_modal-details-footer">
                     <a href="#modal_payment" class="modal-action modal-close modal-trigger btn waves-effect waves-light light-blue lighten-2 z-depth-2"><i class="material-icons left">refresh</i>Renouveller</a>
-                    <a href="{{ path('lemnia_customer_portal_deleteSub', {'id':indent.id}) }}" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">not_interested</i>Résilier l'abonnement</a>
+                    <a href="" class="modal-action modal-close btn-flat waves-effect waves-light grey-text z-depth-2"><i class="material-icons left">not_interested</i>Résilier l'abonnement</a>
                 </div>
             </div>
             <!-- Modal de payment réutilisable ailleurs -->

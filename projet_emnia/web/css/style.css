@@ -1465,7 +1465,7 @@ canvas {
 #dateSignature {
     padding-left: 20px;
 }
-#form_dateExpiration{
+#form_dateExpiration_date{
     display: flex;
 }
 #form_dateExpiration .select-wrapper:nth-of-type(2){

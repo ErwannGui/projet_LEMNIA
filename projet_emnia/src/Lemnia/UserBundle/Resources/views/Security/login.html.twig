@@ -21,7 +21,11 @@
             <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" /> {% endif %}
             <div class="login-space">
                 <button id="_submit" type="submit" name="_submit" class="btn" value="{{ 'security.login.submit'|trans }}">Connexion</button>
+<<<<<<< HEAD
                 <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié</a>
+=======
+                <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a>
+>>>>>>> 0972477745ea77b109fedfdf6721561fc5c1a8d6
             </div>
         </div>
     </form>

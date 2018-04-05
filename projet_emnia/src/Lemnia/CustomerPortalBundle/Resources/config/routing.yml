@@ -6,6 +6,10 @@ lemnia_customer_portal_bill:
     path:     /bill
     defaults: { _controller: LemniaCustomerPortalBundle:Bill:listBill }
 
+lemnia_customer_portal_billPayment:
+    path:     /bill
+    defaults: { _controller: LemniaCustomerPortalBundle:Bill:paymentBill }
+
 lemnia_customer_portal_indent:
     path:     /indent
     defaults: { _controller: LemniaCustomerPortalBundle:Indent:listIndent }
