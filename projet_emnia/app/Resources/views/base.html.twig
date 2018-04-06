@@ -115,13 +115,13 @@
                     <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_listuser') }}"><i class="material-icons light-blue-text darken-1">account_box</i>Liste des utilisateurs</a></li>
                     {% endif %}
                     <li><a class="er_vertical-link_header valign-wrapper grey-text" href="{{ path('lemnia_customer_portal_user') }}"><i class="material-icons light-blue-text darken-1">account_circle</i>Mon compte</a></li>
-                    <div class="center er_user_header">
+                    <div class="center er_user_header" style="bottom: 150px;">
                         <img class="circle responsive-img" src="{{ asset('img/portrait.jpg') }}">
                         <br>
                         <span>{{ app.user.username }}</span>
                     </div>
                     <div class="valign-wrapper">
-                        <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>
+                        <a class="waves-effect waves-light btn er_disconnect_header center-align transparent z-depth-4 grey-text" href="{{ path('fos_user_security_logout') }}" style="bottom: 80px!important;"><i class="material-icons left light-blue-text darken-1">exit_to_app</i>Déconnexion</a>
                     </div>
                 </ul>
             </div>

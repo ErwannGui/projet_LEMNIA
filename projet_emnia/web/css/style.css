@@ -200,7 +200,7 @@ header nav a {
     display: flex;
     flex-direction: column;
     padding-top: 15px;
-    height: calc(100% - 36px)!important;
+    height: 100%;
     /*taille du menu a modifier en configuration de prod*/
     transition-duration: 1s;
     background-color: #25262C!important;
