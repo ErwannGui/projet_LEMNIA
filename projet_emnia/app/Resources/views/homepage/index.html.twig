@@ -13,7 +13,7 @@
                             <i class="material-icons amber-text text-accent-3">check</i>
                         </div>
                         <div class="co_statusCardTextContent">
-                            <span class="amber-text text-accent-3">7 850 €</span>
+                            <span class="amber-text text-accent-3">{% if (error_sub == true) %}2356€{% else %}{{costbym}}{% endif %}</span>
                             <span class="grey-text text-darken-3" style="font-size: 12px">Coût mensuel de vos abonnements</span>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                             <i class="material-icons orange-text">check</i>
                         </div>
                         <div class="co_statusCardTextContent">
-                            <span class="orange-text">7 850 €</span>
+                            <span class="orange-text">{% if (error_sub == true) %}19759€{% else %}{{costbyyear}}{% endif %}</span>
                             <span class="grey-text text-darken-3" style="font-size: 12px">Coût total de vos abonnements</span>
                         </div>
                     </div>
@@ -34,7 +34,8 @@
                 <!-- Graph -->
                 <div class="col s12 m12">
                     <div class="white card-panel z-depth-1">
-                        <canvas id="myChart"></canvas>
+                        <span class="title_card">Dépenses mensuelles</span>
+                        <canvas style="margin-top: 20px" id="myChart"></canvas>
                         <script>
                             var ctx = document.getElementById('myChart').getContext('2d');
                             var chart = new Chart(ctx, {
@@ -43,36 +44,36 @@
                                 data: {
                                     labels: ["January", "February", "March", "April", "May", "June", "July"],
                                     datasets: [{
-                                        label: "Statistiques",
+                                        label: "Dépenses totales",
                                         fill: true,
-                                        //yAxisID: 'k',
                                         borderColor: '#87CEFA',
                                         backgroundColor: '#87CEFA',
+                                        pointBackgroundColor: '#1E90FF',
+                                        pointBorderColor: '#4169E1',
+                                        pointRadius: 4,
+                                        pointHoverRadius: 7,
                                         // Dans le data faudra remplacer avec les requête dans l'API
                                         data: [15, 20, 12, 25, 18, 25, 32],
                                     }]
                                 },
 
                                 options: {
+                                    //on enlève la légende de base 
                                     legend: {
                                         display: false,
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: 'Statistique',
-                                        fontSize: 20,
-                                        fontStyle: 'italic',
-                                        padding: 20,
+
                                     },
                                     scales: {
+                                        //on affiche une légende pour l'axe y
                                         yAxes: [{
                                             display: true,
                                             scaleLabel: {
                                                 display: true,
-                                                labelString: 'Dépenses Mensuelles',
+                                                labelString: 'Montant des dépenses',
                                             },
 
                                             ticks: {
+                                                //On fait commencer l'axe à 0 et on rajoute un k après la valeur 
                                                 beginAtZero: true,
                                                 userCallback: function(tick) {
                                                     return tick.toString() + 'k';
@@ -104,12 +105,87 @@
             <div class="row">
                 <div class="col s12 m12">
                     <div class="white card-panel z-depth-1">
-                        <p>Amazing status block</p>
+                        <p>Commandes</p>
+                        <!--Commande envoyée-->
+                        <div class="an_commande_envoyee">
+                            <div class="co_statusCardCirleIcon yellow lighten-4">
+                                <i class="material-icons amber-text text-lighten-3">send</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande envoyée</span>
+                                <span class="black-text text-lighten-1">2</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Commande reçue-->
+                        <div class="an_commande_recue">
+                            <div class="co_statusCardCirleIcon green lighten-4">
+                                <i class="material-icons green-text text-lighten-3">file_download</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande reçue</span>
+                                <span class="black-text text-lighten-1">{% if (error_order == true) %}13{% else %}{{listOrders.orderreceive}}{% endif %}</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Commande validée-->
+                        <div class="an_commande_validee">
+                            <div class="co_statusCardCirleIcon light-blue lighten-5">
+                                <i class="material-icons light-blue-text text-lighten-3">check</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande validée</span>
+                                <span class="black-text text-lighten-1">{% if(error_order == true) %}3{% else %}{{listOrders.orderok}}{% endif %}</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Commande expirée-->
+                        <div class="an_commande_expiree">
+                            <div class="co_statusCardCirleIcon grey lighten-4">
+                                <i class="material-icons grey-text text-lighten-2">watch_later</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Commande expirée</span>
+                                <span class="black-text text-lighten-1">{% if (error_order == true) %}1{% else %}{{listOrders.orderoff}}{% endif %}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col s12 m12">
                     <div class="white card-panel z-depth-1">
-                        <p>Amazing other status block</p>
+                        <p>Licences et abonnements</p>
+                        <!--Date de validitée lointaine-->
+                        <div class="an_validite_lointaine">
+                            <div class="co_statusCardCirleIcon green lighten-5">
+                                <i class="material-icons green-text text-lighten-3">check</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité lointaine</span>
+                                <span class="black-text text-lighten-1">{% if (error_sub == true) %}5{% else %}{{subsok}}{% endif %}</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Date de validitée proche-->
+                        <div class="an_validite_proche">
+                            <div class="co_statusCardCirleIcon yellow lighten-4">
+                                <i class="material-icons amber-text text-lighten-3">hourglass_empty</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité proche</span>
+                                <span class="black-text text-lighten-1">{% if (error_sub == true) %}2{% else %}{{soonof}}{% endif %}</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <!--Date de validitée dépasée-->
+                        <div class="an_validite_depasee">
+                            <div class="co_statusCardCirleIcon red lighten-4">
+                                <i class="material-icons red-text text-lighten-3">warning</i>
+                            </div>
+                            <div class="an_statusCardTextContent">
+                                <span class="grey-text text-lighten-1" style="font-size: 14px">Date de fin de validité dépassé</span>
+                                <span class="black-text text-lighten-1">{% if (error_sub == true) %}1{% else %}{{subspast}}{% endif %}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

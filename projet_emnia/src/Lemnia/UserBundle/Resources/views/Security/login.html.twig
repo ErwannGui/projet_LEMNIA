@@ -1,13 +1,8 @@
-{% extends "LemniaUserBundle::layout.html.twig" %}
-
-{% block fos_user_content %}
-    {% trans_default_domain 'FOSUserBundle' %}
-
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% extends "LemniaUserBundle::layout.html.twig" %} {% block fos_user_content %} {% trans_default_domain 'FOSUserBundle' %} {% if error %}
+<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-<div class="col s8 offset-s2 l6 login-right-part center">
-    <img class="login-logo" src="{{ asset('img/logo_bleu_clair.png') }}">
+<div class="">
+    <img class="login-logo" src="{{ asset('img/logo_entreprise.png') }}">
     <h1>LEMNIA</h1>
     <h2>Global Solution</h2>
     <p>Content de vous revoir !</p>
@@ -23,11 +18,10 @@
                 <label class="cyan-text text-darken-1" for="password">Mot de passe</label>
             </div>
             {% if csrf_token %}
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-            {% endif %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" /> {% endif %}
             <div class="login-space">
                 <button id="_submit" type="submit" name="_submit" class="btn" value="{{ 'security.login.submit'|trans }}">Connexion</button>
-                <a href="#">Mot de passe oublié ?</a>
+                <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a>
             </div>
         </div>
     </form>

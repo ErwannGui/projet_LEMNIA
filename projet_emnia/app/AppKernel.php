@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Lemnia\UserBundle\LemniaUserBundle(),
             new Lemnia\CoreBundle\LemniaCoreBundle(),
             new Lemnia\CustomerPortalBundle\LemniaCustomerPortalBundle(),
+            new Csa\Bundle\GuzzleBundle\CsaGuzzleBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

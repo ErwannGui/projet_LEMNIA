@@ -8,6 +8,8 @@ $('#ma_modifier_infos_co').hide();
 $('#validerSepa').hide();
 $('#ma_modifier_sepa').hide();
 $('#addCard').hide();
+$('#form_dateExpiration_time').hide();
+
 // modification des informations personnels
 $('#ma_modif_info_perso').click(function(){
     if ($('#ma_info_perso').hasClass('ma_modifyBackground')){
@@ -85,38 +87,21 @@ $('#addNewCard').click(function(){
     $( "#addCard" ).animate({
         top: "+=200"
     }, "slow", function() {
-        // Animation complete.
+        $('#addCard').css('z-index','0');
     });
 });
 
-
+//Canvas signature pad
 var canvas = document.querySelector("canvas");
-
 var signaturePad = new SignaturePad(canvas);
+var canvaConverti = canvas.toDataURL();
 
-// Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible parameters)
-signaturePad.toDataURL(); // save image as PNG
-signaturePad.toDataURL("image/jpeg"); // save image as JPEG
-signaturePad.toDataURL("image/svg+xml"); // save image as SVG
+canvas.addEventListener('mouseup', function(){
+    var canvaConverti = canvas.toDataURL();
+    $('#form_signature').attr({value : canvaConverti});
+});
 
-// Draws signature image from data URL.
-// NOTE: This method does not populate internal data structure that represents drawn signature. Thus, after using #fromDataURL, #toData won't work properly.
-signaturePad.fromDataURL("data:image/png;base64,iVBORw0K...");
 
-// Returns signature image as an array of point groups
-const data = signaturePad.toData();
 
-// Draws signature image from an array of point groups
-signaturePad.fromData(data);
 
-// Clears the canvas
-signaturePad.clear();
 
-// Returns true if canvas is empty, otherwise returns false
-signaturePad.isEmpty();
-
-// Unbinds all event handlers
-signaturePad.off();
-
-// Rebinds all event handlers
-signaturePad.on();
