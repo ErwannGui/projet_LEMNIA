@@ -1,0 +1,3 @@
+lemnia_core_homepage:
+    path:     /
+    defaults: { _controller: LemniaCoreBundle:Default:index }

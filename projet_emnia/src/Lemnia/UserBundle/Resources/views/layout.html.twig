@@ -1,0 +1,58 @@
+{# src/Lemnia/UserBundle/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Portail utilisateur LEMNIA - Connexion</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('materialize/css/materialize.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+        <style type="text/css">
+            /* ---- reset ---- */ body{ margin:0;} /* ---- particles.js container ---- */ #particles-js{ position:absolute; top: 0; z-index: 0; width: 100%; height: 100vh!important; background-color: #90a4ae; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } 
+        </style>
+    </head>
+    <body>
+        {% block body %}
+
+            {# On affiche les messages flash que définissent les contrôleurs du bundle #}
+            {% for key, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ key }}">
+                        {{ message|trans({}, 'FOSUserBundle') }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <div class="row login-structure">
+                <div class="col l6 login-left-part">
+                    <div class="parallelogram" id="one"></div>
+                    <div class="parallelogram" id="two"></div>
+                    <div class="parallelogram" id="three"></div>
+                    <div class="parallelogram" id="four"></div>
+                    <div class="parallelogram" id="five"></div>
+                    <div class="parallelogram" id="six"></div>
+                </div>
+
+                <div class="col s8 offset-s2 l6 login-right-part center">
+                {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+                {% block fos_user_content %}
+                {% endblock fos_user_content %}
+                </div>
+                
+            </div>
+
+        {% endblock %}
+    </body>
+    <script type="text/javascript" src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+        });
+    </script>
+</html>
+

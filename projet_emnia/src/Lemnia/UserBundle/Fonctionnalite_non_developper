@@ -1,0 +1,4 @@
+
+
+-> Il faudrait ajouter un algorythme qui vérifie au tentative de connexion si l'utilisateur existe dans la base de données symfony (partie présente actuellement pour la connexion)
+et si les identifiants n'existe pas verfifier via l'api dolibar une compatibilite avec un contact. Si une telle compatibilité existe créer un nouvel utilisateur Symfony et permettre la connexion.

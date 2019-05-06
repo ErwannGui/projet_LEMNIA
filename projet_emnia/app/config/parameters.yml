@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 147.135.249.241
+    database_port: 3306
+    database_name: lemnia
+    database_user: root
+    database_password: 'YnovPC&'
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: erwann.guillevic@ynov.com
+    mailer_password: null
+    secret: lemnia

@@ -1,0 +1,167 @@
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+  <!-- Vous pouvez customiser le bouton mais surtout il suffit de créer un bouton en css et ensuite lui appliquer la classe modal-trigger et lui ajouter le href lié à votre modal et le lien sera fait -->
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>
+
+<!-- et le js qui va bien dans le bloc javascript de la page -->
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+  </script>
+
+  <!-- table basique sans le plugin Datatable.js -->
+        <table class=""><!-- ajoutez la class de votre choix pour l'effet désiré http://materializecss.com/table.html -->
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+              <!-- si vous voulez ajouter des colonnes vides pour y placer des bouton au hover, rajouter des th vides et remplissez vos td -->
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+autres liens (très) utiles :
+Les bouton avec une annimation pulse : http://materializecss.com/pulse.html
+la gestion des ombres : http://materializecss.com/shadow.html
+les boutons toogle : http://materializecss.com/css-transitions.html
+la palette de couleur evidemmment : http://materializecss.com/color.html
+la gestion des grids pour ajuster l'affichage : http://materializecss.com/grid.html
+la gestion de l'affichage des div et textes : http://materializecss.com/helpers.html
+les différents types de bouttons : http://materializecss.com/buttons.html
+vous allez décourvir les cards et vous allez kiffer vos mères : http://materializecss.com/cards.html
+andreï ca c'est pour toi eclates toi : http://materializecss.com/forms.html
+coco voila comment sont gérés les icons : http://materializecss.com/icons.html
+si vous voulez savoir comment j'ai fait le menu : http://materializecss.com/navbar.html
+la gestion des chargements si jamais : http://materializecss.com/preloader.html
+<!-- maintenant tout ce qui demande une initialization en js -->
+les carousel et des "fragments" pour reprendre les cours d'android : http://materializecss.com/carousel.html
+les accordéons, très utiles pour afficher des données en liste : http://materializecss.com/collapsible.html
+l'affichage des images : http://materializecss.com/media.html
+les parralax, pas forcement utiles ici, mais ailleurs ca passe bien : http://materializecss.com/parallax.html
+
+  <!-- -------------------------------------------------------------------------------
+                              STATUS CARD
+  ----------------------------------------------------------------------------------- -->
+
+  <!-- STATUSCARD ABONNEMENT OK-->
+  <div class="col s12 m4">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon green lighten-5">
+              <i class="material-icons green-text text-lighten-3">check</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Date de fin de validité lointaine</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- STATUSCARD ABONNEMENT WARNING-->
+  <div class="col s12 m4">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon yellow lighten-4">
+              <i class="material-icons amber-text text-lighten-3">hourglass_empty</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Date de fin de validité proche</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- STATUSCARD ABONNEMENT DANGER-->
+  <div class="col s12 m4">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon red lighten-4">
+              <i class="material-icons red-text text-lighten-3">warning</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Date de fin de validité dépassé</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- STATUSCARD COMMANDE ENVOYEE-->
+  <div class="col s12 m3">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon yellow lighten-4">
+              <i class="material-icons amber-text text-lighten-3">send</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Commande envoyée</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- STATUSCARD ABONNEMENT RECU-->
+  <div class="col s12 m3">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon green lighten-5">
+              <i class="material-icons green-text text-lighten-3">file_download</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Commande reçu</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- STATUSCARD ABONNEMENT VALIDEE -->
+  <div class="col s12 m3">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon light-blue lighten-5">
+              <i class="material-icons light-blue-text text-lighten-3">check</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Commande validée</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- STATUSCARD ABONNEMENT EXPIREE-->
+  <div class="col s12 m3">
+      <div class="white co_statusCard z-depth-1">
+          <div class="co_statusCardCirleIcon grey lighten-4">
+              <i class="material-icons grey-text text-lighten-2">watch_later</i>
+          </div>
+          <div class="co_statusCardTextContent">
+              <span class="black-text text-lighten-1">2</span>
+              <span class="grey-text text-lighten-1">Commande expirée</span>
+          </div>
+      </div>
+  </div>
